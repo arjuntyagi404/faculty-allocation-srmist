@@ -1,62 +1,97 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Faculty Timetable</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faculty Timetable — Faculty Allocation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
 </head>
-
 <body>
 
-<h1>{{ faculty.faculty_name }}</h1>
+  <header>
+    <div class="header-left">
+      <p class="eyebrow">SRM Institute of Science and Technology</p>
+      <h1>Faculty Allocation System</h1>
+    </div>
+    <div class="header-right">Academic Portal</div>
+  </header>
 
-<p>Faculty ID : {{ faculty.faculty_id }}</p>
+  <main class="main-wide">
+    <div class="page-wrap">
 
-<p>Workload : {{ faculty.workload }}</p>
+      <div class="card wide">
+        <p class="overline">Faculty Timetable</p>
+        <h2>{{ faculty.faculty_name }}</h2>
+        <div class="divider divider-left"></div>
 
-<table border="1" cellpadding="10">
+        <div class="profile-info">
+          <div class="info-row">
+            <span class="info-label">Faculty ID</span>
+            <span class="info-value">{{ faculty.faculty_id }}</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Workload</span>
+            <span class="info-value">{{ faculty.workload }}</span>
+          </div>
+        </div>
 
-<tr>
+        <a href="/dashboard" class="back-link">← Back to Dashboard</a>
+      </div>
 
-<th>Day</th>
+      <div class="card wide">
+        <p class="overline">Weekly Schedule</p>
+        <h2>Timetable</h2>
+        <div class="divider divider-left"></div>
 
-{% for period in range(1,11) %}
+        {% if timetable %}
+        <div class="table-wrap">
+          <table class="timetable-grid">
 
-<th>{{ period }}</th>
+            <tr>
 
-{% endfor %}
+              <th>Day</th>
 
-</tr>
+              {% for period in range(1,11) %}
 
-{% for day, periods in timetable.items() %}
+              <th>{{ period }}</th>
 
-<tr>
+              {% endfor %}
 
-<td>{{ day }}</td>
+            </tr>
 
-{% for cell in periods %}
+            {% for day, periods in timetable.items() %}
 
-<td>
+            <tr>
 
-{% if cell %}
+              <td class="day-cell">{{ day }}</td>
 
-{{ cell.subject }}
+              {% for cell in periods %}
 
-<br>
+              <td class="{% if cell %}slot-filled{% else %}slot-empty{% endif %}">
 
-(B{{ cell.batch }})
+                {% if cell %}
+                <span class="slot-subject">{{ cell.subject }}</span>
+                <span class="slot-batch">(B{{ cell.batch }})</span>
+                {% endif %}
 
-{% endif %}
+              </td>
 
-</td>
+              {% endfor %}
 
-{% endfor %}
+            </tr>
 
-</tr>
+            {% endfor %}
 
-{% endfor %}
+          </table>
+        </div>
+        {% else %}
+        <p class="empty-state">No timetable available yet.</p>
+        {% endif %}
 
-</table>
+      </div>
+
+    </div>
+  </main>
 
 </body>
-
 </html>

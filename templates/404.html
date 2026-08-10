@@ -1,18 +1,33 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>404</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 — Faculty Allocation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
 </head>
-
 <body>
 
-<h1>404</h1>
+  <header>
+    <div class="header-left">
+      <p class="eyebrow">SRM Institute of Science and Technology</p>
+      <h1>Faculty Allocation System</h1>
+    </div>
+    <div class="header-right">Academic Portal</div>
+  </header>
 
-<p>Page not found.</p>
+  <main>
+    <div class="card">
+      <p class="overline">Error 404</p>
+      <h2>Page Not<br>Found</h2>
+      <div class="divider"></div>
+      <p class="subtitle">The page you're looking for doesn't exist or may have moved.</p>
 
-<a href="/">Return Home</a>
+      <div class="btn-group">
+        <a class="btn-primary" href="/">Return Home</a>
+      </div>
+    </div>
+  </main>
 
 </body>
-
 </html>

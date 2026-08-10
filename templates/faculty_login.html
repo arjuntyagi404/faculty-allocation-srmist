@@ -1,33 +1,63 @@
-<form method="POST">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faculty Login — Faculty Allocation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
 
-<input
-type="text"
-name="faculty_id"
-placeholder="Faculty ID">
+  <header>
+    <div class="header-left">
+      <p class="eyebrow">SRM Institute of Science and Technology</p>
+      <h1>Faculty Allocation System</h1>
+    </div>
+    <div class="header-right">Academic Portal</div>
+  </header>
 
-<br><br>
+  <main>
+    <div class="card">
+      <p class="overline">Faculty Access</p>
+      <h2>Faculty<br>Login</h2>
+      <div class="divider"></div>
+      <p class="subtitle">Sign in with your faculty credentials.</p>
 
-<input
-type="password"
-name="password"
-placeholder="Password">
+      <form method="POST" class="login-form">
 
-<br><br>
+        <input
+        type="text"
+        name="faculty_id"
+        placeholder="Faculty ID"
+        class="form-input">
 
-<button>
+        <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        class="form-input">
 
-Login
+        <button class="btn-primary">
 
-</button>
+        Login
 
-</form>
+        </button>
 
-{% if error %}
+      </form>
 
-<p style="color:red">
+      {% if error %}
 
-{{ error }}
+      <p class="form-error">
 
-</p>
+      {{ error }}
 
-{% endif %}
+      </p>
+
+      {% endif %}
+
+      <a href="/" class="back-link">← Back to role selection</a>
+    </div>
+  </main>
+
+</body>
+</html>

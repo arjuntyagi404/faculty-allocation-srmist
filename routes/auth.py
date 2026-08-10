@@ -81,7 +81,9 @@ def faculty_login():
         )
 
     session["faculty_id"] = faculty.faculty_id
-
+    logger.info(
+    f"Faculty {faculty.faculty_id} logged in.")
+    
     return redirect("/dashboard")
 
 @auth_bp.route("/dashboard")

@@ -1,94 +1,101 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Faculty Allocation</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Allocation — Faculty Allocation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
 </head>
-
 <body>
 
-<h2>Faculty Allocation</h2>
+  <header>
+    <div class="header-left">
+      <p class="eyebrow">SRM Institute of Science and Technology</p>
+      <h1>Faculty Allocation System</h1>
+    </div>
+    <div class="header-right">Academic Portal</div>
+  </header>
 
-<form id="allocationForm">
+  <main class="main-wide">
+    <div class="page-wrap">
 
-    <label>Faculty</label>
+      <div class="card wide">
+        <p class="overline">Allocation Module</p>
+        <h2>Assign Subject<br>to Faculty</h2>
+        <div class="divider divider-left"></div>
+        <p class="subtitle">Assign a subject and batch to a faculty member.</p>
 
-    <br>
+        <form id="allocationForm" class="allocation-form">
 
-    <select id="faculty"></select>
+          <div class="form-grid">
 
-    <br><br>
+            <div class="form-field">
+              <label for="faculty">Faculty</label>
+              <select id="faculty" class="form-input">
+                <option value="">Loading faculty…</option>
+              </select>
+            </div>
 
-    <label>Subject</label>
+            <div class="form-field">
+              <label for="subject">Subject</label>
+              <select id="subject" class="form-input">
+                <option value="">Loading subjects…</option>
+              </select>
+            </div>
 
-    <br>
+            <div class="form-field">
+              <label for="batch">Batch</label>
+              <select id="batch" class="form-input">
+                <option value="1">Batch 1</option>
+                <option value="2">Batch 2</option>
+              </select>
+            </div>
 
-    <select id="subject"></select>
+            <div class="form-field">
+              <label for="section">Section</label>
+              <input
+                  type="text"
+                  id="section"
+                  class="form-input"
+                  placeholder="Optional">
+            </div>
 
-    <br><br>
+          </div>
 
-    <label>Batch</label>
+          <button type="submit" class="btn-primary">Assign</button>
 
-    <br>
+        </form>
+      </div>
 
-    <select id="batch">
-        <option value="1">Batch 1</option>
-        <option value="2">Batch 2</option>
-    </select>
+      <div class="card wide">
+        <p class="overline">Records</p>
+        <h2>Current<br>Allocations</h2>
+        <div class="divider divider-left"></div>
 
-    <br><br>
+        <div class="table-wrap">
+          <table class="alloc-table">
+            <thead>
+              <tr>
+                <th>Faculty</th>
+                <th>Subject</th>
+                <th>Batch</th>
+                <th>Section</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="allocationTable">
+              <tr class="table-placeholder">
+                <td colspan="5">Loading allocations…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-    <label>Section</label>
+    </div>
+  </main>
 
-    <br>
-
-    <input
-        type="text"
-        id="section"
-        placeholder="Optional">
-
-    <br><br>
-
-    <button type="submit">
-
-        Assign
-
-    </button>
-
-</form>
-
-<hr>
-
-<h3>Current Allocations</h3>
-
-<table border="1">
-
-<thead>
-
-<tr>
-
-<th>Faculty</th>
-
-<th>Subject</th>
-
-<th>Batch</th>
-
-<th>Section</th>
-
-<th>Action</th>
-
-</tr>
-
-</thead>
-
-<tbody id="allocationTable">
-
-</tbody>
-
-</table>
-
-<script src="{{ url_for('static', filename='allocation.js') }}"></script>
+  <script src="{{ url_for('static', filename='allocation.js') }}"></script>
 
 </body>
-
 </html>

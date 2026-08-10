@@ -1,18 +1,33 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Server Error</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Server Error — Faculty Allocation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
 </head>
-
 <body>
 
-<h1>500</h1>
+  <header>
+    <div class="header-left">
+      <p class="eyebrow">SRM Institute of Science and Technology</p>
+      <h1>Faculty Allocation System</h1>
+    </div>
+    <div class="header-right">Academic Portal</div>
+  </header>
 
-<p>Something went wrong.</p>
+  <main>
+    <div class="card">
+      <p class="overline">Error 500</p>
+      <h2>Something<br>Went Wrong</h2>
+      <div class="divider"></div>
+      <p class="subtitle">An unexpected server error occurred. Please try again.</p>
 
-<a href="/">Return Home</a>
+      <div class="btn-group">
+        <a class="btn-primary" href="/">Return Home</a>
+      </div>
+    </div>
+  </main>
 
 </body>
-
 </html>

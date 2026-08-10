@@ -1,37 +1,34 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Login</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faculty Allocation System — SRMIST</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
 </head>
-
 <body>
 
-<h1>Faculty Allocation System</h1>
+  <header>
+    <div class="header-left">
+      <p class="eyebrow">SRM Institute of Science and Technology</p>
+      <h1>Faculty Allocation System</h1>
+    </div>
+    <div class="header-right">Academic Portal</div>
+  </header>
 
-<br>
+  <main>
+    <div class="card">
+      <p class="overline">Sign In</p>
+      <h2>Welcome<br>Back</h2>
+      <div class="divider"></div>
+      <p class="subtitle">Select your role to continue to the portal.</p>
 
-<a href="/admin/login">
+      <div class="btn-group">
+        <a class="btn-primary" href="/admin/login">Admin</a>
+        <a class="btn-secondary" href="/faculty/login">Faculty</a>
+      </div>
+    </div>
+  </main>
 
-<button>
-
-Admin
-
-</button>
-
-</a>
-
-<br><br>
-
-<a href="/faculty/login">
-
-<button>
-
-Faculty
-
-</button>
-
-</a>
 </body>
-
 </html>
