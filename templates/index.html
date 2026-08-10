@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faculty Allocation System — SRMIST</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <p class="eyebrow">SRM Institute of Science and Technology</p>
+      <h1>Faculty Allocation System</h1>
+    </div>
+    <div class="header-right">Academic Portal</div>
+  </header>
+
+  <main>
+    <div class="card">
+      <p class="overline">Registration Module</p>
+      <h2>Faculty<br>Management</h2>
+      <div class="divider"></div>
+      <p class="subtitle">Manage faculty records — register new members,<br>update details, or remove entries.</p>
+      <div class="btn-group">
+        <button class="btn-secondary"    onclick="window.location.href='/timetable'">Lookup Timetable</button>
+        <button class="btn-primary"      onclick="openModal('addModal')">Register Faculty</button>
+        <button class="btn-secondary"    onclick="openModal('editModal')">Edit Record</button>
+        <button class="btn-ghost-danger" onclick="openModal('removeModal')">Remove Faculty</button>
+      </div>
+
+      <div class="btn-group-divider"></div>
+
+      <div class="btn-group">
+        <a class="btn-secondary"    href="/allocation">Subject Allocation</a>
+        <a class="btn-ghost-danger" href="/admin/logout">Logout</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ADD Modal -->
+  <div id="addModal" class="modal-overlay">
+    <div class="modal">
+      <p class="modal-eyebrow">New Entry</p>
+      <h3>Register Faculty</h3>
+      <input type="text"  id="add_faculty_id" placeholder="Faculty ID" />
+      <input type="text"  id="add_username"   placeholder="Full Name" />
+      <input type="email" id="add_email"      placeholder="Email Address" />
+      <input type="text"  id="add_contact"    placeholder="Contact Number" />
+      <input type="password" id="add_password" placeholder="Temporary Password" />
+      <div class="modal-btns">
+        <button class="btn-primary"   onclick="addFaculty()">Register</button>
+        <button class="btn-secondary" onclick="closeModal('addModal')">Cancel</button>
+      </div>
+      <p id="add_msg" class="msg"></p>
+    </div>
+  </div>
+
+  <!-- EDIT Modal -->
+  <div id="editModal" class="modal-overlay">
+    <div class="modal">
+      <p class="modal-eyebrow">Update Record</p>
+      <h3>Edit Faculty</h3>
+      <input type="text" id="edit_search_id" placeholder="Enter Faculty ID" />
+      <button class="btn-secondary" onclick="searchFaculty()">Search</button>
+      <div id="edit_fields" style="display:none; margin-top:18px;">
+        <input type="text"  id="edit_username" placeholder="Updated Name" />
+        <input type="email" id="edit_email"    placeholder="Updated Email" />
+        <input type="text"  id="edit_contact"  placeholder="Updated Contact" />
+        <div class="modal-btns">
+          <button class="btn-primary" onclick="editFaculty()">Save Changes</button>
+        </div>
+      </div>
+      <div class="modal-btns" style="margin-top:12px;">
+        <button class="btn-secondary" onclick="closeModal('editModal')">Cancel</button>
+      </div>
+      <p id="edit_msg" class="msg"></p>
+    </div>
+  </div>
+
+  <!-- REMOVE Modal -->
+  <div id="removeModal" class="modal-overlay">
+    <div class="modal">
+      <p class="modal-eyebrow">Remove Entry</p>
+      <h3>Remove Faculty</h3>
+      <input type="text" id="remove_id" placeholder="Enter Faculty ID" />
+      <div id="remove_preview" style="display:none;" class="preview-box">
+        <p id="remove_name"></p>
+        <p id="remove_email"></p>
+      </div>
+      <div class="modal-btns">
+        <button class="btn-secondary" onclick="previewRemove()">Search</button>
+        <button class="btn-confirm-remove" id="confirm_remove_btn"
+                style="display:none;" onclick="removeFaculty()">Confirm Removal</button>
+        <button class="btn-secondary" onclick="closeModal('removeModal')">Cancel</button>
+      </div>
+      <p id="remove_msg" class="msg"></p>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

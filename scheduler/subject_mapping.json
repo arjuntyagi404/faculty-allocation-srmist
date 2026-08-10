@@ -1,0 +1,31 @@
+{
+    "A": {
+        "subject_code": "21CSC302J",
+        "subject_name": "Computer Networks"
+    },
+
+    "B": {
+        "subject_code": "21CSC201J",
+        "subject_name": "Data Structures and Algorithms"
+    },
+
+    "C": {
+        "subject_code": "21CSS201T",
+        "subject_name": "Computer Organization and Architecture"
+    },
+
+    "D": {
+        "subject_code": "21CSC206P",
+        "subject_name": "Advanced Object Oriented Programming"
+    },
+
+    "E": {
+        "subject_code": "21CSC203P",
+        "subject_name": "Advanced Programming Practice"
+    },
+
+    "F": {
+        "subject_code": "21CSC307P",
+        "subject_name": "Machine Learning for Data Analytics"
+    }
+}

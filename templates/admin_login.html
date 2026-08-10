@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login — Faculty Allocation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <p class="eyebrow">SRM Institute of Science and Technology</p>
+      <h1>Faculty Allocation System</h1>
+    </div>
+    <div class="header-right">Academic Portal</div>
+  </header>
+
+  <main>
+    <div class="card">
+      <p class="overline">Admin Access</p>
+      <h2>Admin<br>Login</h2>
+      <div class="divider"></div>
+      <p class="subtitle">Sign in with your administrator credentials.</p>
+
+      <form method="POST" class="login-form">
+
+        <input
+        type="text"
+        name="faculty_id"
+        placeholder="Admin ID"
+        class="form-input">
+
+        <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        class="form-input">
+
+        <button class="btn-primary">
+
+        Login
+
+        </button>
+
+      </form>
+
+      {% if error %}
+
+      <p class="form-error">
+
+      {{ error }}
+
+      </p>
+
+      {% endif %}
+
+      <a href="/" class="back-link">← Back to role selection</a>
+    </div>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Faculty Timetable Lookup</title>
+</head>
+
+<body>
+
+<h1>Faculty Timetable Lookup</h1>
+
+<form method="POST">
+
+    <input
+        type="text"
+        name="faculty_id"
+        placeholder="Faculty ID">
+
+    <button type="submit">
+        Lookup
+    </button>
+
+</form>
+
+{% if error %}
+
+<p style="color:red;">
+    {{ error }}
+</p>
+
+{% endif %}
+
+</body>
+
+</html>

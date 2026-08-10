@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faculty Dashboard — Faculty Allocation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <p class="eyebrow">SRM Institute of Science and Technology</p>
+      <h1>Faculty Allocation System</h1>
+    </div>
+    <div class="header-right">Academic Portal</div>
+  </header>
+
+  <main>
+    <div class="card">
+      <p class="overline">Faculty Portal</p>
+      <h2>Welcome<br>{{ faculty.username }}</h2>
+      <div class="divider"></div>
+
+      <div class="profile-info">
+        <div class="info-row">
+          <span class="info-label">Faculty ID</span>
+          <span class="info-value">{{ faculty.faculty_id }}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Current Workload</span>
+          <span class="info-value"><b>{{ workload }}</b> Hours</span>
+        </div>
+      </div>
+
+      <div class="subjects-section">
+        <p class="section-label">Subjects</p>
+
+        {% if subjects %}
+        <ul class="subject-list">
+          {% for subject in subjects %}
+          <li>{{ subject }}</li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p class="empty-state">No subjects allocated yet.</p>
+        {% endif %}
+      </div>
+
+      <div class="btn-group">
+        <button class="btn-primary" onclick="window.location.href='/timetable'">
+
+          View Timetable
+
+        </button>
+
+        <button class="btn-secondary" onclick="window.location.href='/logout'">
+
+          Logout
+
+        </button>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
