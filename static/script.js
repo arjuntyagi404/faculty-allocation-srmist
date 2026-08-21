@@ -20,6 +20,13 @@ async function addFaculty() {
     password:
         document.getElementById("add_password").value
 
+    ,
+    professor_post:
+      document.getElementById("add_professor_post") ? document.getElementById("add_professor_post").value : undefined,
+
+    special_role:
+      document.getElementById("add_special_role") ? document.getElementById("add_special_role").value : "None"
+
 }
   const res  = await fetch('/faculty/add', {
     method: 'POST',
@@ -42,6 +49,12 @@ async function searchFaculty() {
     document.getElementById('edit_username').value = data.username;
     document.getElementById('edit_email').value    = data.email;
     document.getElementById('edit_contact').value  = data.contact;
+    if (document.getElementById('edit_professor_post')) {
+      document.getElementById('edit_professor_post').value = data.professor_post || 'Assistant Professor';
+    }
+    if (document.getElementById('edit_special_role')) {
+      document.getElementById('edit_special_role').value = data.special_role || 'None';
+    }
     document.getElementById('edit_fields').style.display = 'block';
     msg.textContent = '';
   } else {
@@ -57,6 +70,9 @@ async function editFaculty() {
     username: document.getElementById('edit_username').value,
     email:    document.getElementById('edit_email').value,
     contact:  document.getElementById('edit_contact').value
+    ,
+    professor_post: document.getElementById('edit_professor_post') ? document.getElementById('edit_professor_post').value : undefined,
+    special_role: document.getElementById('edit_special_role') ? document.getElementById('edit_special_role').value : 'None'
   };
   const res  = await fetch('/faculty/edit/' + id, {
     method: 'PUT',
@@ -78,6 +94,11 @@ async function previewRemove() {
   if (res.ok) {
     document.getElementById('remove_name').textContent  = '👤 ' + data.username;
     document.getElementById('remove_email').textContent = '✉️ ' + data.email;
+    if (data.professor_post) {
+      document.getElementById('remove_professor_post').textContent = '📚 ' + data.professor_post;
+    } else {
+      document.getElementById('remove_professor_post').textContent = '';
+    }
     document.getElementById('remove_preview').style.display = 'block';
     document.getElementById('confirm_remove_btn').style.display = 'inline-block';
     msg.textContent = '';

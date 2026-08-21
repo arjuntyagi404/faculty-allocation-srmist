@@ -26,7 +26,8 @@ def build_matrix_timetable(schedule):
         timetable[day][period] = {
             "subject": lecture["subject_name"],
             "slot": lecture["slot"],
-            "batch": lecture["batch"]
+            "batch": lecture["batch"],
+            "time": lecture["time"]
         }
 
     return timetable

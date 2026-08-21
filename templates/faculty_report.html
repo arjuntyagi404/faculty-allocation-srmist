@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faculty Report — Faculty Allocation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <p class="eyebrow">SRM Institute of Science and Technology</p>
+      <h1>Faculty Allocation System</h1>
+    </div>
+    <div class="header-right">Academic Portal</div>
+  </header>
+
+  <main class="main-wide">
+    <div class="report-page">
+      <a class="back-link report-back" href="/admin">← Back to Admin Dashboard</a>
+
+      <div class="card wide report-card">
+        <p class="overline">Administration</p>
+        <h2>Faculty Report</h2>
+        <div class="divider divider-left"></div>
+        <p class="subtitle">Faculty allocations, workload, and weekly timetables.</p>
+      </div>
+
+      <section class="card wide report-card report-filters" aria-label="Faculty report filters">
+        <div class="report-filter-grid">
+          <div class="form-field report-filter-search">
+            <label for="facultyReportSearch">Faculty Name / ID</label>
+            <input id="facultyReportSearch" class="form-input" type="search" placeholder="Search faculty">
+          </div>
+
+          {% set filters = [
+            ("subject", "Subject", filter_options.subjects),
+            ("day", "Day", filter_options.days),
+            ("time", "Time", filter_options.times),
+            ("building", "Building", filter_options.buildings),
+            ("room", "Room Number", filter_options.rooms),
+            ("batch", "Batch", filter_options.batches),
+            ("post", "Professor Post", filter_options.posts),
+            ("special_role", "Special Role", filter_options.special_roles)
+          ] %}
+          {% for key, label, options in filters %}
+          <div class="form-field">
+            <label for="facultyReport{{ key|capitalize }}">{{ label }}</label>
+            <select id="facultyReport{{ key|capitalize }}" class="form-input report-filter" data-filter="{{ key }}">
+              <option value="">All</option>
+              {% for option in options %}
+              {% if key == "subject" %}
+              <option value="{{ option[0] }}">{{ option[0] }} — {{ option[1] }}</option>
+              {% else %}
+              <option value="{{ option }}">{{ option }}</option>
+              {% endif %}
+              {% endfor %}
+            </select>
+          </div>
+          {% endfor %}
+        </div>
+        <p id="facultyReportNoResults" class="empty-state" hidden>No faculty records match these filters.</p>
+      </section>
+
+      {% if reports %}
+      {% for report in reports %}
+      <article class="card wide report-card faculty-report-card"
+        data-faculty="{{ report.filter_data.faculty }}"
+        data-subjects="{{ report.filter_data.subjects }}"
+        data-days="{{ report.filter_data.days }}"
+        data-times="{{ report.filter_data.times }}"
+        data-buildings="{{ report.filter_data.buildings }}"
+        data-rooms="{{ report.filter_data.rooms }}"
+        data-batches="{{ report.filter_data.batches }}"
+        data-post="{{ report.filter_data.post }}"
+        data-special-roles="{{ report.filter_data.special_role }}">
+        <p class="overline">Faculty Member</p>
+        <h2>{{ report.faculty.username }}</h2>
+        <div class="report-meta">
+          <span>Faculty ID: {{ report.faculty.faculty_id }}</span>
+          <span class="post-badge">{{ report.faculty.professor_post }}</span>
+          <span class="post-badge">Special Role: {{ report.faculty.special_role or "None" }}</span>
+        </div>
+
+        <section class="report-section report-workload">
+          <h3>Workload Summary</h3>
+          <div class="profile-info">
+            <div class="info-row">
+              <span class="info-label">Special Role</span>
+              <span class="info-value">{{ report.faculty.special_role or "None" }}{% if report.faculty.special_role and report.faculty.special_role != "None" %} (+2 Hours){% endif %}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Assigned Workload</span>
+              <span class="info-value">{{ report.workload.assigned_workload }} Hours</span>
+            </div>
+            {% if report.workload.required_workload is not none %}
+            <div class="info-row">
+              <span class="info-label">Required Workload</span>
+              <span class="info-value">{{ report.workload.required_workload }} Hours</span>
+            </div>
+            <div class="info-row">
+              {% if report.workload.is_overloaded %}
+              <span class="info-label">Excess Workload</span>
+              <span class="info-value">{{ report.workload.excess_workload }} Hours</span>
+              {% else %}
+              <span class="info-label">Pending Workload</span>
+              <span class="info-value">{{ report.workload.pending_workload }} Hours</span>
+              {% endif %}
+            </div>
+            {% endif %}
+            <div class="info-row">
+              <span class="info-label">Status</span>
+              <span class="info-value">
+                {% if report.workload.required_workload is none %}
+                <span class="status-badge status-within">Assigned Workload Only</span>
+                {% elif report.workload.is_overloaded %}
+                <span class="status-badge status-overloaded">Overloaded by {{ report.workload.excess_workload }} hours</span>
+                {% elif report.workload.pending_workload > 0 %}
+                <span class="status-badge status-pending">Pending {{ report.workload.pending_workload }} hours</span>
+                {% else %}
+                <span class="status-badge status-within">Within Workload Limit</span>
+                {% endif %}
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <section class="report-section">
+          <h3>Subject Allocations</h3>
+          {% if report.allocations %}
+          <div class="table-wrap">
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Subject Code</th>
+                  <th>Subject Name</th>
+                  <th>Course Type</th>
+                  <th>Class Type</th>
+                  <th>Batch</th>
+                  <th>Section</th>
+                  <th>Slot</th>
+                  <th>Time</th>
+                  <th>Room</th>
+                  <th>Building</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for allocation in report.allocations %}
+                <tr>
+                  <td>{{ allocation.subject_code }}</td>
+                  <td>{{ allocation.subject_name }}</td>
+                  <td>{{ allocation.subject_code[-1].upper() }}</td>
+                  <td>{{ allocation.class_type|capitalize }}</td>
+                  <td>{{ allocation.batch }}</td>
+                  <td>{{ allocation.section or "" }}</td>
+                  <td>{{ allocation.slot }}</td>
+                  <td>
+                    {% for time in allocation.times %}
+                    <span>{{ time }}</span>{% if not loop.last %}<br>{% endif %}
+                    {% endfor %}
+                  </td>
+                  <td>{{ allocation.room_number or "" }}</td>
+                  <td>{{ allocation.building_name or "" }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          {% else %}
+          <p class="empty-state">No subjects allocated.</p>
+          {% endif %}
+        </section>
+
+        <section class="report-section">
+          <h3>Weekly Timetable</h3>
+          <div class="table-wrap report-timetable">
+            <table class="timetable-grid">
+              <tr>
+                <th>Day</th>
+                {% for period in range(1, 11) %}
+                <th>
+                  <span>Period {{ period }}</span>
+                  <small>{{ report.period_times[period] }}</small>
+                </th>
+                {% endfor %}
+              </tr>
+              {% for day, periods in report.timetable.items() %}
+              <tr>
+                <td class="day-cell">{{ day }}</td>
+                {% for cell in periods %}
+                <td class="{% if cell %}slot-filled{% else %}slot-empty{% endif %}">
+                  {% if cell %}
+                  <span class="slot-subject">{{ cell.subject }}</span>
+                  <span class="slot-batch">(B{{ cell.batch }})</span>
+                  <span class="slot-time">{{ cell.time }}</span>
+                  {% endif %}
+                </td>
+                {% endfor %}
+              </tr>
+              {% endfor %}
+            </table>
+          </div>
+        </section>
+      </article>
+      {% endfor %}
+      {% else %}
+      <div class="card wide report-card">
+        <p class="empty-state">No faculty records available.</p>
+      </div>
+      {% endif %}
+    </div>
+  </main>
+
+  <script src="{{ url_for('static', filename='faculty_report.js') }}"></script>
+</body>
+</html>

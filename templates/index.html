@@ -33,6 +33,7 @@
 
       <div class="btn-group">
         <a class="btn-secondary"    href="/allocation">Subject Allocation</a>
+        <a class="btn-secondary"    href="/admin/report">View Faculty Report</a>
         <a class="btn-ghost-danger" href="/admin/logout">Logout</a>
       </div>
     </div>
@@ -48,6 +49,20 @@
       <input type="email" id="add_email"      placeholder="Email Address" />
       <input type="text"  id="add_contact"    placeholder="Contact Number" />
       <input type="password" id="add_password" placeholder="Temporary Password" />
+      <label for="add_professor_post" style="margin-top:8px; font-size:13px; color:#666;">Professor Post</label>
+      <select id="add_professor_post">
+        <option>Assistant Professor</option>
+        <option>Associate Professor</option>
+        <option>Cofaculty</option>
+      </select>
+      <label for="add_special_role" style="margin-top:8px; font-size:13px; color:#666;">Special Role</label>
+      <select id="add_special_role">
+        <option>None</option>
+        <option>FA</option>
+        <option>AA</option>
+        <option>TC</option>
+        <option>FUND</option>
+      </select>
       <div class="modal-btns">
         <button class="btn-primary"   onclick="addFaculty()">Register</button>
         <button class="btn-secondary" onclick="closeModal('addModal')">Cancel</button>
@@ -67,6 +82,20 @@
         <input type="text"  id="edit_username" placeholder="Updated Name" />
         <input type="email" id="edit_email"    placeholder="Updated Email" />
         <input type="text"  id="edit_contact"  placeholder="Updated Contact" />
+          <label for="edit_professor_post" style="margin-top:8px; font-size:13px; color:#666;">Professor Post</label>
+          <select id="edit_professor_post">
+            <option>Assistant Professor</option>
+            <option>Associate Professor</option>
+            <option>Cofaculty</option>
+          </select>
+          <label for="edit_special_role" style="margin-top:8px; font-size:13px; color:#666;">Special Role</label>
+          <select id="edit_special_role">
+            <option>None</option>
+            <option>FA</option>
+            <option>AA</option>
+            <option>TC</option>
+            <option>FUND</option>
+          </select>
         <div class="modal-btns">
           <button class="btn-primary" onclick="editFaculty()">Save Changes</button>
         </div>
@@ -87,6 +116,7 @@
       <div id="remove_preview" style="display:none;" class="preview-box">
         <p id="remove_name"></p>
         <p id="remove_email"></p>
+        <p id="remove_professor_post"></p>
       </div>
       <div class="modal-btns">
         <button class="btn-secondary" onclick="previewRemove()">Search</button>

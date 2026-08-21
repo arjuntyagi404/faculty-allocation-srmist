@@ -1,3 +1,4 @@
+let subjectsData = [];
 async function loadFaculty() {
 
     const res = await fetch("/faculty/list");
@@ -25,13 +26,13 @@ async function loadSubjects() {
 
     const res = await fetch("/subjects");
 
-    const subjects = await res.json();
+    subjectsData = await res.json();
 
     const select = document.getElementById("subject");
 
     select.innerHTML = "";
 
-    subjects.forEach(s => {
+    subjectsData.forEach(s => {
 
         select.innerHTML += `
             <option value="${s.subject_code}">
@@ -41,8 +42,46 @@ async function loadSubjects() {
 
     });
 
+    updateClassType();
+}
+function updateClassType() {
+
+    const subjectCode =
+        document.getElementById("subject").value;
+
+    const subject =
+        subjectsData.find(
+            s => s.subject_code === subjectCode
+        );
+
+    const field =
+        document.getElementById("classTypeField");
+
+    if (!subject) {
+        field.style.display = "none";
+        return;
+    }
+
+    const courseType =
+        subject.course_type;
+
+    if (courseType === "J") {
+
+        field.style.display = "block";
+
+    } else {
+
+        field.style.display = "none";
+
+    }
 }
 
+document
+    .getElementById("subject")
+    .addEventListener(
+        "change",
+        updateClassType
+    );
 
 async function loadAllocations() {
 
@@ -67,6 +106,8 @@ async function loadAllocations() {
             <td>${a.batch}</td>
 
             <td>${a.section || ""}</td>
+                <td>${a.room_number || ""}</td>
+                <td>${a.building_name || ""}</td>
 
             <td>
 
@@ -104,15 +145,28 @@ async function addAllocation(event) {
 
     const body = {
 
-        faculty_id: document.getElementById("faculty").value,
+    faculty_id:
+        document.getElementById("faculty").value,
 
-        subject_code: document.getElementById("subject").value,
+    subject_code:
+        document.getElementById("subject").value,
 
-        batch: Number(document.getElementById("batch").value),
+    batch:
+        Number(document.getElementById("batch").value),
 
-        section: document.getElementById("section").value
+    section:
+        document.getElementById("section").value,
 
-    };
+    room_number:
+        document.getElementById("room_number").value,
+
+    building_name:
+        document.getElementById("building_name").value,
+
+    class_type:
+        document.getElementById("classType").value
+
+};
 
     let url = "/allocation/add";
     let method = "POST";
@@ -141,7 +195,11 @@ async function addAllocation(event) {
 
     const data = await res.json();
 
-    alert(data.message || data.error);
+    alert(
+        [data.message, data.warning || data.error]
+            .filter(Boolean)
+            .join("\n")
+    );
 
     if (res.ok) {
 
@@ -173,6 +231,8 @@ async function editAllocation(id) {
 
     document.getElementById("section").value =
         allocation.section || "";
+    document.getElementById("room_number").value = allocation.room_number || "";
+    document.getElementById("building_name").value = allocation.building_name || "";
 
     window.editingAllocation = id;
 

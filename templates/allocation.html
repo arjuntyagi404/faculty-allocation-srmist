@@ -42,7 +42,14 @@
                 <option value="">Loading subjects…</option>
               </select>
             </div>
+            <div class="form-field" id="classTypeField" style="display: none;">
+              <label for="classType">Class Type</label>
 
+              <select id="classType" class="form-input">
+                <option value="theory">Theory</option>
+                <option value="practical">Practical</option>
+              </select>
+            </div>
             <div class="form-field">
               <label for="batch">Batch</label>
               <select id="batch" class="form-input">
@@ -58,6 +65,24 @@
                   id="section"
                   class="form-input"
                   placeholder="Optional">
+            </div>
+
+            <div class="form-field">
+              <label for="room_number">Room Number</label>
+              <input
+                  type="text"
+                  id="room_number"
+                  class="form-input"
+                  placeholder="e.g. 502">
+            </div>
+
+            <div class="form-field">
+              <label for="building_name">Building Name</label>
+              <input
+                  type="text"
+                  id="building_name"
+                  class="form-input"
+                  placeholder="e.g. Tech Park">
             </div>
 
           </div>
@@ -80,6 +105,8 @@
                 <th>Subject</th>
                 <th>Batch</th>
                 <th>Section</th>
+                <th>Room</th>
+                <th>Building</th>
                 <th>Action</th>
               </tr>
             </thead>

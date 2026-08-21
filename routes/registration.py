@@ -1,16 +1,21 @@
-from copy import error
-from venv import logger
-
 from flask import Blueprint, request, jsonify
 from config import db
-from models import faculty
 from models.faculty import Faculty
 from werkzeug.security import generate_password_hash
 from utils.auth import admin_required
 from utils.validators import validate_faculty
+from utils.logger import logger
 
 
 registration_bp = Blueprint('registration', __name__)
+
+SPECIAL_ROLES = {"None", "FA", "AA", "TC", "FUND"}
+
+
+def validate_special_role(value):
+    if value not in SPECIAL_ROLES:
+        return "Invalid special role."
+    return None
 
 # ADD a faculty
 @registration_bp.route('/faculty/add', methods=['POST'])
@@ -29,6 +34,11 @@ def add_faculty():
         }), 400
     if Faculty.query.get(data['faculty_id']):
         return jsonify({"error": "Faculty ID already exists"}), 400
+
+    special_role = data.get("special_role") or "None"
+    role_error = validate_special_role(special_role)
+    if role_error:
+        return jsonify({"error": role_error}), 400
 
     new_faculty = Faculty(
 
@@ -49,12 +59,20 @@ def add_faculty():
         "faculty"
     )
 
+    ,
+    professor_post=data.get(
+        "professor_post",
+        "Assistant Professor"
+    ),
+
+    special_role=special_role
+
     )
     
     db.session.add(new_faculty)
     db.session.commit()
     logger.info(
-    f"Faculty {faculty.faculty_id} registered.")
+    f"Faculty {new_faculty.faculty_id} registered.")
     return jsonify({"message": "Faculty added successfully"}), 201
 
 # EDIT a faculty
@@ -66,7 +84,14 @@ def edit_faculty(faculty_id):
         return jsonify({"error": "Faculty not found"}), 404
 
     data = request.get_json()
-    error = validate_faculty(data)
+    error = next(
+        (
+            f"{field} is required."
+            for field in ("username", "email", "contact")
+            if not data.get(field)
+        ),
+        None
+    )
 
     if error:
 
@@ -78,6 +103,13 @@ def edit_faculty(faculty_id):
     faculty.username = data.get('username', faculty.username)
     faculty.email    = data.get('email',    faculty.email)
     faculty.contact  = data.get('contact',  faculty.contact)
+    faculty.professor_post = data.get('professor_post', faculty.professor_post)
+    if "special_role" in data:
+        special_role = data.get("special_role") or "None"
+        role_error = validate_special_role(special_role)
+        if role_error:
+            return jsonify({"error": role_error}), 400
+        faculty.special_role = special_role
     db.session.commit()
     logger.info(
     f"Faculty {faculty.faculty_id} updated.")

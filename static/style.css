@@ -217,6 +217,8 @@ main {
   backdrop-filter: blur(10px);
   justify-content: center;
   align-items: center;
+  padding: 20px;
+  overflow-y: auto;
   z-index: 999;
 }
 .modal-overlay.active { display: flex; }
@@ -228,6 +230,8 @@ main {
   padding: 44px 40px;
   width: 100%;
   max-width: 400px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
   color: var(--space);
   animation: fadeUp 0.35s ease both;
   box-shadow: 0 32px 80px rgba(10, 12, 22, 0.45);
@@ -273,6 +277,29 @@ main {
 .modal input::placeholder {
   color: rgba(61, 64, 91, 0.38);
   font-weight: 300;
+}
+
+/* Make native <select> inside modals visually match modal inputs */
+.modal select {
+  width: 100%;
+  padding: 13px 16px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(61, 64, 91, 0.18);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--space);
+  background: rgba(255,255,255,0.75);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.modal select:focus {
+  border-color: var(--terra);
+  box-shadow: 0 0 0 3px rgba(224, 122, 95, 0.12);
+}
+.modal select option {
+  color: var(--space);
 }
 
 .modal-btns {
@@ -621,6 +648,146 @@ select.form-input {
   font-style: italic;
 }
 
+/* ── Admin faculty report ── */
+.report-page {
+  width: min(1180px, 94vw);
+  margin: 0 auto;
+}
+.report-card {
+  margin-bottom: 28px;
+  text-align: left;
+}
+.report-filters {
+  padding-bottom: 22px;
+}
+.report-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+}
+.report-filter-search {
+  grid-column: span 2;
+}
+.report-filters .empty-state {
+  margin: 18px 0 0;
+}
+.report-card h2 {
+  margin-bottom: 6px;
+}
+.report-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  color: rgba(244, 241, 222, 0.68);
+  font-size: 13px;
+}
+.post-badge,
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+.post-badge {
+  color: var(--gold);
+  border: 1px solid rgba(242, 204, 143, 0.35);
+}
+.status-within {
+  color: #b9e2c7;
+  background: rgba(129, 178, 154, 0.18);
+}
+.status-pending {
+  color: #b9d8f2;
+}
+.status-overloaded {
+  color: #f5d49b;
+  background: rgba(224, 122, 95, 0.2);
+}
+.report-section {
+  margin-top: 24px;
+}
+.report-section h3 {
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.report-table th,
+.report-table td {
+  padding: 8px 7px;
+  border-bottom: 1px solid rgba(244, 241, 222, 0.1);
+  text-align: left;
+  vertical-align: top;
+}
+.report-table th {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.report-table td {
+  color: rgba(244, 241, 222, 0.78);
+}
+.report-workload .info-row {
+  max-width: 560px;
+}
+.report-timetable {
+  overflow-x: auto;
+}
+.report-timetable .timetable-grid {
+  min-width: 820px;
+}
+.report-back {
+  display: inline-block;
+  margin-bottom: 22px;
+}
+
+@media print {
+  body {
+    background: white;
+    color: #222;
+    animation: none;
+  }
+  header,
+  .report-back,
+  .report-filters {
+    display: none;
+  }
+  .report-page {
+    width: 100%;
+  }
+  .report-card {
+    break-inside: avoid;
+    background: white;
+    color: #222;
+    box-shadow: none;
+  }
+  .report-card h2,
+  .report-section h3,
+  .report-table td,
+  .info-value {
+    color: #222;
+  }
+  .report-table th,
+  .info-label {
+    color: #555;
+  }
+}
+
+@media (max-width: 600px) {
+  .report-filter-search {
+    grid-column: span 1;
+  }
+}
+
 /* ── Timetable page (timetable.html) ──
    Reuses .card.wide, .profile-info/.info-row, .table-wrap,
    .empty-state, and .back-link already defined above. Only the
@@ -643,6 +810,16 @@ select.form-input {
 }
 .timetable-grid th:first-child {
   text-align: left;
+}
+.timetable-grid th small {
+  display: block;
+  margin-top: 4px;
+  color: rgba(244, 241, 222, 0.55);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
 }
 .timetable-grid td {
   padding: 10px 8px;
@@ -672,6 +849,13 @@ select.form-input {
   font-size: 10px;
   color: rgba(244, 241, 222, 0.45);
   margin-top: 2px;
+}
+.slot-time {
+  display: block;
+  margin-top: 4px;
+  color: rgba(244, 241, 222, 0.5);
+  font-size: 9px;
+  white-space: nowrap;
 }
 
 @media (max-width: 640px) {

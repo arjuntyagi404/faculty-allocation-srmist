@@ -30,9 +30,40 @@
             <span class="info-value">{{ faculty.faculty_id }}</span>
           </div>
           <div class="info-row">
-            <span class="info-label">Workload</span>
-            <span class="info-value">{{ faculty.workload }}</span>
+            <span class="info-label">Professor Post</span>
+            <span class="info-value">{{ faculty.professor_post }}</span>
           </div>
+          {% if faculty.special_role and faculty.special_role != "None" %}
+          <div class="info-row">
+            <span class="info-label">Special Role</span>
+            <span class="info-value">{{ faculty.special_role }}</span>
+          </div>
+          {% endif %}
+          <div class="info-row">
+            <span class="info-label">Assigned Workload</span>
+            <span class="info-value">{{ workload.assigned_workload }} Hours</span>
+          </div>
+          {% if workload.required_workload is not none %}
+          <div class="info-row">
+            <span class="info-label">Required Workload</span>
+            <span class="info-value">{{ workload.required_workload }} Hours</span>
+          </div>
+          <div class="info-row">
+            {% if workload.is_overloaded %}
+            <span class="info-label">Excess Workload</span>
+            <span class="info-value">{{ workload.excess_workload }} Hours</span>
+            {% else %}
+            <span class="info-label">Pending Workload</span>
+            <span class="info-value">{{ workload.pending_workload }} Hours</span>
+            {% endif %}
+          </div>
+          {% endif %}
+          {% if workload.is_overloaded %}
+          <p class="msg error">
+            Warning: This faculty member exceeds the recommended weekly workload
+            by {{ workload.excess_workload }} hours.
+          </p>
+          {% endif %}
         </div>
 
         <a href="/dashboard" class="back-link">← Back to Dashboard</a>
@@ -53,7 +84,10 @@
 
               {% for period in range(1,11) %}
 
-              <th>{{ period }}</th>
+              <th>
+                <span>Period {{ period }}</span>
+                <small>{{ period_times[period] }}</small>
+              </th>
 
               {% endfor %}
 
@@ -72,6 +106,7 @@
                 {% if cell %}
                 <span class="slot-subject">{{ cell.subject }}</span>
                 <span class="slot-batch">(B{{ cell.batch }})</span>
+                <span class="slot-time">{{ cell.time }}</span>
                 {% endif %}
 
               </td>

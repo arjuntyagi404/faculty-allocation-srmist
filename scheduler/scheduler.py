@@ -1,17 +1,14 @@
-from scheduler.lookup import lookup_slot
+from scheduler.lookup import get_allocation_periods
+from scheduler.config.period_times import PERIOD_TIMES
 
 
-def generate_schedule(faculty_allocations):
+def generate_schedule(
+    faculty_allocations,
+    professor_post=None,
+    special_role=None
+):
     """
     Generates a complete timetable for one faculty.
-
-    Parameters
-    ----------
-    faculty_allocations : list[dict]
-
-    Returns
-    -------
-    list[dict]
     """
 
     timetable = []
@@ -20,8 +17,13 @@ def generate_schedule(faculty_allocations):
 
         slot = allocation["slot"]
         batch = allocation["batch"]
+        class_type = allocation.get("class_type", "theory")
 
-        occurrences = lookup_slot(slot, batch)
+        occurrences = get_allocation_periods(
+            slot,
+            batch,
+            class_type
+        )
 
         for occurrence in occurrences:
 
@@ -34,10 +36,12 @@ def generate_schedule(faculty_allocations):
                     "subject_name": allocation["subject_name"],
 
                     "slot": slot,
+                    "class_type": class_type,
                     "batch": batch,
 
                     "day": occurrence["day"],
-                    "period": occurrence["period"]
+                    "period": occurrence["period"],
+                    "time": PERIOD_TIMES[occurrence["period"]]
                 }
             )
 
@@ -51,19 +55,12 @@ def generate_schedule(faculty_allocations):
     from scheduler.workload import calculate_workload
 
     return {
-    "faculty_id": faculty_allocations[0]["faculty_id"],
-    "faculty_name": faculty_allocations[0]["faculty_name"],
-    "schedule": timetable,
-    "workload": calculate_workload(timetable)
-    }   
-
-
-if __name__ == "__main__":
-
-    from scheduler.sample_data import faculty_allocations
-
-    faculty = generate_schedule(faculty_allocations)
-
-    from pprint import pprint
-
-    pprint(faculty)
+        "faculty_id": faculty_allocations[0]["faculty_id"],
+        "faculty_name": faculty_allocations[0]["faculty_name"],
+        "schedule": timetable,
+        "workload": calculate_workload(
+            faculty_allocations,
+            professor_post,
+            special_role
+        )
+    }

@@ -96,18 +96,21 @@ def dashboard():
 
     faculty = Faculty.query.get(faculty_id)
 
-    from models.faculty_allocation import FacultyAllocation
+    from scheduler.database_loader import load_allocations
+    from scheduler.workload import calculate_workload
 
-    allocations = FacultyAllocation.query.filter_by(
-        faculty_id=faculty_id
-    ).all()
+    allocations = load_allocations(faculty_id)
 
     subjects = sorted({
-        allocation.subject_name
+        allocation["subject_name"]
         for allocation in allocations
     })
 
-    workload = len(allocations) * 2
+    workload = calculate_workload(
+        allocations,
+        faculty.professor_post,
+        faculty.special_role
+    )
 
     return render_template(
 

@@ -1,18 +1,107 @@
-from dbm import error
+
 
 from config import db
 from models.faculty import Faculty
 from models.faculty_allocation import FacultyAllocation
+
 from flask import Blueprint, request, jsonify, render_template
+
 from scheduler.config.subjects import SUBJECTS
+from scheduler.lookup import get_allocation_periods
+
 from utils.auth import admin_required
 from utils.validators import validate_allocation
-
+from utils.logger import logger
 allocation_bp = Blueprint(
     "allocation",
     __name__
 )
+def check_allocation_conflict(
+    batch,
+    slot,
+    class_type,
+    subject_code=None,
+    section=None,
+    exclude_id=None
+):
+    """
+    Check whether an allocation overlaps an existing
+    allocation for the same batch.
+    """
 
+    new_periods = get_allocation_periods(
+        slot,
+        batch,
+        class_type
+    )
+
+    if not new_periods:
+        return "Unable to determine timetable periods for this allocation."
+
+    new_positions = {
+        (
+            period["day"],
+            period["period"],
+            period["batch"]
+        )
+        for period in new_periods
+    }
+
+    query = FacultyAllocation.query.filter_by(
+        batch=batch
+    )
+
+    if exclude_id is not None:
+        query = query.filter(
+            FacultyAllocation.id != exclude_id
+        )
+
+    existing_allocations = query.all()
+
+    matching_lab_count = 0
+
+    for existing in existing_allocations:
+
+        existing_periods = get_allocation_periods(
+            existing.slot,
+            existing.batch,
+            existing.class_type
+        )
+
+        overlaps = any(
+            (
+                period["day"],
+                period["period"],
+                period["batch"]
+            ) in new_positions
+            for period in existing_periods
+        )
+
+        if overlaps:
+
+            same_lab_session = (
+                class_type == "practical"
+                and existing.class_type == "practical"
+                and existing.subject_code == subject_code
+                and existing.slot == slot
+                and existing.section == section
+            )
+
+            if same_lab_session:
+                matching_lab_count += 1
+                if matching_lab_count >= 2:
+                    return (
+                        "Maximum of two faculty members can be "
+                        "assigned to this lab."
+                    )
+                continue
+
+            return (
+                "Can't do that. There's already a subject "
+                "assigned to this slot."
+            )
+
+    return None
 
 @allocation_bp.route("/allocation")
 @admin_required
@@ -25,36 +114,14 @@ def allocation_page():
 @admin_required
 def add_allocation():
 
-    
     data = request.get_json()
 
     error = validate_allocation(data)
 
     if error:
-
         return jsonify({
-
             "error": error
-
         }), 400
-
-    existing = FacultyAllocation.query.filter_by(
-
-    faculty_id=data["faculty_id"],
-
-    subject_code=data["subject_code"],
-
-    batch=data["batch"]
-
-    ).first()
-
-    if existing:
-
-        return jsonify({
-
-        "error": "Allocation already exists."
-
-        }   ), 400
 
     faculty = Faculty.query.get(data["faculty_id"])
 
@@ -70,19 +137,110 @@ def add_allocation():
             "error": "Invalid subject code."
         }), 400
 
+    course_type = data["subject_code"][-1]
+
+    # Determine theory/practical
+    if course_type == "T":
+
+        class_type = "theory"
+        slot = subject["slot"]
+
+    elif course_type == "P":
+
+        class_type = "practical"
+
+        lab_slots = subject.get("lab_slots", {})
+        slot = lab_slots.get(str(data["batch"]))
+
+        if not slot:
+            return jsonify({
+                "error": "No practical slot configured for this batch."
+            }), 400
+
+    elif course_type == "J":
+
+        class_type = data.get("class_type")
+
+        if class_type not in ["theory", "practical"]:
+            return jsonify({
+                "error": "Please select Theory or Practical for a J course."
+            }), 400
+
+        if class_type == "theory":
+
+            slot = subject["slot"]
+
+        else:
+
+            lab_slots = subject.get("lab_slots", {})
+            slot = lab_slots.get(str(data["batch"]))
+
+            if not slot:
+                return jsonify({
+                    "error": "No practical slot configured for this batch."
+                }), 400
+
+    else:
+
+        return jsonify({
+            "error": "Invalid course type."
+        }), 400
+
+    if (
+        faculty.professor_post.strip().lower() == "cofaculty"
+        and class_type == "theory"
+    ):
+        return jsonify({
+            "error": "Cofaculty can only be assigned to practical/lab classes."
+        }), 400
+
+    # Existing duplicate check
+    existing = FacultyAllocation.query.filter_by(
+        faculty_id=data["faculty_id"],
+        subject_code=data["subject_code"],
+        batch=data["batch"],
+        class_type=class_type
+    ).first()
+
+    if existing:
+
+        return jsonify({
+            "error": "Allocation already exists."
+        }), 400
+
+    # Check physical timetable overlap
+    conflict = check_allocation_conflict(
+        batch=data["batch"],
+        slot=slot,
+        class_type=class_type,
+        subject_code=data["subject_code"],
+        section=data.get("section")
+    )
+
+    if conflict:
+
+        return jsonify({
+            "error": conflict
+        }), 400
+
     allocation = FacultyAllocation(
 
-    faculty_id=data["faculty_id"],
+        faculty_id=data["faculty_id"],
 
-    subject_code=data["subject_code"],
+        subject_code=data["subject_code"],
 
-    subject_name=subject["name"],
+        subject_name=subject["name"],
 
-    slot=subject["slot"],
+        slot=slot,
 
-    batch=data["batch"],
+        class_type=class_type,
 
-    section=data.get("section")
+        batch=data["batch"],
+
+        section=data.get("section")
+        ,
+        room_number=data.get("room_number"),
+        building_name=data.get("building_name")
 
     )
 
@@ -90,23 +248,34 @@ def add_allocation():
 
     db.session.commit()
 
-    logger.info(
+    from scheduler.database_loader import load_allocations
+    from scheduler.workload import calculate_workload
 
-    f"Allocation added: "
+    workload = calculate_workload(
+        load_allocations(allocation.faculty_id),
+        faculty.professor_post,
+        faculty.special_role
+    )
 
-    f"{allocation.faculty_id} "
-
-    f"{allocation.subject_code} "
-
-    f"Batch {allocation.batch}"
-
-)
-
-    return jsonify({
-
+    response = {
         "message": "Allocation added successfully"
+    }
 
-    }), 201
+    if workload["is_overloaded"]:
+        response["warning"] = (
+            "Warning: This allocation exceeds the recommended weekly "
+            f"workload by {workload['excess_workload']} hours."
+        )
+
+    logger.info(
+        f"Allocation added: "
+        f"{allocation.faculty_id} "
+        f"{allocation.subject_code} "
+        f"{allocation.class_type} "
+        f"Batch {allocation.batch}"
+    )
+
+    return jsonify(response), 201
 
 @allocation_bp.route("/allocation/list")
 def allocation_list():
@@ -151,7 +320,6 @@ def edit_allocation(id):
     allocation = FacultyAllocation.query.get(id)
 
     if allocation is None:
-
         return jsonify({
             "error": "Allocation not found."
         }), 404
@@ -161,21 +329,45 @@ def edit_allocation(id):
     error = validate_allocation(data)
 
     if error:
-
         return jsonify({
-
             "error": error
-
         }), 400
 
-    allocation.batch = data.get(
+    new_batch = data.get(
         "batch",
         allocation.batch
     )
 
+    # Check whether moving this allocation creates
+    # a conflict with another allocation.
+    conflict = check_allocation_conflict(
+        batch=new_batch,
+        slot=allocation.slot,
+        class_type=allocation.class_type,
+        subject_code=allocation.subject_code,
+        section=data.get("section", allocation.section),
+        exclude_id=allocation.id
+    )
+
+    if conflict:
+        return jsonify({
+            "error": conflict
+        }), 400
+
+    allocation.batch = new_batch
+
     allocation.section = data.get(
         "section",
         allocation.section
+    )
+    allocation.room_number = data.get(
+        "room_number",
+        allocation.room_number
+    )
+
+    allocation.building_name = data.get(
+        "building_name",
+        allocation.building_name
     )
 
     db.session.commit()

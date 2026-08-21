@@ -462,3 +462,1429 @@
 2026-08-11 03:11:30,878 | INFO | 127.0.0.1 - - [11/Aug/2026 03:11:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
 2026-08-11 03:11:34,171 | INFO | 127.0.0.1 - - [11/Aug/2026 03:11:34] "GET / HTTP/1.1" 200 -
 2026-08-11 03:11:34,242 | INFO | 127.0.0.1 - - [11/Aug/2026 03:11:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 14:06:33,720 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-11 14:06:33,721 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-11 14:06:33,722 | INFO |  * Restarting with stat
+2026-08-11 14:06:34,339 | WARNING |  * Debugger is active!
+2026-08-11 14:06:34,343 | INFO |  * Debugger PIN: 265-607-779
+2026-08-11 14:06:47,410 | INFO | 127.0.0.1 - - [11/Aug/2026 14:06:47] "GET / HTTP/1.1" 200 -
+2026-08-11 14:06:47,558 | INFO | 127.0.0.1 - - [11/Aug/2026 14:06:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 14:07:06,307 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:06] "GET /admin/login HTTP/1.1" 200 -
+2026-08-11 14:07:06,360 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 14:07:09,167 | INFO | Admin ADMIN logged in.
+2026-08-11 14:07:09,168 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:09] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-11 14:07:09,182 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:09] "GET /admin HTTP/1.1" 200 -
+2026-08-11 14:07:09,227 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 14:07:09,230 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:09] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-11 14:07:20,073 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:20] "GET /faculty/F003 HTTP/1.1" 200 -
+2026-08-11 14:07:23,672 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:23] "GET /allocation HTTP/1.1" 200 -
+2026-08-11 14:07:23,745 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 14:07:23,768 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:23] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-11 14:07:23,809 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:23] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-11 14:07:23,811 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:23] "GET /subjects HTTP/1.1" 200 -
+2026-08-11 14:07:23,823 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:23] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-11 14:07:41,737 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:41] "[32mGET /admin/logout HTTP/1.1[0m" 302 -
+2026-08-11 14:07:41,747 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:41] "GET /admin/login HTTP/1.1" 200 -
+2026-08-11 14:07:41,810 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 14:07:44,166 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:44] "GET / HTTP/1.1" 200 -
+2026-08-11 14:07:44,227 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 14:07:44,985 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:44] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-11 14:07:45,056 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 14:07:56,373 | INFO | Faculty F003 logged in.
+2026-08-11 14:07:56,374 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:56] "[32mPOST /faculty/login HTTP/1.1[0m" 302 -
+2026-08-11 14:07:56,394 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:56] "GET /dashboard HTTP/1.1" 200 -
+2026-08-11 14:07:56,491 | INFO | 127.0.0.1 - - [11/Aug/2026 14:07:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 14:08:06,800 | INFO | 127.0.0.1 - - [11/Aug/2026 14:08:06] "GET /timetable HTTP/1.1" 200 -
+2026-08-11 14:08:06,865 | INFO | 127.0.0.1 - - [11/Aug/2026 14:08:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 14:08:52,546 | INFO | 127.0.0.1 - - [11/Aug/2026 14:08:52] "GET /dashboard HTTP/1.1" 200 -
+2026-08-11 14:08:52,626 | INFO | 127.0.0.1 - - [11/Aug/2026 14:08:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 14:08:53,940 | INFO | 127.0.0.1 - - [11/Aug/2026 14:08:53] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-08-11 14:08:53,956 | INFO | 127.0.0.1 - - [11/Aug/2026 14:08:53] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-11 14:08:54,018 | INFO | 127.0.0.1 - - [11/Aug/2026 14:08:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:03:48,789 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-15 21:03:48,790 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-15 21:03:48,793 | INFO |  * Restarting with stat
+2026-08-15 21:03:49,933 | WARNING |  * Debugger is active!
+2026-08-15 21:03:49,942 | INFO |  * Debugger PIN: 265-607-779
+2026-08-15 21:03:52,456 | INFO | 127.0.0.1 - - [15/Aug/2026 21:03:52] "GET / HTTP/1.1" 200 -
+2026-08-15 21:03:52,670 | INFO | 127.0.0.1 - - [15/Aug/2026 21:03:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:03:56,556 | INFO | 127.0.0.1 - - [15/Aug/2026 21:03:56] "GET /admin/login HTTP/1.1" 200 -
+2026-08-15 21:03:56,622 | INFO | 127.0.0.1 - - [15/Aug/2026 21:03:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:03:57,959 | INFO | Admin ADMIN logged in.
+2026-08-15 21:03:57,960 | INFO | 127.0.0.1 - - [15/Aug/2026 21:03:57] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-15 21:03:58,036 | INFO | 127.0.0.1 - - [15/Aug/2026 21:03:58] "GET /admin HTTP/1.1" 200 -
+2026-08-15 21:03:58,095 | INFO | 127.0.0.1 - - [15/Aug/2026 21:03:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:03:58,152 | INFO | 127.0.0.1 - - [15/Aug/2026 21:03:58] "GET /static/script.js HTTP/1.1" 200 -
+2026-08-15 21:05:12,811 | INFO | 127.0.0.1 - - [15/Aug/2026 21:05:12] "GET /allocation HTTP/1.1" 200 -
+2026-08-15 21:05:12,887 | INFO | 127.0.0.1 - - [15/Aug/2026 21:05:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:05:12,938 | INFO | 127.0.0.1 - - [15/Aug/2026 21:05:12] "GET /static/allocation.js HTTP/1.1" 200 -
+2026-08-15 21:05:12,982 | INFO | 127.0.0.1 - - [15/Aug/2026 21:05:12] "GET /subjects HTTP/1.1" 200 -
+2026-08-15 21:05:12,983 | INFO | 127.0.0.1 - - [15/Aug/2026 21:05:12] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-15 21:05:12,993 | INFO | 127.0.0.1 - - [15/Aug/2026 21:05:12] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-15 21:15:29,610 | INFO | 127.0.0.1 - - [15/Aug/2026 21:15:29] "GET /admin/login HTTP/1.1" 200 -
+2026-08-15 21:15:29,698 | INFO | 127.0.0.1 - - [15/Aug/2026 21:15:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:17:26,954 | INFO | 127.0.0.1 - - [15/Aug/2026 21:17:26] "GET /admin/login HTTP/1.1" 200 -
+2026-08-15 21:17:27,046 | INFO | 127.0.0.1 - - [15/Aug/2026 21:17:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:17:33,947 | INFO | Admin ADMIN logged in.
+2026-08-15 21:17:33,950 | INFO | 127.0.0.1 - - [15/Aug/2026 21:17:33] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-15 21:17:33,978 | INFO | 127.0.0.1 - - [15/Aug/2026 21:17:33] "GET /admin HTTP/1.1" 200 -
+2026-08-15 21:17:34,073 | INFO | 127.0.0.1 - - [15/Aug/2026 21:17:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:17:34,073 | INFO | 127.0.0.1 - - [15/Aug/2026 21:17:34] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-15 21:18:01,858 | INFO | 127.0.0.1 - - [15/Aug/2026 21:18:01] "GET /faculty/F003 HTTP/1.1" 200 -
+2026-08-15 21:18:10,143 | INFO | 127.0.0.1 - - [15/Aug/2026 21:18:10] "GET /faculty/F004 HTTP/1.1" 200 -
+2026-08-15 21:18:13,991 | INFO | 127.0.0.1 - - [15/Aug/2026 21:18:13] "GET /allocation HTTP/1.1" 200 -
+2026-08-15 21:18:14,082 | INFO | 127.0.0.1 - - [15/Aug/2026 21:18:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:18:14,083 | INFO | 127.0.0.1 - - [15/Aug/2026 21:18:14] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-15 21:18:14,142 | INFO | 127.0.0.1 - - [15/Aug/2026 21:18:14] "GET /subjects HTTP/1.1" 200 -
+2026-08-15 21:18:14,143 | INFO | 127.0.0.1 - - [15/Aug/2026 21:18:14] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-15 21:18:14,156 | INFO | 127.0.0.1 - - [15/Aug/2026 21:18:14] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-15 21:18:42,031 | INFO | 127.0.0.1 - - [15/Aug/2026 21:18:42] "[32mGET /admin/logout HTTP/1.1[0m" 302 -
+2026-08-15 21:18:42,044 | INFO | 127.0.0.1 - - [15/Aug/2026 21:18:42] "GET /admin/login HTTP/1.1" 200 -
+2026-08-15 21:18:42,137 | INFO | 127.0.0.1 - - [15/Aug/2026 21:18:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:18:45,144 | INFO | 127.0.0.1 - - [15/Aug/2026 21:18:45] "GET / HTTP/1.1" 200 -
+2026-08-15 21:18:45,226 | INFO | 127.0.0.1 - - [15/Aug/2026 21:18:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:18:46,257 | INFO | 127.0.0.1 - - [15/Aug/2026 21:18:46] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-15 21:18:46,339 | INFO | 127.0.0.1 - - [15/Aug/2026 21:18:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:18:55,568 | INFO | Faculty F003 logged in.
+2026-08-15 21:18:55,569 | INFO | 127.0.0.1 - - [15/Aug/2026 21:18:55] "[32mPOST /faculty/login HTTP/1.1[0m" 302 -
+2026-08-15 21:18:55,671 | INFO | 127.0.0.1 - - [15/Aug/2026 21:18:55] "GET /dashboard HTTP/1.1" 200 -
+2026-08-15 21:18:55,800 | INFO | 127.0.0.1 - - [15/Aug/2026 21:18:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:19:13,198 | INFO | 127.0.0.1 - - [15/Aug/2026 21:19:13] "GET /timetable HTTP/1.1" 200 -
+2026-08-15 21:19:13,275 | INFO | 127.0.0.1 - - [15/Aug/2026 21:19:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:19:27,776 | INFO | 127.0.0.1 - - [15/Aug/2026 21:19:27] "GET /dashboard HTTP/1.1" 200 -
+2026-08-15 21:19:27,936 | INFO | 127.0.0.1 - - [15/Aug/2026 21:19:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:38:32,172 | INFO | 127.0.0.1 - - [15/Aug/2026 21:38:32] "GET / HTTP/1.1" 200 -
+2026-08-15 21:38:32,268 | INFO | 127.0.0.1 - - [15/Aug/2026 21:38:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:38:34,284 | INFO | 127.0.0.1 - - [15/Aug/2026 21:38:34] "GET /admin/login HTTP/1.1" 200 -
+2026-08-15 21:38:34,362 | INFO | 127.0.0.1 - - [15/Aug/2026 21:38:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:38:35,636 | INFO | Admin ADMIN logged in.
+2026-08-15 21:38:35,638 | INFO | 127.0.0.1 - - [15/Aug/2026 21:38:35] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-15 21:38:35,656 | INFO | 127.0.0.1 - - [15/Aug/2026 21:38:35] "GET /admin HTTP/1.1" 200 -
+2026-08-15 21:38:35,751 | INFO | 127.0.0.1 - - [15/Aug/2026 21:38:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:38:35,754 | INFO | 127.0.0.1 - - [15/Aug/2026 21:38:35] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-15 21:38:38,374 | INFO | 127.0.0.1 - - [15/Aug/2026 21:38:38] "GET /allocation HTTP/1.1" 200 -
+2026-08-15 21:38:38,469 | INFO | 127.0.0.1 - - [15/Aug/2026 21:38:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-15 21:38:38,472 | INFO | 127.0.0.1 - - [15/Aug/2026 21:38:38] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-15 21:38:38,532 | INFO | 127.0.0.1 - - [15/Aug/2026 21:38:38] "GET /subjects HTTP/1.1" 200 -
+2026-08-15 21:38:38,533 | INFO | 127.0.0.1 - - [15/Aug/2026 21:38:38] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-15 21:38:38,565 | INFO | 127.0.0.1 - - [15/Aug/2026 21:38:38] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-16 23:00:19,008 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-16 23:00:19,010 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-16 23:00:19,013 | INFO |  * Restarting with stat
+2026-08-16 23:00:20,230 | WARNING |  * Debugger is active!
+2026-08-16 23:00:20,238 | INFO |  * Debugger PIN: 265-607-779
+2026-08-16 23:00:25,265 | INFO | 127.0.0.1 - - [16/Aug/2026 23:00:25] "GET / HTTP/1.1" 200 -
+2026-08-16 23:00:25,435 | INFO | 127.0.0.1 - - [16/Aug/2026 23:00:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:00:36,834 | INFO | 127.0.0.1 - - [16/Aug/2026 23:00:36] "GET /admin/login HTTP/1.1" 200 -
+2026-08-16 23:00:36,913 | INFO | 127.0.0.1 - - [16/Aug/2026 23:00:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:00:38,166 | INFO | 127.0.0.1 - - [16/Aug/2026 23:00:38] "POST /admin/login HTTP/1.1" 200 -
+2026-08-16 23:00:38,204 | INFO | 127.0.0.1 - - [16/Aug/2026 23:00:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:01:08,009 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-16 23:01:08,010 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-16 23:01:08,012 | INFO |  * Restarting with stat
+2026-08-16 23:01:09,191 | WARNING |  * Debugger is active!
+2026-08-16 23:01:09,199 | INFO |  * Debugger PIN: 265-607-779
+2026-08-16 23:01:12,058 | INFO | Admin ADMIN logged in.
+2026-08-16 23:01:12,061 | INFO | 127.0.0.1 - - [16/Aug/2026 23:01:12] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-16 23:01:12,120 | INFO | 127.0.0.1 - - [16/Aug/2026 23:01:12] "GET /admin HTTP/1.1" 200 -
+2026-08-16 23:01:12,332 | INFO | 127.0.0.1 - - [16/Aug/2026 23:01:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:01:12,381 | INFO | 127.0.0.1 - - [16/Aug/2026 23:01:12] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-16 23:01:14,472 | INFO | 127.0.0.1 - - [16/Aug/2026 23:01:14] "GET /admin/login HTTP/1.1" 200 -
+2026-08-16 23:01:16,503 | INFO | Admin ADMIN logged in.
+2026-08-16 23:01:16,504 | INFO | 127.0.0.1 - - [16/Aug/2026 23:01:16] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-16 23:01:16,518 | INFO | 127.0.0.1 - - [16/Aug/2026 23:01:16] "GET /admin HTTP/1.1" 200 -
+2026-08-16 23:01:16,608 | INFO | 127.0.0.1 - - [16/Aug/2026 23:01:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:01:16,608 | INFO | 127.0.0.1 - - [16/Aug/2026 23:01:16] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-16 23:01:18,823 | INFO | 127.0.0.1 - - [16/Aug/2026 23:01:18] "GET /allocation HTTP/1.1" 200 -
+2026-08-16 23:01:18,901 | INFO | 127.0.0.1 - - [16/Aug/2026 23:01:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:01:18,904 | INFO | 127.0.0.1 - - [16/Aug/2026 23:01:18] "GET /static/allocation.js HTTP/1.1" 200 -
+2026-08-16 23:01:18,958 | INFO | 127.0.0.1 - - [16/Aug/2026 23:01:18] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-16 23:01:18,959 | INFO | 127.0.0.1 - - [16/Aug/2026 23:01:18] "GET /subjects HTTP/1.1" 200 -
+2026-08-16 23:01:18,965 | INFO | 127.0.0.1 - - [16/Aug/2026 23:01:18] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-16 23:01:30,863 | INFO | 127.0.0.1 - - [16/Aug/2026 23:01:30] "GET /timetable HTTP/1.1" 200 -
+2026-08-16 23:01:30,934 | INFO | 127.0.0.1 - - [16/Aug/2026 23:01:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:02:12,945 | INFO | 127.0.0.1 - - [16/Aug/2026 23:02:12] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-16 23:02:13,943 | INFO | 127.0.0.1 - - [16/Aug/2026 23:02:13] "[31m[1mPOST /faculty/add HTTP/1.1[0m" 400 -
+2026-08-16 23:02:25,929 | INFO | 127.0.0.1 - - [16/Aug/2026 23:02:25] "GET /faculty/F001 HTTP/1.1" 200 -
+2026-08-16 23:02:30,444 | INFO | 127.0.0.1 - - [16/Aug/2026 23:02:30] "GET /allocation HTTP/1.1" 200 -
+2026-08-16 23:02:30,536 | INFO | 127.0.0.1 - - [16/Aug/2026 23:02:30] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-16 23:02:30,537 | INFO | 127.0.0.1 - - [16/Aug/2026 23:02:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:02:30,603 | INFO | 127.0.0.1 - - [16/Aug/2026 23:02:30] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-16 23:02:30,604 | INFO | 127.0.0.1 - - [16/Aug/2026 23:02:30] "GET /subjects HTTP/1.1" 200 -
+2026-08-16 23:02:30,607 | INFO | 127.0.0.1 - - [16/Aug/2026 23:02:30] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-16 23:04:20,922 | INFO | 127.0.0.1 - - [16/Aug/2026 23:04:20] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 500 -
+2026-08-16 23:04:23,626 | INFO | 127.0.0.1 - - [16/Aug/2026 23:04:23] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 500 -
+2026-08-16 23:04:27,132 | INFO | 127.0.0.1 - - [16/Aug/2026 23:04:27] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 500 -
+2026-08-16 23:04:33,695 | INFO | 127.0.0.1 - - [16/Aug/2026 23:04:33] "[31m[1mPOST /allocation/add HTTP/1.1[0m" 400 -
+2026-08-16 23:04:44,186 | INFO | 127.0.0.1 - - [16/Aug/2026 23:04:44] "[31m[1mPOST /allocation/add HTTP/1.1[0m" 400 -
+2026-08-16 23:04:54,281 | INFO | 127.0.0.1 - - [16/Aug/2026 23:04:54] "[31m[1mPOST /allocation/add HTTP/1.1[0m" 400 -
+2026-08-16 23:05:37,282 | INFO |  * Detected change in 'C:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\scheduler\\config\\subjects.py', reloading
+2026-08-16 23:05:37,424 | INFO |  * Restarting with stat
+2026-08-16 23:05:38,587 | WARNING |  * Debugger is active!
+2026-08-16 23:05:38,594 | INFO |  * Debugger PIN: 265-607-779
+2026-08-16 23:05:47,907 | INFO | 127.0.0.1 - - [16/Aug/2026 23:05:47] "GET /allocation HTTP/1.1" 200 -
+2026-08-16 23:05:48,102 | INFO | 127.0.0.1 - - [16/Aug/2026 23:05:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:05:48,103 | INFO | 127.0.0.1 - - [16/Aug/2026 23:05:48] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-16 23:05:48,156 | INFO | 127.0.0.1 - - [16/Aug/2026 23:05:48] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-16 23:05:48,157 | INFO | 127.0.0.1 - - [16/Aug/2026 23:05:48] "GET /subjects HTTP/1.1" 200 -
+2026-08-16 23:05:48,163 | INFO | 127.0.0.1 - - [16/Aug/2026 23:05:48] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-16 23:05:54,928 | INFO | 127.0.0.1 - - [16/Aug/2026 23:05:54] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 500 -
+2026-08-16 23:05:56,541 | INFO | 127.0.0.1 - - [16/Aug/2026 23:05:56] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 500 -
+2026-08-16 23:05:58,636 | INFO | 127.0.0.1 - - [16/Aug/2026 23:05:58] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 500 -
+2026-08-16 23:06:02,073 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:02] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 500 -
+2026-08-16 23:06:02,624 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:02] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 500 -
+2026-08-16 23:06:02,772 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:02] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 500 -
+2026-08-16 23:06:02,904 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:02] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 500 -
+2026-08-16 23:06:05,491 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:05] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 500 -
+2026-08-16 23:06:06,007 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:06] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 500 -
+2026-08-16 23:06:06,141 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:06] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 500 -
+2026-08-16 23:06:06,730 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:06] "GET /allocation HTTP/1.1" 200 -
+2026-08-16 23:06:06,813 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:06] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-16 23:06:06,814 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:06:06,869 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:06] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-16 23:06:06,870 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:06] "GET /subjects HTTP/1.1" 200 -
+2026-08-16 23:06:06,873 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:06] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-16 23:06:07,030 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "GET /allocation HTTP/1.1" 200 -
+2026-08-16 23:06:07,098 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:06:07,098 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-16 23:06:07,144 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "GET /subjects HTTP/1.1" 200 -
+2026-08-16 23:06:07,145 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-16 23:06:07,147 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-16 23:06:07,302 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "GET /allocation HTTP/1.1" 200 -
+2026-08-16 23:06:07,364 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:06:07,364 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-16 23:06:07,415 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-16 23:06:07,416 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "GET /subjects HTTP/1.1" 200 -
+2026-08-16 23:06:07,419 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-16 23:06:07,560 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "GET /allocation HTTP/1.1" 200 -
+2026-08-16 23:06:07,610 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:06:07,615 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-16 23:06:07,656 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-16 23:06:07,657 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "GET /subjects HTTP/1.1" 200 -
+2026-08-16 23:06:07,661 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-16 23:06:07,955 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:07] "GET /allocation HTTP/1.1" 200 -
+2026-08-16 23:06:08,001 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:06:08,004 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:08] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-16 23:06:08,051 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:08] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-16 23:06:08,052 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:08] "GET /subjects HTTP/1.1" 200 -
+2026-08-16 23:06:08,054 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:08] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-16 23:06:13,787 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-16 23:06:13,787 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-16 23:06:13,789 | INFO |  * Restarting with stat
+2026-08-16 23:06:14,971 | WARNING |  * Debugger is active!
+2026-08-16 23:06:14,978 | INFO |  * Debugger PIN: 265-607-779
+2026-08-16 23:06:18,157 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:18] "GET /allocation HTTP/1.1" 200 -
+2026-08-16 23:06:18,314 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:18] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-16 23:06:18,322 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:06:18,375 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:18] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-16 23:06:18,376 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:18] "GET /subjects HTTP/1.1" 200 -
+2026-08-16 23:06:18,382 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:18] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-16 23:06:21,799 | INFO | 127.0.0.1 - - [16/Aug/2026 23:06:21] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 500 -
+2026-08-16 23:07:26,857 | INFO |  * Detected change in 'C:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\allocation.py', reloading
+2026-08-16 23:07:27,052 | INFO |  * Restarting with stat
+2026-08-16 23:07:28,250 | WARNING |  * Debugger is active!
+2026-08-16 23:07:28,255 | INFO |  * Debugger PIN: 265-607-779
+2026-08-16 23:07:33,366 | INFO | 127.0.0.1 - - [16/Aug/2026 23:07:33] "GET /allocation HTTP/1.1" 200 -
+2026-08-16 23:07:33,548 | INFO | 127.0.0.1 - - [16/Aug/2026 23:07:33] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-16 23:07:33,554 | INFO | 127.0.0.1 - - [16/Aug/2026 23:07:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:07:33,622 | INFO | 127.0.0.1 - - [16/Aug/2026 23:07:33] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-16 23:07:33,623 | INFO | 127.0.0.1 - - [16/Aug/2026 23:07:33] "GET /subjects HTTP/1.1" 200 -
+2026-08-16 23:07:33,630 | INFO | 127.0.0.1 - - [16/Aug/2026 23:07:33] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-16 23:07:37,183 | INFO | Allocation added: F001 21CSC302J practical Batch 2
+2026-08-16 23:07:37,184 | INFO | 127.0.0.1 - - [16/Aug/2026 23:07:37] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 201 -
+2026-08-16 23:07:38,499 | INFO | 127.0.0.1 - - [16/Aug/2026 23:07:38] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-16 23:07:49,961 | INFO | Allocation added: ADMIN 21CSC201J practical Batch 1
+2026-08-16 23:07:49,962 | INFO | 127.0.0.1 - - [16/Aug/2026 23:07:49] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 201 -
+2026-08-16 23:07:51,108 | INFO | 127.0.0.1 - - [16/Aug/2026 23:07:51] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-16 23:07:53,643 | INFO | Allocation deleted: 2
+2026-08-16 23:07:53,643 | INFO | 127.0.0.1 - - [16/Aug/2026 23:07:53] "DELETE /allocation/delete/2 HTTP/1.1" 200 -
+2026-08-16 23:07:53,658 | INFO | 127.0.0.1 - - [16/Aug/2026 23:07:53] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-16 23:08:01,194 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:01] "[31m[1mPOST /allocation/add HTTP/1.1[0m" 400 -
+2026-08-16 23:08:11,504 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:11] "[31m[1mPOST /allocation/add HTTP/1.1[0m" 400 -
+2026-08-16 23:08:19,476 | INFO | Allocation added: F001 21CSC302J practical Batch 1
+2026-08-16 23:08:19,477 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:19] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 201 -
+2026-08-16 23:08:20,982 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:20] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-16 23:08:32,506 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:32] "[32mGET /admin/logout HTTP/1.1[0m" 302 -
+2026-08-16 23:08:32,522 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:32] "GET /admin/login HTTP/1.1" 200 -
+2026-08-16 23:08:32,617 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:08:33,741 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:33] "GET / HTTP/1.1" 200 -
+2026-08-16 23:08:33,827 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:08:34,528 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:34] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-16 23:08:34,622 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:08:44,443 | INFO | Faculty F001 logged in.
+2026-08-16 23:08:44,444 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:44] "[32mPOST /faculty/login HTTP/1.1[0m" 302 -
+2026-08-16 23:08:44,492 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:44] "GET /dashboard HTTP/1.1" 200 -
+2026-08-16 23:08:44,606 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:08:48,836 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:48] "GET /timetable HTTP/1.1" 200 -
+2026-08-16 23:08:48,931 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:08:55,250 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:55] "GET /timetable HTTP/1.1" 200 -
+2026-08-16 23:08:55,295 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:08:56,115 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:56] "GET /timetable HTTP/1.1" 200 -
+2026-08-16 23:08:56,170 | INFO | 127.0.0.1 - - [16/Aug/2026 23:08:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:11:57,498 | INFO | 127.0.0.1 - - [16/Aug/2026 23:11:57] "GET /timetable HTTP/1.1" 200 -
+2026-08-16 23:11:57,563 | INFO | 127.0.0.1 - - [16/Aug/2026 23:11:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:11:58,192 | INFO | 127.0.0.1 - - [16/Aug/2026 23:11:58] "GET /timetable HTTP/1.1" 200 -
+2026-08-16 23:11:58,241 | INFO | 127.0.0.1 - - [16/Aug/2026 23:11:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-16 23:12:00,770 | INFO | 127.0.0.1 - - [16/Aug/2026 23:12:00] "GET /dashboard HTTP/1.1" 200 -
+2026-08-16 23:12:00,842 | INFO | 127.0.0.1 - - [16/Aug/2026 23:12:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:11:01,917 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-17 08:11:01,917 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-17 08:11:01,921 | INFO |  * Restarting with stat
+2026-08-17 08:11:02,746 | WARNING |  * Debugger is active!
+2026-08-17 08:11:02,751 | INFO |  * Debugger PIN: 265-607-779
+2026-08-17 08:11:06,471 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:06] "GET / HTTP/1.1" 200 -
+2026-08-17 08:11:06,589 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:11:12,155 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:12] "GET /admin/login HTTP/1.1" 200 -
+2026-08-17 08:11:12,209 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:11:13,672 | INFO | Admin ADMIN logged in.
+2026-08-17 08:11:13,673 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:13] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-17 08:11:13,700 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:13] "GET /admin HTTP/1.1" 200 -
+2026-08-17 08:11:13,730 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:11:13,768 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:13] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-17 08:11:16,037 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:16] "GET /allocation HTTP/1.1" 200 -
+2026-08-17 08:11:16,078 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:11:16,111 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:16] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-17 08:11:16,135 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:16] "GET /subjects HTTP/1.1" 200 -
+2026-08-17 08:11:16,136 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:16] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-17 08:11:16,141 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:16] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-17 08:11:20,493 | INFO | Allocation added: F001 21CSS201T theory Batch 1
+2026-08-17 08:11:20,494 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:20] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 201 -
+2026-08-17 08:11:21,724 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:21] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-17 08:11:31,609 | INFO | Allocation added: F001 21CSC201J practical Batch 2
+2026-08-17 08:11:31,610 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:31] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 201 -
+2026-08-17 08:11:32,821 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:32] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-17 08:11:42,075 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:42] "GET / HTTP/1.1" 200 -
+2026-08-17 08:11:42,121 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:11:43,088 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:43] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-17 08:11:43,151 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:11:51,133 | INFO | Faculty F001 logged in.
+2026-08-17 08:11:51,134 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:51] "[32mPOST /faculty/login HTTP/1.1[0m" 302 -
+2026-08-17 08:11:51,184 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:51] "GET /dashboard HTTP/1.1" 200 -
+2026-08-17 08:11:51,304 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:11:53,194 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:53] "GET /timetable HTTP/1.1" 200 -
+2026-08-17 08:11:53,277 | INFO | 127.0.0.1 - - [17/Aug/2026 08:11:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:13:26,538 | INFO |  * Detected change in 'C:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\scheduler\\scheduler.py', reloading
+2026-08-17 08:13:26,711 | INFO |  * Restarting with stat
+2026-08-17 08:13:27,968 | WARNING |  * Debugger is active!
+2026-08-17 08:13:27,975 | INFO |  * Debugger PIN: 265-607-779
+2026-08-17 08:15:17,757 | INFO | 127.0.0.1 - - [17/Aug/2026 08:15:17] "GET /timetable HTTP/1.1" 200 -
+2026-08-17 08:15:17,885 | INFO | 127.0.0.1 - - [17/Aug/2026 08:15:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:16:01,781 | INFO |  * Detected change in 'C:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\scheduler\\scheduler.py', reloading
+2026-08-17 08:16:01,908 | INFO |  * Restarting with stat
+2026-08-17 08:16:03,164 | WARNING |  * Debugger is active!
+2026-08-17 08:16:03,173 | INFO |  * Debugger PIN: 265-607-779
+2026-08-17 08:16:04,156 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:04] "GET /timetable HTTP/1.1" 200 -
+2026-08-17 08:16:04,278 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:16:05,040 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:05] "GET /timetable HTTP/1.1" 200 -
+2026-08-17 08:16:05,090 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:16:05,336 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:05] "GET /timetable HTTP/1.1" 200 -
+2026-08-17 08:16:05,380 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:16:07,538 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:07] "GET /timetable HTTP/1.1" 200 -
+2026-08-17 08:16:07,597 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:16:42,325 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-17 08:16:42,325 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-17 08:16:42,327 | INFO |  * Restarting with stat
+2026-08-17 08:16:43,533 | WARNING |  * Debugger is active!
+2026-08-17 08:16:43,539 | INFO |  * Debugger PIN: 265-607-779
+2026-08-17 08:16:43,592 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:43] "GET /timetable HTTP/1.1" 200 -
+2026-08-17 08:16:43,693 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:16:44,500 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:44] "GET /timetable HTTP/1.1" 200 -
+2026-08-17 08:16:44,534 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:16:47,467 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:47] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-17 08:16:47,505 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:16:48,940 | INFO | Faculty ADMIN logged in.
+2026-08-17 08:16:48,942 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:48] "[32mPOST /faculty/login HTTP/1.1[0m" 302 -
+2026-08-17 08:16:48,958 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:48] "GET /dashboard HTTP/1.1" 200 -
+2026-08-17 08:16:49,008 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:16:52,317 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:52] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-08-17 08:16:52,329 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:52] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-17 08:16:52,376 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:16:59,931 | INFO | Faculty F001 logged in.
+2026-08-17 08:16:59,932 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:59] "[32mPOST /faculty/login HTTP/1.1[0m" 302 -
+2026-08-17 08:16:59,951 | INFO | 127.0.0.1 - - [17/Aug/2026 08:16:59] "GET /dashboard HTTP/1.1" 200 -
+2026-08-17 08:17:00,039 | INFO | 127.0.0.1 - - [17/Aug/2026 08:17:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:17:04,025 | INFO | 127.0.0.1 - - [17/Aug/2026 08:17:04] "GET /timetable HTTP/1.1" 200 -
+2026-08-17 08:17:04,099 | INFO | 127.0.0.1 - - [17/Aug/2026 08:17:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:20:55,625 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-17 08:20:55,625 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-17 08:20:55,628 | INFO |  * Restarting with stat
+2026-08-17 08:20:56,759 | WARNING |  * Debugger is active!
+2026-08-17 08:20:56,766 | INFO |  * Debugger PIN: 265-607-779
+2026-08-17 08:20:56,829 | INFO | 127.0.0.1 - - [17/Aug/2026 08:20:56] "GET /timetable HTTP/1.1" 200 -
+2026-08-17 08:20:56,964 | INFO | 127.0.0.1 - - [17/Aug/2026 08:20:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:25:27,683 | INFO |  * Detected change in 'C:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\allocation.py', reloading
+2026-08-17 08:25:27,837 | INFO |  * Restarting with stat
+2026-08-17 08:25:28,999 | WARNING |  * Debugger is active!
+2026-08-17 08:25:29,005 | INFO |  * Debugger PIN: 265-607-779
+2026-08-17 08:26:19,234 | INFO | 127.0.0.1 - - [17/Aug/2026 08:26:19] "GET /timetable HTTP/1.1" 200 -
+2026-08-17 08:26:19,361 | INFO | 127.0.0.1 - - [17/Aug/2026 08:26:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:27:22,495 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:22] "GET / HTTP/1.1" 200 -
+2026-08-17 08:27:22,566 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:27:23,560 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:23] "GET /admin/login HTTP/1.1" 200 -
+2026-08-17 08:27:23,614 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:27:24,558 | INFO | Admin ADMIN logged in.
+2026-08-17 08:27:24,559 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:24] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-17 08:27:24,609 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:24] "GET /admin HTTP/1.1" 200 -
+2026-08-17 08:27:24,668 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:27:24,718 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:24] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-17 08:27:26,370 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:26] "GET /allocation HTTP/1.1" 200 -
+2026-08-17 08:27:26,434 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:27:26,473 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:26] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-17 08:27:26,496 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:26] "GET /subjects HTTP/1.1" 200 -
+2026-08-17 08:27:26,497 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:26] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-17 08:27:26,503 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:26] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-17 08:27:30,146 | INFO | Allocation added: F001 21CSC302J theory Batch 1
+2026-08-17 08:27:30,146 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:30] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 201 -
+2026-08-17 08:27:31,549 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:31] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-17 08:27:39,708 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:39] "GET /timetable HTTP/1.1" 200 -
+2026-08-17 08:27:39,760 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:27:51,708 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:51] "GET / HTTP/1.1" 200 -
+2026-08-17 08:27:51,779 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:27:52,484 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:52] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-17 08:27:52,563 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:27:53,904 | INFO | Faculty ADMIN logged in.
+2026-08-17 08:27:53,905 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:53] "[32mPOST /faculty/login HTTP/1.1[0m" 302 -
+2026-08-17 08:27:53,939 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:53] "GET /dashboard HTTP/1.1" 200 -
+2026-08-17 08:27:54,003 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:27:55,440 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:55] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-08-17 08:27:55,449 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:55] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-17 08:27:55,496 | INFO | 127.0.0.1 - - [17/Aug/2026 08:27:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:28:02,614 | INFO | Faculty F001 logged in.
+2026-08-17 08:28:02,615 | INFO | 127.0.0.1 - - [17/Aug/2026 08:28:02] "[32mPOST /faculty/login HTTP/1.1[0m" 302 -
+2026-08-17 08:28:02,634 | INFO | 127.0.0.1 - - [17/Aug/2026 08:28:02] "GET /dashboard HTTP/1.1" 200 -
+2026-08-17 08:28:02,730 | INFO | 127.0.0.1 - - [17/Aug/2026 08:28:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:28:04,492 | INFO | 127.0.0.1 - - [17/Aug/2026 08:28:04] "GET /timetable HTTP/1.1" 200 -
+2026-08-17 08:28:04,536 | INFO | 127.0.0.1 - - [17/Aug/2026 08:28:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:30:27,432 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:27] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-08-17 08:30:27,444 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:27] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-17 08:30:27,492 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:30:29,336 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:29] "GET / HTTP/1.1" 200 -
+2026-08-17 08:30:29,386 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:30:30,312 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:30] "GET /admin/login HTTP/1.1" 200 -
+2026-08-17 08:30:30,391 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:30:31,180 | INFO | Admin ADMIN logged in.
+2026-08-17 08:30:31,181 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:31] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-17 08:30:31,192 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:31] "GET /admin HTTP/1.1" 200 -
+2026-08-17 08:30:31,248 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:30:31,254 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:31] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-17 08:30:53,968 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:53] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-17 08:30:54,929 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:54] "[31m[1mPOST /faculty/add HTTP/1.1[0m" 400 -
+2026-08-17 08:30:58,707 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:58] "GET /allocation HTTP/1.1" 200 -
+2026-08-17 08:30:58,825 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:58] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-17 08:30:58,843 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:30:58,886 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:58] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-17 08:30:58,887 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:58] "GET /subjects HTTP/1.1" 200 -
+2026-08-17 08:30:58,891 | INFO | 127.0.0.1 - - [17/Aug/2026 08:30:58] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-17 08:31:13,080 | INFO | Allocation added: F002 21CSC201J theory Batch 2
+2026-08-17 08:31:13,081 | INFO | 127.0.0.1 - - [17/Aug/2026 08:31:13] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 201 -
+2026-08-17 08:31:14,125 | INFO | 127.0.0.1 - - [17/Aug/2026 08:31:14] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-17 08:31:33,429 | INFO | 127.0.0.1 - - [17/Aug/2026 08:31:33] "[31m[1mPOST /allocation/add HTTP/1.1[0m" 400 -
+2026-08-17 08:31:53,351 | INFO | 127.0.0.1 - - [17/Aug/2026 08:31:53] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-17 08:31:53,429 | INFO | 127.0.0.1 - - [17/Aug/2026 08:31:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:32:01,355 | INFO | Faculty F002 logged in.
+2026-08-17 08:32:01,356 | INFO | 127.0.0.1 - - [17/Aug/2026 08:32:01] "[32mPOST /faculty/login HTTP/1.1[0m" 302 -
+2026-08-17 08:32:01,369 | INFO | 127.0.0.1 - - [17/Aug/2026 08:32:01] "GET /dashboard HTTP/1.1" 200 -
+2026-08-17 08:32:01,464 | INFO | 127.0.0.1 - - [17/Aug/2026 08:32:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 08:32:03,164 | INFO | 127.0.0.1 - - [17/Aug/2026 08:32:03] "GET /timetable HTTP/1.1" 200 -
+2026-08-17 08:32:03,239 | INFO | 127.0.0.1 - - [17/Aug/2026 08:32:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:45:25,796 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-17 15:45:25,797 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-17 15:45:25,799 | INFO |  * Restarting with stat
+2026-08-17 15:45:26,565 | WARNING |  * Debugger is active!
+2026-08-17 15:45:26,569 | INFO |  * Debugger PIN: 265-607-779
+2026-08-17 15:45:42,606 | INFO | 127.0.0.1 - - [17/Aug/2026 15:45:42] "GET / HTTP/1.1" 200 -
+2026-08-17 15:45:42,760 | INFO | 127.0.0.1 - - [17/Aug/2026 15:45:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:45:45,062 | INFO | 127.0.0.1 - - [17/Aug/2026 15:45:45] "GET /admin/login HTTP/1.1" 200 -
+2026-08-17 15:45:45,100 | INFO | 127.0.0.1 - - [17/Aug/2026 15:45:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:45:46,449 | INFO | Admin ADMIN logged in.
+2026-08-17 15:45:46,451 | INFO | 127.0.0.1 - - [17/Aug/2026 15:45:46] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-17 15:45:46,464 | INFO | 127.0.0.1 - - [17/Aug/2026 15:45:46] "GET /admin HTTP/1.1" 200 -
+2026-08-17 15:45:46,504 | INFO | 127.0.0.1 - - [17/Aug/2026 15:45:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:45:46,506 | INFO | 127.0.0.1 - - [17/Aug/2026 15:45:46] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-17 15:45:48,776 | INFO | 127.0.0.1 - - [17/Aug/2026 15:45:48] "GET /timetable HTTP/1.1" 200 -
+2026-08-17 15:45:48,823 | INFO | 127.0.0.1 - - [17/Aug/2026 15:45:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:45:54,156 | INFO | 127.0.0.1 - - [17/Aug/2026 15:45:54] "GET /timetable HTTP/1.1" 200 -
+2026-08-17 15:45:54,226 | INFO | 127.0.0.1 - - [17/Aug/2026 15:45:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:47:58,872 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-17 15:47:58,872 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-17 15:47:58,874 | INFO |  * Restarting with stat
+2026-08-17 15:47:59,648 | WARNING |  * Debugger is active!
+2026-08-17 15:47:59,653 | INFO |  * Debugger PIN: 265-607-779
+2026-08-17 15:48:02,803 | INFO | 127.0.0.1 - - [17/Aug/2026 15:48:02] "GET / HTTP/1.1" 200 -
+2026-08-17 15:48:02,998 | INFO | 127.0.0.1 - - [17/Aug/2026 15:48:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:49:08,168 | INFO | 127.0.0.1 - - [17/Aug/2026 15:49:08] "GET /admin/login HTTP/1.1" 200 -
+2026-08-17 15:49:08,239 | INFO | 127.0.0.1 - - [17/Aug/2026 15:49:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:49:18,512 | INFO | 127.0.0.1 - - [17/Aug/2026 15:49:18] "GET / HTTP/1.1" 200 -
+2026-08-17 15:49:18,595 | INFO | 127.0.0.1 - - [17/Aug/2026 15:49:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:49:48,542 | INFO | 127.0.0.1 - - [17/Aug/2026 15:49:48] "GET /admin/login HTTP/1.1" 200 -
+2026-08-17 15:49:48,584 | INFO | 127.0.0.1 - - [17/Aug/2026 15:49:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:49:51,836 | INFO | Admin ADMIN logged in.
+2026-08-17 15:49:51,856 | INFO | 127.0.0.1 - - [17/Aug/2026 15:49:51] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-17 15:49:51,882 | INFO | 127.0.0.1 - - [17/Aug/2026 15:49:51] "GET /admin HTTP/1.1" 200 -
+2026-08-17 15:49:51,916 | INFO | 127.0.0.1 - - [17/Aug/2026 15:49:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:49:51,943 | INFO | 127.0.0.1 - - [17/Aug/2026 15:49:51] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-17 15:50:00,909 | INFO | 127.0.0.1 - - [17/Aug/2026 15:50:00] "GET /faculty/F001 HTTP/1.1" 200 -
+2026-08-17 15:50:08,284 | INFO | 127.0.0.1 - - [17/Aug/2026 15:50:08] "GET /faculty/F001 HTTP/1.1" 200 -
+2026-08-17 15:50:11,964 | INFO | 127.0.0.1 - - [17/Aug/2026 15:50:11] "GET /allocation HTTP/1.1" 200 -
+2026-08-17 15:50:11,994 | INFO | 127.0.0.1 - - [17/Aug/2026 15:50:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:50:12,031 | INFO | 127.0.0.1 - - [17/Aug/2026 15:50:12] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-17 15:50:12,054 | INFO | 127.0.0.1 - - [17/Aug/2026 15:50:12] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-17 15:50:12,055 | INFO | 127.0.0.1 - - [17/Aug/2026 15:50:12] "GET /subjects HTTP/1.1" 200 -
+2026-08-17 15:50:12,063 | INFO | 127.0.0.1 - - [17/Aug/2026 15:50:12] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-17 15:50:39,566 | INFO | 127.0.0.1 - - [17/Aug/2026 15:50:39] "GET /allocation HTTP/1.1" 200 -
+2026-08-17 15:50:39,612 | INFO | 127.0.0.1 - - [17/Aug/2026 15:50:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:50:39,613 | INFO | 127.0.0.1 - - [17/Aug/2026 15:50:39] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-17 15:50:39,641 | INFO | 127.0.0.1 - - [17/Aug/2026 15:50:39] "GET /subjects HTTP/1.1" 200 -
+2026-08-17 15:50:39,641 | INFO | 127.0.0.1 - - [17/Aug/2026 15:50:39] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-17 15:50:39,648 | INFO | 127.0.0.1 - - [17/Aug/2026 15:50:39] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-17 15:51:17,329 | INFO | 127.0.0.1 - - [17/Aug/2026 15:51:17] "GET /allocation/1 HTTP/1.1" 200 -
+2026-08-17 15:51:52,312 | INFO | 127.0.0.1 - - [17/Aug/2026 15:51:52] "[32mGET /admin/logout HTTP/1.1[0m" 302 -
+2026-08-17 15:51:52,321 | INFO | 127.0.0.1 - - [17/Aug/2026 15:51:52] "GET /admin/login HTTP/1.1" 200 -
+2026-08-17 15:51:52,362 | INFO | 127.0.0.1 - - [17/Aug/2026 15:51:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:51:57,546 | INFO | 127.0.0.1 - - [17/Aug/2026 15:51:57] "GET / HTTP/1.1" 200 -
+2026-08-17 15:51:57,580 | INFO | 127.0.0.1 - - [17/Aug/2026 15:51:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:51:58,692 | INFO | 127.0.0.1 - - [17/Aug/2026 15:51:58] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-17 15:51:58,729 | INFO | 127.0.0.1 - - [17/Aug/2026 15:51:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:52:06,920 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:06] "GET / HTTP/1.1" 200 -
+2026-08-17 15:52:06,959 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:52:07,961 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:07] "GET /admin/login HTTP/1.1" 200 -
+2026-08-17 15:52:07,991 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:52:09,262 | INFO | Admin ADMIN logged in.
+2026-08-17 15:52:09,263 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:09] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-17 15:52:09,271 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:09] "GET /admin HTTP/1.1" 200 -
+2026-08-17 15:52:09,300 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:52:09,303 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:09] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-17 15:52:13,851 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:13] "GET /allocation HTTP/1.1" 200 -
+2026-08-17 15:52:13,886 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:52:13,887 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:13] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-17 15:52:13,906 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:13] "GET /subjects HTTP/1.1" 200 -
+2026-08-17 15:52:13,906 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:13] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-17 15:52:13,911 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:13] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-17 15:52:39,981 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:39] "[32mGET /admin/logout HTTP/1.1[0m" 302 -
+2026-08-17 15:52:40,003 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:40] "GET /admin/login HTTP/1.1" 200 -
+2026-08-17 15:52:40,076 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:52:41,560 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:41] "GET / HTTP/1.1" 200 -
+2026-08-17 15:52:41,601 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:52:42,423 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:42] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-17 15:52:42,464 | INFO | 127.0.0.1 - - [17/Aug/2026 15:52:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:53:05,271 | INFO | Faculty F001 logged in.
+2026-08-17 15:53:05,272 | INFO | 127.0.0.1 - - [17/Aug/2026 15:53:05] "[32mPOST /faculty/login HTTP/1.1[0m" 302 -
+2026-08-17 15:53:05,306 | INFO | 127.0.0.1 - - [17/Aug/2026 15:53:05] "GET /dashboard HTTP/1.1" 200 -
+2026-08-17 15:53:05,360 | INFO | 127.0.0.1 - - [17/Aug/2026 15:53:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:53:30,558 | INFO | 127.0.0.1 - - [17/Aug/2026 15:53:30] "GET /timetable HTTP/1.1" 200 -
+2026-08-17 15:53:30,603 | INFO | 127.0.0.1 - - [17/Aug/2026 15:53:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:54:08,362 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:08] "GET /dashboard HTTP/1.1" 200 -
+2026-08-17 15:54:08,411 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:54:11,286 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:11] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-08-17 15:54:11,291 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:11] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-17 15:54:11,326 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:54:12,750 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:12] "GET / HTTP/1.1" 200 -
+2026-08-17 15:54:12,790 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:54:14,650 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:14] "GET /admin/login HTTP/1.1" 200 -
+2026-08-17 15:54:14,681 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:54:15,997 | INFO | Admin ADMIN logged in.
+2026-08-17 15:54:15,998 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:15] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-17 15:54:16,007 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:16] "GET /admin HTTP/1.1" 200 -
+2026-08-17 15:54:16,043 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:54:16,043 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:16] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-17 15:54:20,548 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:20] "GET /allocation HTTP/1.1" 200 -
+2026-08-17 15:54:20,591 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:54:20,594 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:20] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-17 15:54:20,624 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:20] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-17 15:54:20,625 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:20] "GET /subjects HTTP/1.1" 200 -
+2026-08-17 15:54:20,632 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:20] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-17 15:54:27,419 | INFO | Allocation added: F001 21CSC201J theory Batch 1
+2026-08-17 15:54:27,419 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:27] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 201 -
+2026-08-17 15:54:29,142 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:29] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-17 15:54:31,720 | INFO | 127.0.0.1 - - [17/Aug/2026 15:54:31] "[31m[1mPOST /allocation/add HTTP/1.1[0m" 400 -
+2026-08-17 15:55:03,682 | INFO | Allocation added: F001 21CSC201J practical Batch 1
+2026-08-17 15:55:03,683 | INFO | 127.0.0.1 - - [17/Aug/2026 15:55:03] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 201 -
+2026-08-17 15:55:04,909 | INFO | 127.0.0.1 - - [17/Aug/2026 15:55:04] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-17 15:55:10,787 | INFO | 127.0.0.1 - - [17/Aug/2026 15:55:10] "[31m[1mPOST /allocation/add HTTP/1.1[0m" 400 -
+2026-08-17 15:57:12,491 | INFO | 127.0.0.1 - - [17/Aug/2026 15:57:12] "GET /allocation HTTP/1.1" 200 -
+2026-08-17 15:57:12,539 | INFO | 127.0.0.1 - - [17/Aug/2026 15:57:12] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-17 15:57:12,542 | INFO | 127.0.0.1 - - [17/Aug/2026 15:57:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 15:57:12,572 | INFO | 127.0.0.1 - - [17/Aug/2026 15:57:12] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-17 15:57:12,574 | INFO | 127.0.0.1 - - [17/Aug/2026 15:57:12] "GET /subjects HTTP/1.1" 200 -
+2026-08-17 15:57:12,580 | INFO | 127.0.0.1 - - [17/Aug/2026 15:57:12] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-17 15:57:55,842 | INFO | 127.0.0.1 - - [17/Aug/2026 15:57:55] "[31m[1mPOST /allocation/add HTTP/1.1[0m" 400 -
+2026-08-17 15:58:00,001 | INFO | 127.0.0.1 - - [17/Aug/2026 15:58:00] "[31m[1mPOST /allocation/add HTTP/1.1[0m" 400 -
+2026-08-17 16:04:52,551 | INFO | 127.0.0.1 - - [17/Aug/2026 16:04:52] "[31m[1mPOST /allocation/add HTTP/1.1[0m" 400 -
+2026-08-17 16:20:24,637 | INFO | 127.0.0.1 - - [17/Aug/2026 16:20:24] "GET / HTTP/1.1" 200 -
+2026-08-17 16:20:24,751 | INFO | 127.0.0.1 - - [17/Aug/2026 16:20:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 16:20:33,109 | INFO | 127.0.0.1 - - [17/Aug/2026 16:20:33] "GET /admin/login HTTP/1.1" 200 -
+2026-08-17 16:20:33,183 | INFO | 127.0.0.1 - - [17/Aug/2026 16:20:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 16:20:37,058 | INFO | Admin ADMIN logged in.
+2026-08-17 16:20:37,059 | INFO | 127.0.0.1 - - [17/Aug/2026 16:20:37] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-17 16:20:37,069 | INFO | 127.0.0.1 - - [17/Aug/2026 16:20:37] "GET /admin HTTP/1.1" 200 -
+2026-08-17 16:20:37,142 | INFO | 127.0.0.1 - - [17/Aug/2026 16:20:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 16:20:37,197 | INFO | 127.0.0.1 - - [17/Aug/2026 16:20:37] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-17 16:20:52,978 | INFO | 127.0.0.1 - - [17/Aug/2026 16:20:52] "GET /faculty/F001 HTTP/1.1" 200 -
+2026-08-17 16:20:57,692 | INFO | 127.0.0.1 - - [17/Aug/2026 16:20:57] "GET /faculty/F001 HTTP/1.1" 200 -
+2026-08-17 16:21:03,133 | INFO | 127.0.0.1 - - [17/Aug/2026 16:21:03] "GET /allocation HTTP/1.1" 200 -
+2026-08-17 16:21:03,198 | INFO | 127.0.0.1 - - [17/Aug/2026 16:21:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 16:21:03,245 | INFO | 127.0.0.1 - - [17/Aug/2026 16:21:03] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-17 16:21:03,277 | INFO | 127.0.0.1 - - [17/Aug/2026 16:21:03] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-17 16:21:03,291 | INFO | 127.0.0.1 - - [17/Aug/2026 16:21:03] "GET /subjects HTTP/1.1" 200 -
+2026-08-17 16:21:03,297 | INFO | 127.0.0.1 - - [17/Aug/2026 16:21:03] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-17 16:21:25,980 | INFO | 127.0.0.1 - - [17/Aug/2026 16:21:25] "[31m[1mPOST /allocation/add HTTP/1.1[0m" 400 -
+2026-08-17 16:21:31,470 | INFO | 127.0.0.1 - - [17/Aug/2026 16:21:31] "[31m[1mPOST /allocation/add HTTP/1.1[0m" 400 -
+2026-08-17 16:21:45,524 | INFO | 127.0.0.1 - - [17/Aug/2026 16:21:45] "[32mGET /admin/logout HTTP/1.1[0m" 302 -
+2026-08-17 16:21:45,544 | INFO | 127.0.0.1 - - [17/Aug/2026 16:21:45] "GET /admin/login HTTP/1.1" 200 -
+2026-08-17 16:21:45,623 | INFO | 127.0.0.1 - - [17/Aug/2026 16:21:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 16:21:47,629 | INFO | 127.0.0.1 - - [17/Aug/2026 16:21:47] "GET / HTTP/1.1" 200 -
+2026-08-17 16:21:47,696 | INFO | 127.0.0.1 - - [17/Aug/2026 16:21:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 16:21:48,420 | INFO | 127.0.0.1 - - [17/Aug/2026 16:21:48] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-17 16:21:48,488 | INFO | 127.0.0.1 - - [17/Aug/2026 16:21:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 16:22:01,079 | INFO | 127.0.0.1 - - [17/Aug/2026 16:22:01] "POST /faculty/login HTTP/1.1" 200 -
+2026-08-17 16:22:01,175 | INFO | 127.0.0.1 - - [17/Aug/2026 16:22:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 16:22:03,282 | INFO | 127.0.0.1 - - [17/Aug/2026 16:22:03] "GET / HTTP/1.1" 200 -
+2026-08-17 16:22:03,398 | INFO | 127.0.0.1 - - [17/Aug/2026 16:22:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 16:22:04,292 | INFO | 127.0.0.1 - - [17/Aug/2026 16:22:04] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-17 16:22:04,394 | INFO | 127.0.0.1 - - [17/Aug/2026 16:22:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 16:22:13,206 | INFO | Faculty F001 logged in.
+2026-08-17 16:22:13,207 | INFO | 127.0.0.1 - - [17/Aug/2026 16:22:13] "[32mPOST /faculty/login HTTP/1.1[0m" 302 -
+2026-08-17 16:22:13,221 | INFO | 127.0.0.1 - - [17/Aug/2026 16:22:13] "GET /dashboard HTTP/1.1" 200 -
+2026-08-17 16:22:13,309 | INFO | 127.0.0.1 - - [17/Aug/2026 16:22:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 16:22:21,298 | INFO | 127.0.0.1 - - [17/Aug/2026 16:22:21] "GET /timetable HTTP/1.1" 200 -
+2026-08-17 16:22:21,351 | INFO | 127.0.0.1 - - [17/Aug/2026 16:22:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 16:23:13,066 | INFO | 127.0.0.1 - - [17/Aug/2026 16:23:13] "GET /admin/login HTTP/1.1" 200 -
+2026-08-17 16:23:13,150 | INFO | 127.0.0.1 - - [17/Aug/2026 16:23:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 16:23:14,648 | INFO | Admin ADMIN logged in.
+2026-08-17 16:23:14,649 | INFO | 127.0.0.1 - - [17/Aug/2026 16:23:14] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-17 16:23:14,661 | INFO | 127.0.0.1 - - [17/Aug/2026 16:23:14] "GET /admin HTTP/1.1" 200 -
+2026-08-17 16:23:14,731 | INFO | 127.0.0.1 - - [17/Aug/2026 16:23:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-17 16:23:14,733 | INFO | 127.0.0.1 - - [17/Aug/2026 16:23:14] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-20 23:10:51,622 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-20 23:10:51,623 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-20 23:10:51,626 | INFO |  * Restarting with stat
+2026-08-20 23:10:52,867 | WARNING |  * Debugger is active!
+2026-08-20 23:10:52,877 | INFO |  * Debugger PIN: 265-607-779
+2026-08-20 23:10:55,654 | INFO | 127.0.0.1 - - [20/Aug/2026 23:10:55] "GET / HTTP/1.1" 200 -
+2026-08-20 23:10:55,889 | INFO | 127.0.0.1 - - [20/Aug/2026 23:10:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:10:57,832 | INFO | 127.0.0.1 - - [20/Aug/2026 23:10:57] "GET /admin/login HTTP/1.1" 200 -
+2026-08-20 23:10:57,917 | INFO | 127.0.0.1 - - [20/Aug/2026 23:10:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:10:59,173 | INFO | Admin ADMIN logged in.
+2026-08-20 23:10:59,174 | INFO | 127.0.0.1 - - [20/Aug/2026 23:10:59] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-20 23:10:59,219 | INFO | 127.0.0.1 - - [20/Aug/2026 23:10:59] "GET /admin HTTP/1.1" 200 -
+2026-08-20 23:10:59,274 | INFO | 127.0.0.1 - - [20/Aug/2026 23:10:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:10:59,333 | INFO | 127.0.0.1 - - [20/Aug/2026 23:10:59] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-20 23:11:05,616 | INFO | 127.0.0.1 - - [20/Aug/2026 23:11:05] "GET /allocation HTTP/1.1" 200 -
+2026-08-20 23:11:05,706 | INFO | 127.0.0.1 - - [20/Aug/2026 23:11:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:11:05,755 | INFO | 127.0.0.1 - - [20/Aug/2026 23:11:05] "GET /static/allocation.js HTTP/1.1" 200 -
+2026-08-20 23:11:05,816 | INFO | 127.0.0.1 - - [20/Aug/2026 23:11:05] "GET /subjects HTTP/1.1" 200 -
+2026-08-20 23:11:05,818 | INFO | 127.0.0.1 - - [20/Aug/2026 23:11:05] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-20 23:11:05,926 | INFO | 127.0.0.1 - - [20/Aug/2026 23:11:05] "[35m[1mGET /allocation/list HTTP/1.1[0m" 500 -
+2026-08-20 23:18:00,666 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\scheduler\\workload.py', reloading
+2026-08-20 23:18:00,858 | INFO |  * Restarting with stat
+2026-08-20 23:18:02,132 | WARNING |  * Debugger is active!
+2026-08-20 23:18:02,139 | INFO |  * Debugger PIN: 265-607-779
+2026-08-20 23:18:23,443 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\auth.py', reloading
+2026-08-20 23:18:23,599 | INFO |  * Restarting with stat
+2026-08-20 23:18:24,866 | WARNING |  * Debugger is active!
+2026-08-20 23:18:24,874 | INFO |  * Debugger PIN: 265-607-779
+2026-08-20 23:18:56,292 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\scheduler\\workload.py', reloading
+2026-08-20 23:18:56,477 | INFO |  * Restarting with stat
+2026-08-20 23:18:57,776 | WARNING |  * Debugger is active!
+2026-08-20 23:18:57,783 | INFO |  * Debugger PIN: 265-607-779
+2026-08-20 23:20:00,532 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\scheduler\\workload.py', reloading
+2026-08-20 23:20:00,678 | INFO |  * Restarting with stat
+2026-08-20 23:20:01,910 | WARNING |  * Debugger is active!
+2026-08-20 23:20:01,918 | INFO |  * Debugger PIN: 265-607-779
+2026-08-20 23:20:18,677 | INFO | 127.0.0.1 - - [20/Aug/2026 23:20:18] "GET /allocation HTTP/1.1" 200 -
+2026-08-20 23:20:18,872 | INFO | 127.0.0.1 - - [20/Aug/2026 23:20:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:20:18,875 | INFO | 127.0.0.1 - - [20/Aug/2026 23:20:18] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-20 23:20:18,919 | INFO | 127.0.0.1 - - [20/Aug/2026 23:20:18] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-20 23:20:18,921 | INFO | 127.0.0.1 - - [20/Aug/2026 23:20:18] "GET /subjects HTTP/1.1" 200 -
+2026-08-20 23:20:18,955 | INFO | 127.0.0.1 - - [20/Aug/2026 23:20:18] "[35m[1mGET /allocation/list HTTP/1.1[0m" 500 -
+2026-08-20 23:20:57,040 | INFO | 127.0.0.1 - - [20/Aug/2026 23:20:57] "GET /allocation HTTP/1.1" 200 -
+2026-08-20 23:20:57,123 | INFO | 127.0.0.1 - - [20/Aug/2026 23:20:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:20:57,124 | INFO | 127.0.0.1 - - [20/Aug/2026 23:20:57] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-20 23:20:57,149 | INFO | 127.0.0.1 - - [20/Aug/2026 23:20:57] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-20 23:20:57,151 | INFO | 127.0.0.1 - - [20/Aug/2026 23:20:57] "GET /subjects HTTP/1.1" 200 -
+2026-08-20 23:20:57,175 | INFO | 127.0.0.1 - - [20/Aug/2026 23:20:57] "[35m[1mGET /allocation/list HTTP/1.1[0m" 500 -
+2026-08-20 23:21:05,400 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:05] "GET /allocation HTTP/1.1" 200 -
+2026-08-20 23:21:05,466 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:05] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-20 23:21:05,470 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:21:05,504 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:05] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-20 23:21:05,506 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:05] "GET /subjects HTTP/1.1" 200 -
+2026-08-20 23:21:05,530 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:05] "[35m[1mGET /allocation/list HTTP/1.1[0m" 500 -
+2026-08-20 23:21:06,259 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:06] "GET /allocation HTTP/1.1" 200 -
+2026-08-20 23:21:06,321 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:21:06,322 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:06] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-20 23:21:06,370 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:06] "GET /subjects HTTP/1.1" 200 -
+2026-08-20 23:21:06,370 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:06] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-20 23:21:06,391 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:06] "[35m[1mGET /allocation/list HTTP/1.1[0m" 500 -
+2026-08-20 23:21:12,121 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:12] "GET /allocation HTTP/1.1" 200 -
+2026-08-20 23:21:12,172 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:21:12,173 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:12] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-20 23:21:12,217 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:12] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-20 23:21:12,219 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:12] "GET /subjects HTTP/1.1" 200 -
+2026-08-20 23:21:12,238 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:12] "[35m[1mGET /allocation/list HTTP/1.1[0m" 500 -
+2026-08-20 23:21:35,786 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:35] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-20 23:21:38,155 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:38] "GET /allocation HTTP/1.1" 200 -
+2026-08-20 23:21:38,256 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:38] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-20 23:21:38,259 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:21:38,297 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:38] "GET /subjects HTTP/1.1" 200 -
+2026-08-20 23:21:38,299 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:38] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-20 23:21:38,317 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:38] "[35m[1mGET /allocation/list HTTP/1.1[0m" 500 -
+2026-08-20 23:21:45,437 | INFO | 127.0.0.1 - - [20/Aug/2026 23:21:45] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 500 -
+2026-08-20 23:22:07,744 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-20 23:22:07,744 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-20 23:22:07,747 | INFO |  * Restarting with stat
+2026-08-20 23:22:09,064 | WARNING |  * Debugger is active!
+2026-08-20 23:22:09,071 | INFO |  * Debugger PIN: 265-607-779
+2026-08-20 23:22:09,764 | INFO | 127.0.0.1 - - [20/Aug/2026 23:22:09] "GET / HTTP/1.1" 200 -
+2026-08-20 23:22:09,929 | INFO | 127.0.0.1 - - [20/Aug/2026 23:22:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:22:10,864 | INFO | 127.0.0.1 - - [20/Aug/2026 23:22:10] "GET /admin/login HTTP/1.1" 200 -
+2026-08-20 23:22:10,944 | INFO | 127.0.0.1 - - [20/Aug/2026 23:22:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:22:12,062 | INFO | Admin ADMIN logged in.
+2026-08-20 23:22:12,063 | INFO | 127.0.0.1 - - [20/Aug/2026 23:22:12] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-20 23:22:12,081 | INFO | 127.0.0.1 - - [20/Aug/2026 23:22:12] "GET /admin HTTP/1.1" 200 -
+2026-08-20 23:22:12,155 | INFO | 127.0.0.1 - - [20/Aug/2026 23:22:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:22:12,166 | INFO | 127.0.0.1 - - [20/Aug/2026 23:22:12] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-20 23:22:13,743 | INFO | 127.0.0.1 - - [20/Aug/2026 23:22:13] "GET /allocation HTTP/1.1" 200 -
+2026-08-20 23:22:13,831 | INFO | 127.0.0.1 - - [20/Aug/2026 23:22:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:22:13,832 | INFO | 127.0.0.1 - - [20/Aug/2026 23:22:13] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-20 23:22:13,884 | INFO | 127.0.0.1 - - [20/Aug/2026 23:22:13] "GET /subjects HTTP/1.1" 200 -
+2026-08-20 23:22:13,885 | INFO | 127.0.0.1 - - [20/Aug/2026 23:22:13] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-20 23:22:13,918 | INFO | 127.0.0.1 - - [20/Aug/2026 23:22:13] "[35m[1mGET /allocation/list HTTP/1.1[0m" 500 -
+2026-08-20 23:23:36,822 | ERROR | Exception on /allocation/list [GET]
+Traceback (most recent call last):
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: faculty_allocations.room_number
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\arjun\OneDrive\Documents\inhouseproject\faculty-allocation-srmist\routes\allocation.py", line 234, in allocation_list
+    allocations = FacultyAllocation.query.all()
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\orm\query.py", line 2711, in all
+    return self._iter().all()  # type: ignore
+           ~~~~~~~~~~^^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\orm\session.py", line 2373, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\orm\session.py", line 2271, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: faculty_allocations.room_number
+[SQL: SELECT faculty_allocations.id AS faculty_allocations_id, faculty_allocations.faculty_id AS faculty_allocations_faculty_id, faculty_allocations.subject_code AS faculty_allocations_subject_code, faculty_allocations.subject_name AS faculty_allocations_subject_name, faculty_allocations.slot AS faculty_allocations_slot, faculty_allocations.class_type AS faculty_allocations_class_type, faculty_allocations.batch AS faculty_allocations_batch, faculty_allocations.section AS faculty_allocations_section, faculty_allocations.room_number AS faculty_allocations_room_number, faculty_allocations.building_name AS faculty_allocations_building_name 
+FROM faculty_allocations]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-20 23:23:36,840 | ERROR | 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+Traceback (most recent call last):
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: faculty_allocations.room_number
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\arjun\OneDrive\Documents\inhouseproject\faculty-allocation-srmist\routes\allocation.py", line 234, in allocation_list
+    allocations = FacultyAllocation.query.all()
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\orm\query.py", line 2711, in all
+    return self._iter().all()  # type: ignore
+           ~~~~~~~~~~^^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\orm\session.py", line 2373, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\orm\session.py", line 2271, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: faculty_allocations.room_number
+[SQL: SELECT faculty_allocations.id AS faculty_allocations_id, faculty_allocations.faculty_id AS faculty_allocations_faculty_id, faculty_allocations.subject_code AS faculty_allocations_subject_code, faculty_allocations.subject_name AS faculty_allocations_subject_name, faculty_allocations.slot AS faculty_allocations_slot, faculty_allocations.class_type AS faculty_allocations_class_type, faculty_allocations.batch AS faculty_allocations_batch, faculty_allocations.section AS faculty_allocations_section, faculty_allocations.room_number AS faculty_allocations_room_number, faculty_allocations.building_name AS faculty_allocations_building_name 
+FROM faculty_allocations]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-20 23:26:39,431 | INFO | 127.0.0.1 - - [20/Aug/2026 23:26:39] "GET /allocation HTTP/1.1" 200 -
+2026-08-20 23:26:39,484 | INFO | 127.0.0.1 - - [20/Aug/2026 23:26:39] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-20 23:26:39,489 | INFO | 127.0.0.1 - - [20/Aug/2026 23:26:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:26:39,548 | INFO | 127.0.0.1 - - [20/Aug/2026 23:26:39] "GET /subjects HTTP/1.1" 200 -
+2026-08-20 23:26:39,551 | INFO | 127.0.0.1 - - [20/Aug/2026 23:26:39] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-20 23:26:39,554 | INFO | 127.0.0.1 - - [20/Aug/2026 23:26:39] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-20 23:26:54,505 | INFO | Allocation added: F001 21CSC302J theory Batch 1
+2026-08-20 23:26:54,505 | INFO | 127.0.0.1 - - [20/Aug/2026 23:26:54] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 201 -
+2026-08-20 23:26:55,793 | INFO | 127.0.0.1 - - [20/Aug/2026 23:26:55] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-20 23:27:01,698 | INFO | Allocation added: ADMIN 21CSC302J practical Batch 1
+2026-08-20 23:27:01,699 | INFO | 127.0.0.1 - - [20/Aug/2026 23:27:01] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 201 -
+2026-08-20 23:27:02,813 | INFO | 127.0.0.1 - - [20/Aug/2026 23:27:02] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-20 23:27:09,074 | INFO | Allocation deleted: 2
+2026-08-20 23:27:09,075 | INFO | 127.0.0.1 - - [20/Aug/2026 23:27:09] "DELETE /allocation/delete/2 HTTP/1.1" 200 -
+2026-08-20 23:27:09,099 | INFO | 127.0.0.1 - - [20/Aug/2026 23:27:09] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-20 23:27:09,971 | INFO | 127.0.0.1 - - [20/Aug/2026 23:27:09] "[31m[1mPOST /allocation/add HTTP/1.1[0m" 400 -
+2026-08-20 23:27:13,053 | INFO | 127.0.0.1 - - [20/Aug/2026 23:27:13] "[31m[1mPOST /allocation/add HTTP/1.1[0m" 400 -
+2026-08-20 23:27:15,963 | INFO | Allocation added: F001 21CSC302J practical Batch 1
+2026-08-20 23:27:15,964 | INFO | 127.0.0.1 - - [20/Aug/2026 23:27:15] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 201 -
+2026-08-20 23:27:17,585 | INFO | 127.0.0.1 - - [20/Aug/2026 23:27:17] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-20 23:27:33,181 | INFO | 127.0.0.1 - - [20/Aug/2026 23:27:33] "GET / HTTP/1.1" 200 -
+2026-08-20 23:27:33,276 | INFO | 127.0.0.1 - - [20/Aug/2026 23:27:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:27:34,065 | INFO | 127.0.0.1 - - [20/Aug/2026 23:27:34] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-20 23:27:34,141 | INFO | 127.0.0.1 - - [20/Aug/2026 23:27:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:27:45,455 | INFO | Faculty F001 logged in.
+2026-08-20 23:27:45,456 | INFO | 127.0.0.1 - - [20/Aug/2026 23:27:45] "[32mPOST /faculty/login HTTP/1.1[0m" 302 -
+2026-08-20 23:27:45,489 | INFO | 127.0.0.1 - - [20/Aug/2026 23:27:45] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-08-20 23:27:45,632 | INFO | 127.0.0.1 - - [20/Aug/2026 23:27:45] "GET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-08-20 23:27:45,655 | INFO | 127.0.0.1 - - [20/Aug/2026 23:27:45] "GET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-08-20 23:27:45,686 | INFO | 127.0.0.1 - - [20/Aug/2026 23:27:45] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=PBzdQT7d9WiIYbH6n2QA HTTP/1.1" 200 -
+2026-08-20 23:27:45,693 | INFO | 127.0.0.1 - - [20/Aug/2026 23:27:45] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-08-20 23:28:14,251 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\auth.py', reloading
+2026-08-20 23:28:14,471 | INFO |  * Restarting with stat
+2026-08-20 23:28:15,775 | WARNING |  * Debugger is active!
+2026-08-20 23:28:15,786 | INFO |  * Debugger PIN: 265-607-779
+2026-08-20 23:31:00,723 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\auth.py', reloading
+2026-08-20 23:31:00,914 | INFO |  * Restarting with stat
+2026-08-20 23:31:02,219 | WARNING |  * Debugger is active!
+2026-08-20 23:31:02,226 | INFO |  * Debugger PIN: 265-607-779
+2026-08-20 23:31:21,090 | INFO | 127.0.0.1 - - [20/Aug/2026 23:31:21] "GET /dashboard HTTP/1.1" 200 -
+2026-08-20 23:31:21,211 | INFO | 127.0.0.1 - - [20/Aug/2026 23:31:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:31:24,624 | INFO | 127.0.0.1 - - [20/Aug/2026 23:31:24] "GET /timetable HTTP/1.1" 200 -
+2026-08-20 23:31:24,712 | INFO | 127.0.0.1 - - [20/Aug/2026 23:31:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:33:20,818 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\scheduler\\workload.py', reloading
+2026-08-20 23:33:21,003 | INFO |  * Restarting with stat
+2026-08-20 23:33:22,247 | WARNING |  * Debugger is active!
+2026-08-20 23:33:22,254 | INFO |  * Debugger PIN: 265-607-779
+2026-08-20 23:33:33,410 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\scheduler\\workload.py', reloading
+2026-08-20 23:33:33,569 | INFO |  * Restarting with stat
+2026-08-20 23:33:34,809 | WARNING |  * Debugger is active!
+2026-08-20 23:33:34,819 | INFO |  * Debugger PIN: 265-607-779
+2026-08-20 23:34:17,300 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\timetable.py', reloading
+2026-08-20 23:34:17,502 | INFO |  * Restarting with stat
+2026-08-20 23:34:18,883 | WARNING |  * Debugger is active!
+2026-08-20 23:34:18,890 | INFO |  * Debugger PIN: 265-607-779
+2026-08-20 23:34:26,003 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\timetable.py', reloading
+2026-08-20 23:34:26,170 | INFO |  * Restarting with stat
+2026-08-20 23:34:27,382 | WARNING |  * Debugger is active!
+2026-08-20 23:34:27,389 | INFO |  * Debugger PIN: 265-607-779
+2026-08-20 23:37:04,022 | INFO | 127.0.0.1 - - [20/Aug/2026 23:37:04] "GET /dashboard HTTP/1.1" 200 -
+2026-08-20 23:37:04,184 | INFO | 127.0.0.1 - - [20/Aug/2026 23:37:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:37:09,997 | INFO | 127.0.0.1 - - [20/Aug/2026 23:37:09] "GET /admin/login HTTP/1.1" 200 -
+2026-08-20 23:37:10,082 | INFO | 127.0.0.1 - - [20/Aug/2026 23:37:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:37:11,611 | INFO | Admin ADMIN logged in.
+2026-08-20 23:37:11,612 | INFO | 127.0.0.1 - - [20/Aug/2026 23:37:11] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-20 23:37:11,629 | INFO | 127.0.0.1 - - [20/Aug/2026 23:37:11] "GET /admin HTTP/1.1" 200 -
+2026-08-20 23:37:11,707 | INFO | 127.0.0.1 - - [20/Aug/2026 23:37:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:37:11,708 | INFO | 127.0.0.1 - - [20/Aug/2026 23:37:11] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-20 23:37:16,437 | INFO | 127.0.0.1 - - [20/Aug/2026 23:37:16] "GET /allocation HTTP/1.1" 200 -
+2026-08-20 23:37:16,521 | INFO | 127.0.0.1 - - [20/Aug/2026 23:37:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:37:16,522 | INFO | 127.0.0.1 - - [20/Aug/2026 23:37:16] "GET /static/allocation.js HTTP/1.1" 200 -
+2026-08-20 23:37:16,572 | INFO | 127.0.0.1 - - [20/Aug/2026 23:37:16] "GET /subjects HTTP/1.1" 200 -
+2026-08-20 23:37:16,572 | INFO | 127.0.0.1 - - [20/Aug/2026 23:37:16] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-20 23:37:16,581 | INFO | 127.0.0.1 - - [20/Aug/2026 23:37:16] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-20 23:43:20,407 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\scheduler\\database_loader.py', reloading
+2026-08-20 23:43:20,579 | INFO |  * Restarting with stat
+2026-08-20 23:43:22,024 | WARNING |  * Debugger is active!
+2026-08-20 23:43:22,031 | INFO |  * Debugger PIN: 265-607-779
+2026-08-20 23:43:59,511 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\admin.py', reloading
+2026-08-20 23:43:59,668 | INFO |  * Restarting with stat
+2026-08-20 23:44:00,909 | WARNING |  * Debugger is active!
+2026-08-20 23:44:00,918 | INFO |  * Debugger PIN: 265-607-779
+2026-08-20 23:44:56,595 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\scheduler\\database_loader.py', reloading
+2026-08-20 23:44:56,782 | INFO |  * Restarting with stat
+2026-08-20 23:44:58,037 | WARNING |  * Debugger is active!
+2026-08-20 23:44:58,045 | INFO |  * Debugger PIN: 265-607-779
+2026-08-20 23:46:08,832 | INFO | 127.0.0.1 - - [20/Aug/2026 23:46:08] "GET /timetable HTTP/1.1" 200 -
+2026-08-20 23:46:08,980 | INFO | 127.0.0.1 - - [20/Aug/2026 23:46:08] "GET /static/style.css HTTP/1.1" 200 -
+2026-08-20 23:46:16,727 | INFO | 127.0.0.1 - - [20/Aug/2026 23:46:16] "GET / HTTP/1.1" 200 -
+2026-08-20 23:46:16,795 | INFO | 127.0.0.1 - - [20/Aug/2026 23:46:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:46:18,262 | INFO | 127.0.0.1 - - [20/Aug/2026 23:46:18] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-20 23:46:18,324 | INFO | 127.0.0.1 - - [20/Aug/2026 23:46:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:46:21,840 | INFO | 127.0.0.1 - - [20/Aug/2026 23:46:21] "GET / HTTP/1.1" 200 -
+2026-08-20 23:46:21,908 | INFO | 127.0.0.1 - - [20/Aug/2026 23:46:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:46:22,719 | INFO | 127.0.0.1 - - [20/Aug/2026 23:46:22] "GET /admin/login HTTP/1.1" 200 -
+2026-08-20 23:46:22,787 | INFO | 127.0.0.1 - - [20/Aug/2026 23:46:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:46:23,693 | INFO | Admin ADMIN logged in.
+2026-08-20 23:46:23,695 | INFO | 127.0.0.1 - - [20/Aug/2026 23:46:23] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-20 23:46:23,708 | INFO | 127.0.0.1 - - [20/Aug/2026 23:46:23] "GET /admin HTTP/1.1" 200 -
+2026-08-20 23:46:23,771 | INFO | 127.0.0.1 - - [20/Aug/2026 23:46:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:46:23,772 | INFO | 127.0.0.1 - - [20/Aug/2026 23:46:23] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-20 23:46:25,551 | INFO | 127.0.0.1 - - [20/Aug/2026 23:46:25] "GET /admin/report HTTP/1.1" 200 -
+2026-08-20 23:46:25,619 | INFO | 127.0.0.1 - - [20/Aug/2026 23:46:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:57:57,212 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\admin.py', reloading
+2026-08-20 23:57:57,353 | INFO |  * Restarting with stat
+2026-08-20 23:57:58,788 | WARNING |  * Debugger is active!
+2026-08-20 23:57:58,799 | INFO |  * Debugger PIN: 265-607-779
+2026-08-20 23:58:06,931 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\scheduler\\scheduler.py', reloading
+2026-08-20 23:58:07,069 | INFO |  * Restarting with stat
+2026-08-20 23:58:08,188 | WARNING |  * Debugger is active!
+2026-08-20 23:58:08,195 | INFO |  * Debugger PIN: 265-607-779
+2026-08-20 23:58:12,406 | INFO | 127.0.0.1 - - [20/Aug/2026 23:58:12] "GET /admin/report HTTP/1.1" 200 -
+2026-08-20 23:58:12,534 | INFO | 127.0.0.1 - - [20/Aug/2026 23:58:12] "GET /static/style.css HTTP/1.1" 200 -
+2026-08-20 23:59:42,110 | INFO | 127.0.0.1 - - [20/Aug/2026 23:59:42] "GET /admin/report HTTP/1.1" 200 -
+2026-08-20 23:59:42,154 | INFO | 127.0.0.1 - - [20/Aug/2026 23:59:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:59:43,149 | INFO | 127.0.0.1 - - [20/Aug/2026 23:59:43] "GET /admin/report HTTP/1.1" 200 -
+2026-08-20 23:59:43,181 | INFO | 127.0.0.1 - - [20/Aug/2026 23:59:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:59:44,297 | INFO | 127.0.0.1 - - [20/Aug/2026 23:59:44] "GET /admin/report HTTP/1.1" 200 -
+2026-08-20 23:59:44,336 | INFO | 127.0.0.1 - - [20/Aug/2026 23:59:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:59:47,708 | INFO | 127.0.0.1 - - [20/Aug/2026 23:59:47] "GET /allocation HTTP/1.1" 200 -
+2026-08-20 23:59:47,768 | INFO | 127.0.0.1 - - [20/Aug/2026 23:59:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 23:59:47,770 | INFO | 127.0.0.1 - - [20/Aug/2026 23:59:47] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-20 23:59:47,794 | INFO | 127.0.0.1 - - [20/Aug/2026 23:59:47] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-20 23:59:47,796 | INFO | 127.0.0.1 - - [20/Aug/2026 23:59:47] "GET /subjects HTTP/1.1" 200 -
+2026-08-20 23:59:47,803 | INFO | 127.0.0.1 - - [20/Aug/2026 23:59:47] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-20 23:59:51,264 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\admin.py', reloading
+2026-08-20 23:59:51,417 | INFO |  * Restarting with stat
+2026-08-20 23:59:52,496 | WARNING |  * Debugger is active!
+2026-08-20 23:59:52,503 | INFO |  * Debugger PIN: 265-607-779
+2026-08-20 23:59:53,735 | INFO | 127.0.0.1 - - [20/Aug/2026 23:59:53] "GET /timetable HTTP/1.1" 200 -
+2026-08-20 23:59:53,847 | INFO | 127.0.0.1 - - [20/Aug/2026 23:59:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:00:00,607 | INFO | 127.0.0.1 - - [21/Aug/2026 00:00:00] "GET /timetable HTTP/1.1" 200 -
+2026-08-21 00:00:00,673 | INFO | 127.0.0.1 - - [21/Aug/2026 00:00:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:00:17,812 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\admin.py', reloading
+2026-08-21 00:00:17,975 | INFO |  * Restarting with stat
+2026-08-21 00:00:19,101 | WARNING |  * Debugger is active!
+2026-08-21 00:00:19,109 | INFO |  * Debugger PIN: 265-607-779
+2026-08-21 00:00:36,560 | INFO | 127.0.0.1 - - [21/Aug/2026 00:00:36] "GET /allocation HTTP/1.1" 200 -
+2026-08-21 00:00:36,774 | INFO | 127.0.0.1 - - [21/Aug/2026 00:00:36] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-21 00:00:36,778 | INFO | 127.0.0.1 - - [21/Aug/2026 00:00:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:00:36,806 | INFO | 127.0.0.1 - - [21/Aug/2026 00:00:36] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-21 00:00:36,807 | INFO | 127.0.0.1 - - [21/Aug/2026 00:00:36] "GET /subjects HTTP/1.1" 200 -
+2026-08-21 00:00:36,817 | INFO | 127.0.0.1 - - [21/Aug/2026 00:00:36] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-21 00:00:39,771 | INFO | 127.0.0.1 - - [21/Aug/2026 00:00:39] "GET /admin/report HTTP/1.1" 200 -
+2026-08-21 00:00:39,861 | INFO | 127.0.0.1 - - [21/Aug/2026 00:00:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:00:45,427 | INFO | 127.0.0.1 - - [21/Aug/2026 00:00:45] "GET /admin/report HTTP/1.1" 200 -
+2026-08-21 00:00:45,495 | INFO | 127.0.0.1 - - [21/Aug/2026 00:00:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:00:46,530 | INFO | 127.0.0.1 - - [21/Aug/2026 00:00:46] "GET /admin/report HTTP/1.1" 200 -
+2026-08-21 00:00:46,575 | INFO | 127.0.0.1 - - [21/Aug/2026 00:00:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:02:28,359 | INFO | 127.0.0.1 - - [21/Aug/2026 00:02:28] "GET /admin/report HTTP/1.1" 200 -
+2026-08-21 00:02:28,430 | INFO | 127.0.0.1 - - [21/Aug/2026 00:02:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:19:35,836 | INFO | 127.0.0.1 - - [21/Aug/2026 00:19:35] "GET /admin/report HTTP/1.1" 200 -
+2026-08-21 00:19:35,912 | INFO | 127.0.0.1 - - [21/Aug/2026 00:19:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:28:14,372 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\allocation.py', reloading
+2026-08-21 00:28:14,551 | INFO |  * Restarting with stat
+2026-08-21 00:28:15,829 | WARNING |  * Debugger is active!
+2026-08-21 00:28:15,841 | INFO |  * Debugger PIN: 265-607-779
+2026-08-21 00:28:43,141 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\admin.py', reloading
+2026-08-21 00:28:43,287 | INFO |  * Restarting with stat
+2026-08-21 00:28:44,388 | WARNING |  * Debugger is active!
+2026-08-21 00:28:44,394 | INFO |  * Debugger PIN: 265-607-779
+2026-08-21 00:28:59,576 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\allocation.py', reloading
+2026-08-21 00:28:59,731 | INFO |  * Restarting with stat
+2026-08-21 00:29:00,939 | WARNING |  * Debugger is active!
+2026-08-21 00:29:00,947 | INFO |  * Debugger PIN: 265-607-779
+2026-08-21 00:30:26,022 | INFO | Allocation added: AF_TEST1 21CSC307P practical Batch 2
+2026-08-21 00:30:38,940 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\allocation.py', reloading
+2026-08-21 00:30:39,102 | INFO |  * Restarting with stat
+2026-08-21 00:30:40,202 | WARNING |  * Debugger is active!
+2026-08-21 00:30:40,209 | INFO |  * Debugger PIN: 265-607-779
+2026-08-21 00:30:57,812 | INFO | Allocation added: AF_TEST1 21CSC307P practical Batch 2
+2026-08-21 00:30:57,823 | INFO | Allocation added: CF_TEST 21CSC307P practical Batch 2
+2026-08-21 00:31:24,705 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\allocation.py', reloading
+2026-08-21 00:31:24,838 | INFO |  * Restarting with stat
+2026-08-21 00:31:25,915 | WARNING |  * Debugger is active!
+2026-08-21 00:31:25,922 | INFO |  * Debugger PIN: 265-607-779
+2026-08-21 00:31:48,358 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-21 00:31:48,358 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-21 00:31:48,361 | INFO |  * Restarting with stat
+2026-08-21 00:31:49,642 | WARNING |  * Debugger is active!
+2026-08-21 00:31:49,648 | INFO |  * Debugger PIN: 265-607-779
+2026-08-21 00:33:42,897 | INFO | 127.0.0.1 - - [21/Aug/2026 00:33:42] "[32mGET /admin/report HTTP/1.1[0m" 302 -
+2026-08-21 00:33:42,912 | INFO | 127.0.0.1 - - [21/Aug/2026 00:33:42] "GET /admin/login HTTP/1.1" 200 -
+2026-08-21 00:33:43,025 | INFO | 127.0.0.1 - - [21/Aug/2026 00:33:43] "GET /static/style.css HTTP/1.1" 200 -
+2026-08-21 00:33:43,404 | WARNING | 404: Page not found.
+2026-08-21 00:33:43,408 | INFO | 127.0.0.1 - - [21/Aug/2026 00:33:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-21 00:33:59,861 | INFO | Admin ADMIN logged in.
+2026-08-21 00:33:59,862 | INFO | 127.0.0.1 - - [21/Aug/2026 00:33:59] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-21 00:33:59,874 | INFO | 127.0.0.1 - - [21/Aug/2026 00:33:59] "GET /admin HTTP/1.1" 200 -
+2026-08-21 00:33:59,911 | INFO | 127.0.0.1 - - [21/Aug/2026 00:33:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:33:59,912 | INFO | 127.0.0.1 - - [21/Aug/2026 00:33:59] "GET /static/script.js HTTP/1.1" 200 -
+2026-08-21 00:34:04,729 | INFO | 127.0.0.1 - - [21/Aug/2026 00:34:04] "GET /admin/report HTTP/1.1" 200 -
+2026-08-21 00:34:04,760 | INFO | 127.0.0.1 - - [21/Aug/2026 00:34:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:34:04,761 | INFO | 127.0.0.1 - - [21/Aug/2026 00:34:04] "GET /static/faculty_report.js HTTP/1.1" 200 -
+2026-08-21 00:34:27,008 | INFO | 127.0.0.1 - - [21/Aug/2026 00:34:27] "GET /admin/report HTTP/1.1" 200 -
+2026-08-21 00:34:27,034 | INFO | 127.0.0.1 - - [21/Aug/2026 00:34:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:34:27,039 | INFO | 127.0.0.1 - - [21/Aug/2026 00:34:27] "GET /static/faculty_report.js HTTP/1.1" 200 -
+2026-08-21 00:42:38,833 | INFO | 127.0.0.1 - - [21/Aug/2026 00:42:38] "GET /admin HTTP/1.1" 200 -
+2026-08-21 00:42:38,872 | INFO | 127.0.0.1 - - [21/Aug/2026 00:42:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:42:38,872 | INFO | 127.0.0.1 - - [21/Aug/2026 00:42:38] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-21 00:42:42,003 | INFO | 127.0.0.1 - - [21/Aug/2026 00:42:42] "GET /admin/report HTTP/1.1" 200 -
+2026-08-21 00:42:42,045 | INFO | 127.0.0.1 - - [21/Aug/2026 00:42:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:42:42,046 | INFO | 127.0.0.1 - - [21/Aug/2026 00:42:42] "GET /static/faculty_report.js HTTP/1.1" 200 -
+2026-08-21 00:42:42,091 | INFO | 127.0.0.1 - - [21/Aug/2026 00:42:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:43:19,409 | INFO | 127.0.0.1 - - [21/Aug/2026 00:43:19] "GET /admin/report HTTP/1.1" 200 -
+2026-08-21 00:43:19,485 | INFO | 127.0.0.1 - - [21/Aug/2026 00:43:19] "GET /static/faculty_report.js HTTP/1.1" 200 -
+2026-08-21 00:43:19,489 | INFO | 127.0.0.1 - - [21/Aug/2026 00:43:19] "GET /static/style.css HTTP/1.1" 200 -
+2026-08-21 00:44:05,534 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:05] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:44:12,337 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:12] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:44:15,780 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:15] "GET /allocation HTTP/1.1" 200 -
+2026-08-21 00:44:15,909 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:15] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-21 00:44:15,909 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:44:15,975 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:15] "GET /subjects HTTP/1.1" 200 -
+2026-08-21 00:44:15,975 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:15] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-21 00:44:15,983 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:15] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-21 00:44:20,241 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:20] "[31m[1mPOST /allocation/add HTTP/1.1[0m" 400 -
+2026-08-21 00:44:24,502 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:24] "GET /allocation HTTP/1.1" 200 -
+2026-08-21 00:44:24,595 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:24] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-21 00:44:24,596 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:44:24,699 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:24] "GET /subjects HTTP/1.1" 200 -
+2026-08-21 00:44:24,700 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:24] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-21 00:44:24,708 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:24] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-21 00:44:29,670 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:29] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:44:30,396 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:30] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:44:36,273 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:36] "[33mGET /faculty/F002 HTTP/1.1[0m" 404 -
+2026-08-21 00:44:39,515 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:39] "GET /admin HTTP/1.1" 200 -
+2026-08-21 00:44:39,592 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:39] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-21 00:44:39,595 | INFO | 127.0.0.1 - - [21/Aug/2026 00:44:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:45:12,211 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-21 00:45:12,212 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-21 00:45:12,215 | INFO |  * Restarting with stat
+2026-08-21 00:45:13,468 | WARNING |  * Debugger is active!
+2026-08-21 00:45:13,476 | INFO |  * Debugger PIN: 265-607-779
+2026-08-21 00:45:24,786 | INFO | 127.0.0.1 - - [21/Aug/2026 00:45:24] "GET /admin/report HTTP/1.1" 200 -
+2026-08-21 00:45:24,945 | INFO | 127.0.0.1 - - [21/Aug/2026 00:45:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:45:24,949 | INFO | 127.0.0.1 - - [21/Aug/2026 00:45:24] "[36mGET /static/faculty_report.js HTTP/1.1[0m" 304 -
+2026-08-21 00:45:28,885 | INFO | 127.0.0.1 - - [21/Aug/2026 00:45:28] "GET /admin HTTP/1.1" 200 -
+2026-08-21 00:45:28,941 | INFO | 127.0.0.1 - - [21/Aug/2026 00:45:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:45:28,942 | INFO | 127.0.0.1 - - [21/Aug/2026 00:45:28] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-21 00:46:02,521 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:02] "GET / HTTP/1.1" 200 -
+2026-08-21 00:46:02,635 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:46:05,944 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:05] "GET /admin/login HTTP/1.1" 200 -
+2026-08-21 00:46:06,039 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:46:07,395 | INFO | Admin ADMIN logged in.
+2026-08-21 00:46:07,397 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:07] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-21 00:46:07,412 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:07] "GET /admin HTTP/1.1" 200 -
+2026-08-21 00:46:07,492 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:46:07,493 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:07] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-21 00:46:09,525 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:09] "GET /allocation HTTP/1.1" 200 -
+2026-08-21 00:46:09,599 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:46:09,600 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:09] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-21 00:46:09,643 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:09] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-21 00:46:09,644 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:09] "GET /subjects HTTP/1.1" 200 -
+2026-08-21 00:46:09,652 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:09] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-21 00:46:27,123 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:27] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:46:27,421 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:27] "[31m[1mPOST /faculty/add HTTP/1.1[0m" 400 -
+2026-08-21 00:46:30,844 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:30] "GET /allocation HTTP/1.1" 200 -
+2026-08-21 00:46:30,981 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:30] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-21 00:46:30,982 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:46:31,053 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:31] "GET /subjects HTTP/1.1" 200 -
+2026-08-21 00:46:31,054 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:31] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-21 00:46:31,060 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:31] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-21 00:46:42,055 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:42] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:46:42,493 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:42] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:46:42,747 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:42] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:46:43,065 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:43] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:46:44,339 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:44] "GET /allocation HTTP/1.1" 200 -
+2026-08-21 00:46:44,451 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:44] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-21 00:46:44,452 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:46:44,494 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:44] "GET /subjects HTTP/1.1" 200 -
+2026-08-21 00:46:44,495 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:44] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-21 00:46:44,501 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:44] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-21 00:46:56,230 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:56] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:46:58,378 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:58] "GET /admin HTTP/1.1" 200 -
+2026-08-21 00:46:58,439 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:58] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-21 00:46:58,440 | INFO | 127.0.0.1 - - [21/Aug/2026 00:46:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:47:00,595 | INFO | 127.0.0.1 - - [21/Aug/2026 00:47:00] "[31m[1mPOST /faculty/add HTTP/1.1[0m" 400 -
+2026-08-21 00:47:05,839 | INFO | 127.0.0.1 - - [21/Aug/2026 00:47:05] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:47:06,589 | INFO | 127.0.0.1 - - [21/Aug/2026 00:47:06] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:47:06,876 | INFO | 127.0.0.1 - - [21/Aug/2026 00:47:06] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:47:07,082 | INFO | 127.0.0.1 - - [21/Aug/2026 00:47:07] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:47:10,469 | INFO | 127.0.0.1 - - [21/Aug/2026 00:47:10] "GET /allocation HTTP/1.1" 200 -
+2026-08-21 00:47:10,605 | INFO | 127.0.0.1 - - [21/Aug/2026 00:47:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:47:10,606 | INFO | 127.0.0.1 - - [21/Aug/2026 00:47:10] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-21 00:47:10,659 | INFO | 127.0.0.1 - - [21/Aug/2026 00:47:10] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-21 00:47:10,661 | INFO | 127.0.0.1 - - [21/Aug/2026 00:47:10] "GET /subjects HTTP/1.1" 200 -
+2026-08-21 00:47:10,667 | INFO | 127.0.0.1 - - [21/Aug/2026 00:47:10] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-21 00:47:59,129 | INFO | 127.0.0.1 - - [21/Aug/2026 00:47:59] "GET /admin HTTP/1.1" 200 -
+2026-08-21 00:47:59,177 | INFO | 127.0.0.1 - - [21/Aug/2026 00:47:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:47:59,178 | INFO | 127.0.0.1 - - [21/Aug/2026 00:47:59] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-21 00:48:05,209 | INFO | 127.0.0.1 - - [21/Aug/2026 00:48:05] "GET /admin HTTP/1.1" 200 -
+2026-08-21 00:48:05,261 | INFO | 127.0.0.1 - - [21/Aug/2026 00:48:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:48:05,262 | INFO | 127.0.0.1 - - [21/Aug/2026 00:48:05] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-21 00:49:03,251 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\registration.py', reloading
+2026-08-21 00:49:03,466 | INFO |  * Restarting with stat
+2026-08-21 00:49:05,030 | WARNING |  * Debugger is active!
+2026-08-21 00:49:05,042 | INFO |  * Debugger PIN: 265-607-779
+2026-08-21 00:50:02,301 | INFO | Faculty CHK_BACKEND_FIXED registered.
+2026-08-21 00:50:02,782 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\registration.py', reloading
+2026-08-21 00:50:02,979 | INFO |  * Restarting with stat
+2026-08-21 00:50:04,583 | WARNING |  * Debugger is active!
+2026-08-21 00:50:04,594 | INFO |  * Debugger PIN: 265-607-779
+2026-08-21 00:50:07,321 | INFO | 127.0.0.1 - - [21/Aug/2026 00:50:07] "GET /admin HTTP/1.1" 200 -
+2026-08-21 00:50:07,502 | INFO | 127.0.0.1 - - [21/Aug/2026 00:50:07] "GET /static/style.css HTTP/1.1" 200 -
+2026-08-21 00:50:07,506 | INFO | 127.0.0.1 - - [21/Aug/2026 00:50:07] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-21 00:50:14,187 | INFO | Faculty B613811 registered.
+2026-08-21 00:50:14,188 | INFO | 127.0.0.1 - - [21/Aug/2026 00:50:14] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 201 -
+2026-08-21 00:51:45,673 | INFO | 127.0.0.1 - - [21/Aug/2026 00:51:45] "GET /allocation HTTP/1.1" 200 -
+2026-08-21 00:51:45,747 | INFO | 127.0.0.1 - - [21/Aug/2026 00:51:45] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-21 00:51:45,748 | INFO | 127.0.0.1 - - [21/Aug/2026 00:51:45] "GET /static/style.css HTTP/1.1" 200 -
+2026-08-21 00:51:45,784 | INFO | 127.0.0.1 - - [21/Aug/2026 00:51:45] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-21 00:51:45,791 | INFO | 127.0.0.1 - - [21/Aug/2026 00:51:45] "GET /subjects HTTP/1.1" 200 -
+2026-08-21 00:51:45,800 | INFO | 127.0.0.1 - - [21/Aug/2026 00:51:45] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-21 00:51:51,993 | INFO | 127.0.0.1 - - [21/Aug/2026 00:51:51] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:51:54,221 | INFO | 127.0.0.1 - - [21/Aug/2026 00:51:54] "GET /admin HTTP/1.1" 200 -
+2026-08-21 00:51:54,288 | INFO | 127.0.0.1 - - [21/Aug/2026 00:51:54] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-21 00:51:54,289 | INFO | 127.0.0.1 - - [21/Aug/2026 00:51:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:51:56,052 | INFO | 127.0.0.1 - - [21/Aug/2026 00:51:56] "[31m[1mPOST /faculty/add HTTP/1.1[0m" 400 -
+2026-08-21 00:52:02,334 | INFO | 127.0.0.1 - - [21/Aug/2026 00:52:02] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:52:03,055 | INFO | 127.0.0.1 - - [21/Aug/2026 00:52:03] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:52:03,249 | INFO | 127.0.0.1 - - [21/Aug/2026 00:52:03] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:52:04,767 | INFO | 127.0.0.1 - - [21/Aug/2026 00:52:04] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:52:05,221 | INFO | 127.0.0.1 - - [21/Aug/2026 00:52:05] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:52:05,396 | INFO | 127.0.0.1 - - [21/Aug/2026 00:52:05] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 00:52:10,248 | INFO | Faculty F004 registered.
+2026-08-21 00:52:10,249 | INFO | 127.0.0.1 - - [21/Aug/2026 00:52:10] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 201 -
+2026-08-21 00:52:14,316 | INFO | 127.0.0.1 - - [21/Aug/2026 00:52:14] "GET /allocation HTTP/1.1" 200 -
+2026-08-21 00:52:14,456 | INFO | 127.0.0.1 - - [21/Aug/2026 00:52:14] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-21 00:52:14,457 | INFO | 127.0.0.1 - - [21/Aug/2026 00:52:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:52:14,516 | INFO | 127.0.0.1 - - [21/Aug/2026 00:52:14] "GET /subjects HTTP/1.1" 200 -
+2026-08-21 00:52:14,517 | INFO | 127.0.0.1 - - [21/Aug/2026 00:52:14] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-21 00:52:14,522 | INFO | 127.0.0.1 - - [21/Aug/2026 00:52:14] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-21 00:52:22,754 | INFO | Allocation added: F002 21CSC302J practical Batch 1
+2026-08-21 00:52:22,754 | INFO | 127.0.0.1 - - [21/Aug/2026 00:52:22] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 201 -
+2026-08-21 00:52:24,128 | INFO | 127.0.0.1 - - [21/Aug/2026 00:52:24] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-21 00:52:28,777 | INFO | 127.0.0.1 - - [21/Aug/2026 00:52:28] "[31m[1mPOST /allocation/add HTTP/1.1[0m" 400 -
+2026-08-21 00:54:19,611 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\scheduler\\workload.py', reloading
+2026-08-21 00:54:19,803 | INFO |  * Restarting with stat
+2026-08-21 00:54:21,120 | WARNING |  * Debugger is active!
+2026-08-21 00:54:21,127 | INFO |  * Debugger PIN: 265-607-779
+2026-08-21 00:56:17,444 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\registration.py', reloading
+2026-08-21 00:56:17,635 | INFO |  * Restarting with stat
+2026-08-21 00:56:18,922 | WARNING |  * Debugger is active!
+2026-08-21 00:56:18,930 | INFO |  * Debugger PIN: 265-607-779
+2026-08-21 00:56:47,295 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\admin.py', reloading
+2026-08-21 00:56:47,447 | INFO |  * Restarting with stat
+2026-08-21 00:56:48,726 | WARNING |  * Debugger is active!
+2026-08-21 00:56:48,735 | INFO |  * Debugger PIN: 265-607-779
+2026-08-21 00:57:23,177 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\app.py', reloading
+2026-08-21 00:57:23,372 | INFO |  * Restarting with stat
+2026-08-21 00:57:24,843 | WARNING |  * Debugger is active!
+2026-08-21 00:57:24,849 | INFO |  * Debugger PIN: 265-607-779
+2026-08-21 00:57:32,936 | INFO | Faculty SR_FA registered.
+2026-08-21 00:57:33,146 | INFO | Faculty SR_AA registered.
+2026-08-21 00:57:33,370 | INFO | Faculty SR_TC registered.
+2026-08-21 00:57:33,591 | INFO | Faculty SR_FUND registered.
+2026-08-21 00:57:44,182 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\registration.py', reloading
+2026-08-21 00:57:44,507 | INFO |  * Restarting with stat
+2026-08-21 00:57:45,720 | WARNING |  * Debugger is active!
+2026-08-21 00:57:45,728 | INFO |  * Debugger PIN: 265-607-779
+2026-08-21 00:58:11,102 | INFO |  * Detected change in 'c:\\Users\\arjun\\OneDrive\\Documents\\inhouseproject\\faculty-allocation-srmist\\routes\\registration.py', reloading
+2026-08-21 00:58:11,315 | INFO |  * Restarting with stat
+2026-08-21 00:58:12,725 | WARNING |  * Debugger is active!
+2026-08-21 00:58:12,733 | INFO |  * Debugger PIN: 265-607-779
+2026-08-21 00:58:12,781 | INFO | Faculty F001 updated.
+2026-08-21 00:58:12,790 | INFO | Faculty F001 updated.
+2026-08-21 00:59:01,147 | INFO | 127.0.0.1 - - [21/Aug/2026 00:59:01] "GET /admin/report HTTP/1.1" 200 -
+2026-08-21 00:59:01,313 | INFO | 127.0.0.1 - - [21/Aug/2026 00:59:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 00:59:01,314 | INFO | 127.0.0.1 - - [21/Aug/2026 00:59:01] "GET /static/faculty_report.js HTTP/1.1" 200 -
+2026-08-21 01:01:19,889 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:19] "GET /allocation HTTP/1.1" 200 -
+2026-08-21 01:01:19,957 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:19] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-21 01:01:19,958 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 01:01:20,010 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:20] "GET /subjects HTTP/1.1" 200 -
+2026-08-21 01:01:20,011 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:20] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-21 01:01:20,020 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:20] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-21 01:01:20,985 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:20] "GET /allocation HTTP/1.1" 200 -
+2026-08-21 01:01:21,044 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 01:01:21,045 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:21] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-21 01:01:21,096 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:21] "GET /subjects HTTP/1.1" 200 -
+2026-08-21 01:01:21,096 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:21] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-21 01:01:21,110 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:21] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-21 01:01:27,935 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:27] "GET /admin HTTP/1.1" 200 -
+2026-08-21 01:01:27,988 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 01:01:27,989 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:27] "GET /static/script.js HTTP/1.1" 200 -
+2026-08-21 01:01:29,320 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:29] "GET /admin HTTP/1.1" 200 -
+2026-08-21 01:01:29,382 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 01:01:29,383 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:29] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-21 01:01:52,356 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:52] "GET /admin/report HTTP/1.1" 200 -
+2026-08-21 01:01:52,451 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 01:01:52,452 | INFO | 127.0.0.1 - - [21/Aug/2026 01:01:52] "GET /static/faculty_report.js HTTP/1.1" 200 -
+2026-08-21 01:02:35,848 | INFO | 127.0.0.1 - - [21/Aug/2026 01:02:35] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 01:02:37,479 | INFO | 127.0.0.1 - - [21/Aug/2026 01:02:37] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 01:02:38,467 | INFO | 127.0.0.1 - - [21/Aug/2026 01:02:38] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 01:02:38,830 | INFO | 127.0.0.1 - - [21/Aug/2026 01:02:38] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 01:02:39,032 | INFO | 127.0.0.1 - - [21/Aug/2026 01:02:39] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 01:02:39,204 | INFO | 127.0.0.1 - - [21/Aug/2026 01:02:39] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 01:02:39,351 | INFO | 127.0.0.1 - - [21/Aug/2026 01:02:39] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 500 -
+2026-08-21 01:02:41,344 | INFO | 127.0.0.1 - - [21/Aug/2026 01:02:41] "GET /allocation HTTP/1.1" 200 -
+2026-08-21 01:02:41,458 | INFO | 127.0.0.1 - - [21/Aug/2026 01:02:41] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-21 01:02:41,459 | INFO | 127.0.0.1 - - [21/Aug/2026 01:02:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 01:02:41,508 | INFO | 127.0.0.1 - - [21/Aug/2026 01:02:41] "GET /subjects HTTP/1.1" 200 -
+2026-08-21 01:02:41,509 | INFO | 127.0.0.1 - - [21/Aug/2026 01:02:41] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-21 01:02:41,517 | INFO | 127.0.0.1 - - [21/Aug/2026 01:02:41] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-21 01:02:48,141 | INFO | 127.0.0.1 - - [21/Aug/2026 01:02:48] "GET /admin HTTP/1.1" 200 -
+2026-08-21 01:02:48,200 | INFO | 127.0.0.1 - - [21/Aug/2026 01:02:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 01:02:48,201 | INFO | 127.0.0.1 - - [21/Aug/2026 01:02:48] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-21 01:03:03,265 | INFO | Faculty F005 registered.
+2026-08-21 01:03:03,266 | INFO | 127.0.0.1 - - [21/Aug/2026 01:03:03] "[35m[1mPOST /faculty/add HTTP/1.1[0m" 201 -
+2026-08-21 01:03:08,872 | INFO | 127.0.0.1 - - [21/Aug/2026 01:03:08] "GET /allocation HTTP/1.1" 200 -
+2026-08-21 01:03:08,977 | INFO | 127.0.0.1 - - [21/Aug/2026 01:03:08] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-21 01:03:08,978 | INFO | 127.0.0.1 - - [21/Aug/2026 01:03:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 01:03:09,044 | INFO | 127.0.0.1 - - [21/Aug/2026 01:03:09] "GET /subjects HTTP/1.1" 200 -
+2026-08-21 01:03:09,044 | INFO | 127.0.0.1 - - [21/Aug/2026 01:03:09] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-21 01:03:09,049 | INFO | 127.0.0.1 - - [21/Aug/2026 01:03:09] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-21 01:03:21,441 | INFO | Allocation added: F005 21CSC201J practical Batch 1
+2026-08-21 01:03:21,442 | INFO | 127.0.0.1 - - [21/Aug/2026 01:03:21] "[35m[1mPOST /allocation/add HTTP/1.1[0m" 201 -
+2026-08-21 01:03:23,048 | INFO | 127.0.0.1 - - [21/Aug/2026 01:03:23] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-21 01:03:27,478 | INFO | 127.0.0.1 - - [21/Aug/2026 01:03:27] "GET /admin/report HTTP/1.1" 200 -
+2026-08-21 01:03:27,557 | INFO | 127.0.0.1 - - [21/Aug/2026 01:03:27] "[36mGET /static/faculty_report.js HTTP/1.1[0m" 304 -
+2026-08-21 01:03:27,558 | INFO | 127.0.0.1 - - [21/Aug/2026 01:03:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 01:06:42,140 | INFO | 127.0.0.1 - - [21/Aug/2026 01:06:42] "GET /admin HTTP/1.1" 200 -
+2026-08-21 01:06:42,203 | INFO | 127.0.0.1 - - [21/Aug/2026 01:06:42] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-21 01:06:42,208 | INFO | 127.0.0.1 - - [21/Aug/2026 01:06:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 01:06:42,856 | INFO | 127.0.0.1 - - [21/Aug/2026 01:06:42] "GET /timetable HTTP/1.1" 200 -
+2026-08-21 01:06:42,956 | INFO | 127.0.0.1 - - [21/Aug/2026 01:06:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:10:43,484 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-21 10:10:43,485 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-21 10:10:43,487 | INFO |  * Restarting with stat
+2026-08-21 10:10:44,140 | WARNING |  * Debugger is active!
+2026-08-21 10:10:44,161 | INFO |  * Debugger PIN: 265-607-779
+2026-08-21 10:10:49,033 | INFO | 127.0.0.1 - - [21/Aug/2026 10:10:49] "GET / HTTP/1.1" 200 -
+2026-08-21 10:10:49,149 | INFO | 127.0.0.1 - - [21/Aug/2026 10:10:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:10:56,804 | INFO | 127.0.0.1 - - [21/Aug/2026 10:10:56] "GET /admin/login HTTP/1.1" 200 -
+2026-08-21 10:10:56,840 | INFO | 127.0.0.1 - - [21/Aug/2026 10:10:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:11:11,044 | INFO | Admin ADMIN logged in.
+2026-08-21 10:11:11,045 | INFO | 127.0.0.1 - - [21/Aug/2026 10:11:11] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-21 10:11:11,067 | INFO | 127.0.0.1 - - [21/Aug/2026 10:11:11] "GET /admin HTTP/1.1" 200 -
+2026-08-21 10:11:11,110 | INFO | 127.0.0.1 - - [21/Aug/2026 10:11:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:11:11,112 | INFO | 127.0.0.1 - - [21/Aug/2026 10:11:11] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-21 10:12:44,582 | INFO | 127.0.0.1 - - [21/Aug/2026 10:12:44] "GET /faculty/F001 HTTP/1.1" 200 -
+2026-08-21 10:12:55,854 | INFO | 127.0.0.1 - - [21/Aug/2026 10:12:55] "[33mGET /faculty/f002 HTTP/1.1[0m" 404 -
+2026-08-21 10:12:58,118 | INFO | 127.0.0.1 - - [21/Aug/2026 10:12:58] "[33mGET /faculty/f001 HTTP/1.1[0m" 404 -
+2026-08-21 10:13:02,345 | INFO | 127.0.0.1 - - [21/Aug/2026 10:13:02] "GET /faculty/F001 HTTP/1.1" 200 -
+2026-08-21 10:13:07,973 | INFO | 127.0.0.1 - - [21/Aug/2026 10:13:07] "GET /allocation HTTP/1.1" 200 -
+2026-08-21 10:13:08,047 | INFO | 127.0.0.1 - - [21/Aug/2026 10:13:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:13:08,056 | INFO | 127.0.0.1 - - [21/Aug/2026 10:13:08] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-21 10:13:08,095 | INFO | 127.0.0.1 - - [21/Aug/2026 10:13:08] "GET /subjects HTTP/1.1" 200 -
+2026-08-21 10:13:08,098 | INFO | 127.0.0.1 - - [21/Aug/2026 10:13:08] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-21 10:13:08,109 | INFO | 127.0.0.1 - - [21/Aug/2026 10:13:08] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-21 10:14:37,274 | INFO | 127.0.0.1 - - [21/Aug/2026 10:14:37] "GET /admin/report HTTP/1.1" 200 -
+2026-08-21 10:14:37,350 | INFO | 127.0.0.1 - - [21/Aug/2026 10:14:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:14:37,353 | INFO | 127.0.0.1 - - [21/Aug/2026 10:14:37] "[36mGET /static/faculty_report.js HTTP/1.1[0m" 304 -
+2026-08-21 10:17:08,167 | INFO | 127.0.0.1 - - [21/Aug/2026 10:17:08] "[32mGET /admin/logout HTTP/1.1[0m" 302 -
+2026-08-21 10:17:08,178 | INFO | 127.0.0.1 - - [21/Aug/2026 10:17:08] "GET /admin/login HTTP/1.1" 200 -
+2026-08-21 10:17:08,260 | INFO | 127.0.0.1 - - [21/Aug/2026 10:17:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:17:09,764 | INFO | 127.0.0.1 - - [21/Aug/2026 10:17:09] "GET / HTTP/1.1" 200 -
+2026-08-21 10:17:09,832 | INFO | 127.0.0.1 - - [21/Aug/2026 10:17:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:17:10,516 | INFO | 127.0.0.1 - - [21/Aug/2026 10:17:10] "GET /faculty/login HTTP/1.1" 200 -
+2026-08-21 10:17:10,589 | INFO | 127.0.0.1 - - [21/Aug/2026 10:17:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:17:21,682 | INFO | Faculty F001 logged in.
+2026-08-21 10:17:21,683 | INFO | 127.0.0.1 - - [21/Aug/2026 10:17:21] "[32mPOST /faculty/login HTTP/1.1[0m" 302 -
+2026-08-21 10:17:21,723 | INFO | 127.0.0.1 - - [21/Aug/2026 10:17:21] "GET /dashboard HTTP/1.1" 200 -
+2026-08-21 10:17:21,820 | INFO | 127.0.0.1 - - [21/Aug/2026 10:17:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:17:28,815 | INFO | 127.0.0.1 - - [21/Aug/2026 10:17:28] "GET /timetable HTTP/1.1" 200 -
+2026-08-21 10:17:28,877 | INFO | 127.0.0.1 - - [21/Aug/2026 10:17:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:19:25,953 | INFO | 127.0.0.1 - - [21/Aug/2026 10:19:25] "GET /admin/login HTTP/1.1" 200 -
+2026-08-21 10:19:26,046 | INFO | 127.0.0.1 - - [21/Aug/2026 10:19:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:19:28,297 | INFO | Admin ADMIN logged in.
+2026-08-21 10:19:28,298 | INFO | 127.0.0.1 - - [21/Aug/2026 10:19:28] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-08-21 10:19:28,311 | INFO | 127.0.0.1 - - [21/Aug/2026 10:19:28] "GET /admin HTTP/1.1" 200 -
+2026-08-21 10:19:28,379 | INFO | 127.0.0.1 - - [21/Aug/2026 10:19:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:19:28,380 | INFO | 127.0.0.1 - - [21/Aug/2026 10:19:28] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-08-21 10:19:46,800 | INFO | 127.0.0.1 - - [21/Aug/2026 10:19:46] "GET /timetable HTTP/1.1" 200 -
+2026-08-21 10:19:46,847 | INFO | 127.0.0.1 - - [21/Aug/2026 10:19:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:19:55,161 | INFO | 127.0.0.1 - - [21/Aug/2026 10:19:55] "GET /timetable HTTP/1.1" 200 -
+2026-08-21 10:19:55,229 | INFO | 127.0.0.1 - - [21/Aug/2026 10:19:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:20:01,496 | INFO | 127.0.0.1 - - [21/Aug/2026 10:20:01] "GET /admin/report HTTP/1.1" 200 -
+2026-08-21 10:20:01,551 | INFO | 127.0.0.1 - - [21/Aug/2026 10:20:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:20:01,552 | INFO | 127.0.0.1 - - [21/Aug/2026 10:20:01] "[36mGET /static/faculty_report.js HTTP/1.1[0m" 304 -
+2026-08-21 10:20:47,661 | INFO | 127.0.0.1 - - [21/Aug/2026 10:20:47] "GET /allocation HTTP/1.1" 200 -
+2026-08-21 10:20:47,741 | INFO | 127.0.0.1 - - [21/Aug/2026 10:20:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:20:47,741 | INFO | 127.0.0.1 - - [21/Aug/2026 10:20:47] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-21 10:20:47,783 | INFO | 127.0.0.1 - - [21/Aug/2026 10:20:47] "GET /subjects HTTP/1.1" 200 -
+2026-08-21 10:20:47,784 | INFO | 127.0.0.1 - - [21/Aug/2026 10:20:47] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-21 10:20:47,793 | INFO | 127.0.0.1 - - [21/Aug/2026 10:20:47] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-21 10:20:52,367 | INFO | 127.0.0.1 - - [21/Aug/2026 10:20:52] "GET /allocation HTTP/1.1" 200 -
+2026-08-21 10:20:52,432 | INFO | 127.0.0.1 - - [21/Aug/2026 10:20:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:20:52,432 | INFO | 127.0.0.1 - - [21/Aug/2026 10:20:52] "[36mGET /static/allocation.js HTTP/1.1[0m" 304 -
+2026-08-21 10:20:52,464 | INFO | 127.0.0.1 - - [21/Aug/2026 10:20:52] "GET /subjects HTTP/1.1" 200 -
+2026-08-21 10:20:52,465 | INFO | 127.0.0.1 - - [21/Aug/2026 10:20:52] "GET /faculty/list HTTP/1.1" 200 -
+2026-08-21 10:20:52,473 | INFO | 127.0.0.1 - - [21/Aug/2026 10:20:52] "GET /allocation/list HTTP/1.1" 200 -
+2026-08-21 10:26:55,353 | INFO | 127.0.0.1 - - [21/Aug/2026 10:26:55] "GET /admin/report HTTP/1.1" 200 -
+2026-08-21 10:26:55,471 | INFO | 127.0.0.1 - - [21/Aug/2026 10:26:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-21 10:26:55,501 | INFO | 127.0.0.1 - - [21/Aug/2026 10:26:55] "[36mGET /static/faculty_report.js HTTP/1.1[0m" 304 -

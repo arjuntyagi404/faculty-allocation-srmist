@@ -29,6 +29,22 @@ app.register_blueprint(dashboard_bp)
 with app.app_context():
     db.create_all()
 
+    faculty_columns = db.session.execute(
+        db.text("PRAGMA table_info(faculty)")
+    ).fetchall()
+    if not any(column[1] == "special_role" for column in faculty_columns):
+        db.session.execute(db.text(
+            "ALTER TABLE faculty ADD COLUMN special_role "
+            "VARCHAR(20) NOT NULL DEFAULT 'None'"
+        ))
+        db.session.commit()
+
+    db.session.execute(db.text(
+        "UPDATE faculty SET special_role = 'None' "
+        "WHERE special_role IS NULL"
+    ))
+    db.session.commit()
+
 
 @app.route('/')
 def index():

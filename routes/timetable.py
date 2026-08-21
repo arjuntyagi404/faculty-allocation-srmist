@@ -5,6 +5,7 @@ from models.faculty import Faculty
 from scheduler.database_loader import load_allocations
 from scheduler.scheduler import generate_schedule
 from scheduler.timetable_builder import build_matrix_timetable
+from scheduler.config.period_times import PERIOD_TIMES
 
 timetable_bp = Blueprint(
     "timetable",
@@ -26,14 +27,25 @@ def timetable():
 
     if not allocation_data:
 
+        from scheduler.workload import calculate_workload
+
         return render_template(
             "timetable.html",
             faculty=faculty,
             timetable=None,
-            workload=0
+            workload=calculate_workload(
+                [],
+                faculty.professor_post,
+                faculty.special_role
+            ),
+            period_times=PERIOD_TIMES
         )
 
-    result = generate_schedule(allocation_data)
+    result = generate_schedule(
+        allocation_data,
+        faculty.professor_post,
+        faculty.special_role
+    )
 
     matrix = build_matrix_timetable(
         result["schedule"]
@@ -43,5 +55,6 @@ def timetable():
         "timetable.html",
         faculty=faculty,
         timetable=matrix,
-        workload=result["workload"]
+        workload=result["workload"],
+        period_times=PERIOD_TIMES
     )

@@ -29,8 +29,29 @@
         </div>
         <div class="info-row">
           <span class="info-label">Current Workload</span>
-          <span class="info-value"><b>{{ workload }}</b> Hours</span>
+            <span class="info-value"><b>{{ workload.assigned_workload }}</b> Hours</span>
         </div>
+          {% if workload.required_workload is not none %}
+          <div class="info-row">
+            <span class="info-label">Required Workload</span>
+            <span class="info-value">{{ workload.required_workload }} Hours</span>
+          </div>
+          <div class="info-row">
+            {% if workload.is_overloaded %}
+            <span class="info-label">Excess Workload</span>
+            <span class="info-value">{{ workload.excess_workload }} Hours</span>
+            {% else %}
+            <span class="info-label">Pending Workload</span>
+            <span class="info-value">{{ workload.pending_workload }} Hours</span>
+            {% endif %}
+          </div>
+          {% endif %}
+          {% if workload.is_overloaded %}
+          <p class="msg error">
+            Warning: This faculty member exceeds the recommended weekly workload
+            by {{ workload.excess_workload }} hours.
+          </p>
+          {% endif %}
       </div>
 
       <div class="subjects-section">
