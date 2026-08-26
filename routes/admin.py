@@ -1,9 +1,10 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from models.faculty import Faculty
+from models.subject_preference import SubjectPreference
 from scheduler.database_loader import load_all_allocations
 from scheduler.scheduler import generate_schedule
 from scheduler.timetable_builder import build_matrix_timetable
-from scheduler.workload import calculate_workload
+from scheduler.workload import calculate_allocation_workload, calculate_workload
 from scheduler.config.period_times import PERIOD_TIMES
 from utils.auth import admin_required
 
@@ -12,6 +13,33 @@ admin_bp = Blueprint(
     __name__
 )
 
+
+def _report_faculty_context():
+    faculties = Faculty.query.filter(
+        Faculty.role != "admin"
+    ).order_by(
+        Faculty.username
+    ).all()
+    faculty_id = request.args.get("faculty_id", "")
+    faculty = next(
+        (item for item in faculties if item.faculty_id == faculty_id),
+        None
+    )
+    allocations = load_all_allocations().get(faculty_id, []) if faculty else []
+    result = generate_schedule(
+        allocations,
+        faculty.professor_post,
+        faculty.special_role
+    ) if faculty and allocations else {
+        "schedule": [],
+        "workload": calculate_workload(
+            [],
+            faculty.professor_post if faculty else None,
+            faculty.special_role if faculty else None
+        )
+    }
+    return faculties, faculty, allocations, result
+
 @admin_bp.route("/admin")
 @admin_required
 def admin_dashboard():
@@ -19,9 +47,127 @@ def admin_dashboard():
     return render_template("index.html")
 
 
+@admin_bp.route("/admin/faculty-query")
+@admin_required
+def faculty_query_portal():
+
+    faculties = Faculty.query.filter(
+        Faculty.role != "admin"
+    ).order_by(
+        Faculty.username
+    ).all()
+    allocations_by_faculty = load_all_allocations()
+    query_rows = []
+
+    for faculty in faculties:
+        allocations = allocations_by_faculty.get(
+            faculty.faculty_id,
+            []
+        )
+        allocation_lookup = {
+            (
+                allocation["subject_code"],
+                allocation["class_type"],
+                allocation["batch"]
+            ): allocation
+            for allocation in allocations
+        }
+        schedule = generate_schedule(
+            allocations,
+            faculty.professor_post,
+            faculty.special_role
+        )["schedule"] if allocations else []
+
+        for entry in schedule:
+            allocation = allocation_lookup.get(
+                (
+                    entry["subject_code"],
+                    entry["class_type"],
+                    entry["batch"]
+                ),
+                {}
+            )
+            query_rows.append({
+                "day": entry["day"],
+                "day_order": entry["day"].split()[-1],
+                "time": entry["time"],
+                "faculty_name": entry["faculty_name"],
+                "faculty_id": faculty.faculty_id,
+                "professor_post": faculty.professor_post,
+                "cabin_no": faculty.cabin_no or "",
+                "subject_code": entry["subject_code"],
+                "subject_name": entry["subject_name"],
+                "building": allocation.get("building_name") or "",
+                "room": allocation.get("room_number") or "",
+                "venue": " · ".join(filter(None, (
+                    allocation.get("building_name"),
+                    allocation.get("room_number")
+                ))) or "Venue not assigned",
+            })
+
+    return render_template(
+        "faculty_query.html",
+        query_rows=query_rows,
+        period_times=PERIOD_TIMES,
+        buildings=["TP1", "TP2", "UB", "Main Block", "Biotech", "I-MAC Lab"]
+    )
+
+
+@admin_bp.route("/admin/subject-preference-report")
+@admin_required
+def subject_preference_report():
+
+    faculties = Faculty.query.filter(
+        Faculty.role != "admin"
+    ).order_by(
+        Faculty.username
+    ).all()
+    preferences = {
+        preference.faculty_id: preference
+        for preference in SubjectPreference.query.filter(
+            SubjectPreference.faculty_id.in_(
+                [faculty.faculty_id for faculty in faculties]
+            )
+        ).all()
+    } if faculties else {}
+
+    return render_template(
+        "subject_preference_report.html",
+        faculties=faculties,
+        preferences=preferences,
+        filter_options={
+            "posts": sorted({
+                faculty.professor_post
+                for faculty in faculties
+            }),
+            "regulations": sorted({
+                preference.regulation
+                for preference in preferences.values()
+                if preference.regulation
+            }),
+            "programs": sorted({
+                preference.program
+                for preference in preferences.values()
+                if preference.program
+            }),
+            "semesters": sorted({
+                preference.semester_type
+                for preference in preferences.values()
+                if preference.semester_type
+            }),
+        }
+    )
+
+
 @admin_bp.route("/admin/report")
 @admin_required
 def faculty_report():
+    return render_template("faculty_report_landing.html")
+
+
+@admin_bp.route("/admin/report/full")
+@admin_required
+def faculty_full_report():
 
     faculties = Faculty.query.filter(
         Faculty.role != "admin"
@@ -148,4 +294,85 @@ def faculty_report():
                 for faculty in faculties
             }),
         }
+    )
+
+
+@admin_bp.route("/admin/report/workload")
+@admin_required
+def workload_report():
+    faculties, faculty, allocations, result = _report_faculty_context()
+    workload_rows = [
+        {
+            "subject_code": allocation["subject_code"],
+            "subject_name": allocation["subject_name"],
+            "hours": calculate_allocation_workload(allocation),
+        }
+        for allocation in allocations
+    ]
+    return render_template(
+        "workload_report.html",
+        faculties=faculties,
+        faculty=faculty,
+        workload=result["workload"],
+        workload_rows=workload_rows,
+    )
+
+
+@admin_bp.route("/admin/report/subject-allocation")
+@admin_required
+def subject_allocation_report():
+    faculties, faculty, allocations, result = _report_faculty_context()
+    schedule_by_allocation = {}
+    for entry in result["schedule"]:
+        key = (entry["subject_code"], entry["class_type"], entry["batch"])
+        schedule_by_allocation.setdefault(key, []).append(
+            f"{entry['day']} / Period {entry['period']}"
+        )
+    allocation_rows = []
+    for allocation in allocations:
+        key = (
+            allocation["subject_code"],
+            allocation["class_type"],
+            allocation["batch"],
+        )
+        allocation_rows.append({
+            **allocation,
+            "course_type": allocation["subject_code"][-1].upper(),
+            "day_slot": ", ".join(dict.fromkeys(schedule_by_allocation.get(key, []))) or "Not scheduled",
+            "venue": " · ".join(filter(None, (
+                allocation.get("building_name"),
+                allocation.get("room_number"),
+            ))) or "Venue not assigned",
+        })
+    return render_template(
+        "subject_allocation_report.html",
+        faculties=faculties,
+        faculty=faculty,
+        allocations=allocation_rows,
+    )
+
+
+@admin_bp.route("/admin/report/lookup-timetable")
+@admin_required
+def lookup_timetable_report():
+    faculties, faculty, allocations, result = _report_faculty_context()
+    timetable = build_matrix_timetable(result["schedule"])
+    allocation_lookup = {
+        (allocation["subject_code"], allocation["slot"], allocation["batch"]): allocation
+        for allocation in allocations
+    }
+    for periods in timetable.values():
+        for cell in periods:
+            if cell:
+                allocation = allocation_lookup.get((cell["subject"], cell["slot"], cell["batch"]), {})
+                cell["venue"] = " · ".join(filter(None, (
+                    allocation.get("building_name"),
+                    allocation.get("room_number"),
+                ))) or "Venue not assigned"
+    return render_template(
+        "lookup_timetable_report.html",
+        faculties=faculties,
+        faculty=faculty,
+        timetable=timetable if allocations else None,
+        period_times=PERIOD_TIMES,
     )

@@ -1,0 +1,120 @@
+subject_code,subject_name,regulation,program,department,semester,category,course_type,credits,hours_per_week,LTPC
+21CSE321T,Data Warehousing and Data Mining,2021,UG,BDA,V,Elective,T,,,
+21CSE326T,Artificial Neural Networks,2021,UG,BDA,V,Elective,T,,,
+21CSE339T,Game Artificial Intelligence,2021,UG,GT,V,Elective,T,,,
+21CSE340T,Analytics and Decision Making,2021,UG,GT,V,Elective,T,,,
+21CSE341T,Computer Graphics,2021,UG,GT,V,Elective,T,,,
+21CSE314T,Computational Statistics,2021,UG,CSBS,V,Elective,T,,,
+21CSE315T,Conversational Systems,2021,UG,CSBS,V,Elective,T,,,
+21CSE374T,Machine Learning for Enterprise,2021,UG,CSBS,V,Elective,T,,,
+21CSE331T,Cryptocurrencies and Blockchain Technology,2021,UG,BCT,V,Elective,T,,,
+21CSE332T,Fundamentals of Ethereum,2021,UG,BCT,V,Elective,T,,,
+21CSE333T,AI and Blockchain,2021,UG,BCT,V,Elective,T,,,
+21CSE421T,Business Intelligence and Analytics,2021,UG,BDA,VII,Elective,T,,,
+21CSE426T,Financial Machine Learning,2021,UG,BDA,VII,Elective,T,,,
+21CSE430T,Automatic Speech Recognition,2021,UG,BDA,VII,Elective,T,,,
+21CSE423T,Big Data Visualization,2021,UG,BDA,VII,Elective,T,,,
+21CSE428T,Healthcare Analytics,2021,UG,BDA,VII,Elective,T,,,
+21CSE447T,Robot Motion Planning,2021,UG,BDA,VII,Elective,T,,,
+21CSE295T,Statistical Data Analytics and Interpretation,2021,UG,BDA,VII,Elective,T,,,
+21CSE422T,Convolutional Neural Network,2021,UG,BDA,VII,Elective,T,,,
+21CSE425T,Advanced Machine Leaning,2021,UG,BDA,VII,Elective,T,,,
+21CSE427T,Augmented and Virtual Reality,2021,UG,BDA,VII,Elective,T,,,
+21CSE424T,Deep Learning for Data Analytics,2021,UG,BDA,VII,Elective,T,,,
+21CSE429T,Data Science for Internet of Things,2021,UG,BDA,VII,Elective,T,,,
+21CSE448T,Bio-inspired Computing and Fuzzy Logic,2021,UG,BDA,VII,Elective,T,,,
+21CSE449T,Risk Analytics,2021,UG,BDA,VII,Elective,T,,,
+21CSE431T,Building Private Blockchain,2021,UG,BCT,VII,Elective,T,,,
+21CSE432T,Blockchain Technology with Hyperledger,2021,UG,BCT,VII,Elective,T,,,
+21CSE433T,Blockchain Business Models,2021,UG,BCT,VII,Elective,T,,,
+21CSE434T,Distributed Ledger Technology,2021,UG,BCT,VII,Elective,T,,,
+21CSE436T,Bitcoin Essentials and Use Cases,2021,UG,BCT,VII,Elective,T,,,
+21CSE438T,Web security,2021,UG,BCT,VII,Elective,T,,,
+21CSE435T,Smart Contracts and Application Development,2021,UG,BCT,VII,Elective,T,,,
+21CSE437T,Decentralized Applications on Blockchain,2021,UG,BCT,VII,Elective,T,,,
+21CSE420T,IT Workshop using Scilab,2021,UG,CSBS,VII,Elective,T,,,
+21CSE451T,Pattern Recognition Techniques,2021,UG,CSBS,VII,Elective,T,,,
+21CSE484T,Enterprise Systems,2021,UG,CSBS,VII,Elective,T,,,
+21CSE419T,Usability Design of Software Applications,2021,UG,CSBS,VII,Elective,T,,,
+21CSE453T,Speech Recognition,2021,UG,CSBS,VII,Elective,T,,,
+21CSE456T,Software Defined Networks,2021,UG,CSBS,VII,Elective,T,,,
+21CSE483T,Robotics and Embedded Systems,2021,UG,CSBS,VII,Elective,T,,,
+21CSE353T,"Augmented, Virtual and Mixed Reality",2021,UG,CSBS,VII,Elective,T,,,
+21CSE458T,Wireless and Mobile Communication,2021,UG,CSBS,VII,Elective,T,,,
+21CSE459T,Wireless Sensor Networks,2021,UG,CSBS,VII,Elective,T,,,
+21CSE481T,Information Visualization,2021,UG,CSBS,VII,Elective,T,,,
+21CSE441T,Mobile Game Development,2021,UG,GT,VII,Elective,T,,,
+21CSE442T,Game Monetization Techniques,2021,UG,GT,VII,Elective,T,,,
+21CSE439T,Virtual Reality and Augmented Reality,2021,UG,GT,VII,Elective,T,,,
+21CSE443T,Game Production and Publishing,2021,UG,GT,VII,Elective,T,,,
+21CSE444T,Applied Gamification,2021,UG,GT,VII,Elective,T,,,
+21CSE440T,Computer Animation and Simulation,2021,UG,GT,VII,Elective,T,,,
+21CSE445T,Metaverse Fundamentals,2021,UG,GT,VII,Elective,T,,,
+21CSE446T,Digital marketing and Publishing,2021,UG,GT,VII,Elective,T,,,
+21CSE524T,Computer Vision Techniques,2021,PG,M.Tech,IX,Elective,T,,,
+21CSE658T,Large Language Models,2021,PG,M.Tech,IX,Elective,T,,,
+21CSE668T,Business Data Analytics,2021,PG,M.Tech,IX,Elective,T,,,
+21CSE591T,Advanced Data Visualization,2021,PG,M.Tech,IX,Elective,T,,,
+26CSE1001J,Programming for Problem Solving,2026,UG,,I,Core,J,4,7,3-0-2-4
+21CSS202T,Fundamentals of Data Science,2021,UG,,III,Core,T,5,4,3-2-0-5
+21CSC201J,Data Structures and Algorithms,2021,UG,,III,Core,J,4,7,3-0-2-4
+21CSC202J,Operating Systems,2021,UG,,III,Core,J,4,7,3-0-2-4
+21LEM202T,Universal Human Values,2021,UG,,III,Core,T,3,2,1-2-0-3
+21CSS201T,Computer Organization and Architecture,2021,UG,,III,Core,T,4,,3-1-0-4
+21CSC203P,Advanced Programming Practice,2021,UG,,III,Core,P,4,3,3-1-0-4
+21CSC206P,Advanced Object Oriented Programming,2021,UG,,III,Core,P,3,3,2-1-0-3
+21MGH201T,Human Resource Management,2021,UG,,III,Core,T,2,3,2-0-0-2
+21CSC301T,Formal Language and Automata,2021,UG,,V,Core,T,3,3,3-0-0-3
+21CSC302J,Computer Networks,2021,UG,,V,Core,J,4,7,3-0-2-4
+21CSC307P,Machine Learning for Data Analytics,2021,UG,,V,Core,P,3,3,2-1-0-3
+21CSC305T,Blockchain using Cryptography,2021,UG,,V,Core,T,3,3,2-1-0-3
+21CSC307T,Deep Learning in Gaming and Application,2021,UG,,V,Core,T,3,3,2-1-0-3
+21GNP301L,Community Connect,2021,UG,,V,Core,L,1,2,0-0-2-1
+21LEM301T,Indian Art Form,2021,UG,,V,Core,T,1,1,1-0-0-1
+21GNH401T,Behavioral Psychology,2021,UG,,VII,Core,T,3,3,2-1-0-3
+21CSC101T,Object Oriented Design and Programming,2021,UG,,II,Core,T,,,
+21GNH101J,Philosophy of Engineering,2021,UG,,II,Core,J,,,
+21CSC204J,Design and Analysis of Algorithms,2021,UG,,IV,Core,J,,,
+21CSC205P,Database Management Systems,2021,UG,,IV,Core,P,,,
+21CSC206T,Artificial Intelligence,2021,UG,,IV,Core,T,,,
+21DCS201P,Design Thinking and Methodology,2021,UG,,IV,Core,P,,,
+21PDH201T,Social Engineering,2021,UG,,IV,Core,T,,,
+21CSC304J,Compiler Design,2021,UG,,VI,Core,J,,,
+21CSS301T,Full Stack Development,2021,UG,,VI,Core,T,,,
+21CSC303J,Software Engineering and Project Management,2021,UG,,VI,Core,J,,,
+21CSC306J,Software Engineering Perspectives in Computer Game Development,2021,UG,,VI,Core,J,,,
+21CSS303T,Data Science,2021,UG,,VI,Core,T,,,
+21CSC502T,Applied Deep Learning,2021,UG,,VIII,Core,T,,,
+21CSC501T,Natural Language Processing Techniques,2021,UG,,VIII,Core,T,,,
+21GNS502J,Research Methodology,2021,UG,,VIII,Core,J,,,
+21CSC556J,Database Systems Design: Relational and NoSQL,2021,UG,,II,Core,J,,,
+21CSC567J,Big Data Frameworks and MLOps,2021,UG,,II,Core,J,,,
+21CSC573J,Data Analysis and Interpretation,2021,UG,,II,Core,J,,,
+21CSC558J,Deep Learning Approaches,2021,UG,,II,Core,J,,,
+21CSE389T,Environmental Hydrology For Data Science,2021,UG,,V,Core,T,3,,3-0-0-3
+21CSE740T,Technologies for Smart Mega Factories,2021,UG,,V,Core,T,3,,3-0-0-3
+21IPE322P,Photogrammetry for Mapping and Surveying with UAVs,2021,UG,,V,Core,P,3,,3-0-0-3
+21IPE336T,Advanced Java Programming - offered by VOLVO,2021,UG,,V,Core,T,3,,3-0-0-3
+21IPE313P,Interactive Data Visualization Techniques and Analysis,2021,UG,,VII,Core,P,3,,3-0-0-3
+21CSE525T,Agent Technology,2021,UG,,IX,Core,T,3,,3-0-0-3
+21AIE540T,Super Intelligence,2021,UG,,IX,Core,T,3,,3-0-0-3
+21CSE552T,Computational Linguistics,2021,UG,,IX,Core,T,3,,3-0-0-3
+21AIE535T,Artificial Intelligence and Internet of Things,2021,UG,,IX,Core,T,3,,3-0-0-3
+21CSC555J,Machine Learning algorithms,2021,UG,,I,Core,J,4,,3-0-2-4
+21CSC554J,Applied Data Science,2021,UG,,I,Core,J,4,,3-0-2-4
+21CSC529T,Inferential Statistic,2021,UG,,I,Core,T,3,,2-1-0-3
+21IPC501J,Research Methodology,2021,UG,,I,Core,J,4,,3-0-2-4
+21CSE564T,Elective -1 : Big Data Eco System (Data science),2021,UG,,I,Core,T,3,,3-0-0-3
+21CSE558T,Elective 2 -Deep Neural Network Architecture(BDA & Data Engineering),2021,UG,,I,Core,T,3,,3-0-0-3
+21CSC601T,Case Studies,2021,UG,,III,Core,T,3,,3-0-0-3
+21CSE562T,SQL and NoSQL for Data Science,2021,UG,,III,Core,T,3,,3-0-0-3
+21CSE655T,Advanced Machine Learning Algorithms,2021,UG,,III,Core,T,3,,3-0-0-3
+21CSE659T,Reinforcement Learning,2021,UG,,III,Core,T,3,,3-0-0-3
+21IPE341P,21IPE341P ERP Application Development and Enterprise Data Platforms,2021,UG,,V,Core,P,,,
+21CSE741T,Photogrammetry for Mapping and Surveying with UAVs,2021,,,,,T,,,
+MBI24I07L,Deep Learning,,,,,,L,,,
+MBG24108L,Programming Languages for Business Decisions (Practical),,,,,,L,,,
+MHDS 18106 / MHDS21106,PYTHON PROGRAMMING FOR DATA ANALYTICS,,,,,,,,,
+MHDS 18206 / MHDS21301,SQL and NoSQL for Data Science,,,,,,,,,
+21CSE216P,Linux and Container Technologies,2021,,,,,P,,,
+21IPE341T,Mastering the Data Paradox with AI and ML,2021,,,,,T,,,

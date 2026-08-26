@@ -10,15 +10,17 @@
 
   <header>
     <div class="header-left">
+      <span class="brand-mark" aria-hidden="true">S</span>
       <p class="eyebrow">SRM Institute of Science and Technology</p>
       <h1>Faculty Allocation System</h1>
+      <span class="header-subtitle">Department Academic Management Portal</span>
     </div>
-    <div class="header-right">Academic Portal</div>
+    <div class="header-right">Admin Portal</div>
   </header>
 
   <main class="main-wide">
     <div class="report-page">
-      <a class="back-link report-back" href="/admin">← Back to Admin Dashboard</a>
+      <a class="back-link report-back" href="{{ url_for('admin.faculty_report') }}">← Back to Faculty Reports</a>
 
       <div class="card wide report-card">
         <p class="overline">Administration</p>
@@ -27,7 +29,39 @@
         <p class="subtitle">Faculty allocations, workload, and weekly timetables.</p>
       </div>
 
+      <div class="dashboard-grid report-navigation" aria-label="Faculty report views">
+        <a class="dashboard-action" href="{{ url_for('admin.workload_report') }}"><span class="action-icon">W</span><span><strong>Workload Calculation</strong><span>Review subject-by-subject workload</span></span></a>
+        <a class="dashboard-action" href="{{ url_for('admin.subject_allocation_report') }}"><span class="action-icon">A</span><span><strong>Subject Allocation</strong><span>See subjects assigned to faculty</span></span></a>
+        <a class="dashboard-action" href="{{ url_for('admin.lookup_timetable_report') }}"><span class="action-icon">T</span><span><strong>Lookup Timetable</strong><span>View teaching times and venues</span></span></a>
+      </div>
+
+      {% set metrics = namespace(within=0, pending=0, overloaded=0, assistant=0, associate=0, cofaculty=0, assigned=0) %}
+      {% for report in reports %}
+      {% set metrics.assigned = metrics.assigned + report.workload.assigned_workload %}
+      {% if report.workload.required_workload is none or not report.workload.is_overloaded and report.workload.pending_workload == 0 %}
+      {% set metrics.within = metrics.within + 1 %}
+      {% elif report.workload.is_overloaded %}
+      {% set metrics.overloaded = metrics.overloaded + 1 %}
+      {% elif report.workload.pending_workload is not none and report.workload.pending_workload > 0 %}
+      {% set metrics.pending = metrics.pending + 1 %}
+      {% endif %}
+      {% if report.faculty.professor_post == "Assistant Professor" %}{% set metrics.assistant = metrics.assistant + 1 %}{% endif %}
+      {% if report.faculty.professor_post == "Associate Professor" %}{% set metrics.associate = metrics.associate + 1 %}{% endif %}
+      {% if report.faculty.professor_post == "Cofaculty" %}{% set metrics.cofaculty = metrics.cofaculty + 1 %}{% endif %}
+      {% endfor %}
+      <section class="metric-grid report-metrics" aria-label="Faculty report summary">
+        <div class="metric-card"><span class="metric-label">Total Faculty</span><span class="metric-value">{{ reports|length }}</span></div>
+        <div class="metric-card"><span class="metric-label">Within Workload</span><span class="metric-value metric-green">{{ metrics.within }}</span></div>
+        <div class="metric-card"><span class="metric-label">Pending Allocation</span><span class="metric-value metric-blue">{{ metrics.pending }}</span></div>
+        <div class="metric-card"><span class="metric-label">Overloaded Faculty</span><span class="metric-value metric-orange">{{ metrics.overloaded }}</span></div>
+        <div class="metric-card"><span class="metric-label">Assistant Professors</span><span class="metric-value">{{ metrics.assistant }}</span></div>
+        <div class="metric-card"><span class="metric-label">Associate Professors</span><span class="metric-value">{{ metrics.associate }}</span></div>
+        <div class="metric-card"><span class="metric-label">Cofaculty</span><span class="metric-value">{{ metrics.cofaculty }}</span></div>
+        <div class="metric-card"><span class="metric-label">Total Assigned Workload</span><span class="metric-value">{{ metrics.assigned }}h</span></div>
+      </section>
+
       <section class="card wide report-card report-filters" aria-label="Faculty report filters">
+        <div class="query-heading"><div><p class="overline">Availability Query</p><p class="query-helper">Filter faculty availability and allocation records.</p></div><span class="query-chip">Live filters</span></div>
         <div class="report-filter-grid">
           <div class="form-field report-filter-search">
             <label for="facultyReportSearch">Faculty Name / ID</label>
@@ -81,6 +115,7 @@
           <span>Faculty ID: {{ report.faculty.faculty_id }}</span>
           <span class="post-badge">{{ report.faculty.professor_post }}</span>
           <span class="post-badge">Special Role: {{ report.faculty.special_role or "None" }}</span>
+          <span class="post-badge">Cabin Number: {{ report.faculty.cabin_no or "Not assigned" }}</span>
         </div>
 
         <section class="report-section report-workload">
@@ -88,7 +123,7 @@
           <div class="profile-info">
             <div class="info-row">
               <span class="info-label">Special Role</span>
-              <span class="info-value">{{ report.faculty.special_role or "None" }}{% if report.faculty.special_role and report.faculty.special_role != "None" %} (+2 Hours){% endif %}</span>
+              <span class="info-value">{{ report.faculty.special_role or "None" }}{% if report.faculty.special_role in ["FA", "AA", "Project Incharge", "TC", "Placement Coordinator"] %} (+2 Hours){% endif %}</span>
             </div>
             <div class="info-row">
               <span class="info-label">Assigned Workload</span>

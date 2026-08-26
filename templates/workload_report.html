@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workload Calculation — Faculty Allocation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+  <header><div class="header-left"><span class="brand-mark" aria-hidden="true">S</span><p class="eyebrow">SRM Institute of Science and Technology</p><h1>Faculty Allocation System</h1><span class="header-subtitle">Department Academic Management Portal</span></div><div class="header-right">Admin Portal</div></header>
+  <main class="main-wide"><div class="report-page">
+    <a class="back-link report-back" href="{{ url_for('admin.faculty_report') }}">← Back to Faculty Reports</a>
+    <div class="card wide report-card"><p class="overline">Administration</p><h2>Workload Calculation</h2><p class="subtitle">Subject-by-subject workload from existing allocations.</p>
+      <form class="report-select-form" method="get"><div class="form-field"><label for="faculty_id">Faculty</label><select class="form-input" id="faculty_id" name="faculty_id" onchange="this.form.submit()"><option value="">Select Faculty</option>{% for item in faculties %}<option value="{{ item.faculty_id }}" {% if faculty and item.faculty_id == faculty.faculty_id %}selected{% endif %}>{{ item.username }} — {{ item.faculty_id }}</option>{% endfor %}</select></div></form>
+    </div>
+    {% if faculty %}
+    <div class="card wide report-card"><p class="overline">Faculty Member</p><h2>{{ faculty.username }}</h2><div class="report-meta"><span>Faculty ID: {{ faculty.faculty_id }}</span><span class="post-badge">{{ faculty.professor_post }}</span><span class="post-badge">Special Role: {{ faculty.special_role or "None" }}</span></div>
+      <div class="profile-info"><div class="info-row"><span class="info-label">Required Workload</span><span class="info-value">{% if workload.required_workload is not none %}{{ workload.required_workload }} hours{% else %}Not configured{% endif %}</span></div></div>
+      <div class="table-wrap"><table class="report-table"><thead><tr><th>Subject</th><th>Workload</th></tr></thead><tbody>{% for row in workload_rows %}<tr><td>{{ row.subject_code }} — {{ row.subject_name }}</td><td>{{ row.hours }} hours</td></tr>{% endfor %}{% if faculty.special_role in ["FA", "AA", "Project Incharge", "TC", "Placement Coordinator"] %}<tr><td>Special Role</td><td>+2 hours</td></tr>{% endif %}<tr><th>Total Workload</th><th>{{ workload.assigned_workload }} hours</th></tr></tbody></table></div>
+      {% if workload.required_workload is not none %}<div class="profile-info"><div class="info-row">{% if workload.is_overloaded %}<span class="info-label">Workload exceeded by</span><span class="info-value">{{ workload.excess_workload }} hours</span>{% else %}<span class="info-label">Pending Workload</span><span class="info-value">{{ workload.pending_workload }} hours</span>{% endif %}</div></div>{% endif %}
+    </div>
+    {% elif faculties %}<div class="card wide report-card"><p class="empty-state">Select a faculty to view workload.</p></div>{% endif %}
+  </div></main>
+</body>
+</html>

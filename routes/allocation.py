@@ -7,7 +7,7 @@ from models.faculty_allocation import FacultyAllocation
 from flask import Blueprint, request, jsonify, render_template
 
 from scheduler.config.subjects import SUBJECTS
-from scheduler.lookup import get_allocation_periods
+from scheduler.lookup import get_allocation_periods, TIMETABLE
 
 from utils.auth import admin_required
 from utils.validators import validate_allocation
@@ -16,6 +16,52 @@ allocation_bp = Blueprint(
     "allocation",
     __name__
 )
+
+
+def get_lab_start_slots():
+    """Return each timetable lab session's first P slot once."""
+
+    slots = {}
+
+    for periods in TIMETABLE.values():
+        period_numbers = sorted(int(period) for period in periods)
+
+        batch_keys = {
+            batch_key
+            for period in period_numbers
+            for batch_key in periods[str(period)]
+        }
+
+        for batch_key in batch_keys:
+            practical_periods = [
+                period for period in period_numbers
+                if periods[str(period)].get(batch_key, "").startswith("P")
+            ]
+
+            runs = []
+            for period in practical_periods:
+                if not runs or period != runs[-1][-1] + 1:
+                    runs.append([period])
+                else:
+                    runs[-1].append(period)
+
+            for run in runs:
+                for index in range(0, len(run) - 1, 2):
+                    start_period = run[index]
+                    end_period = run[index + 1]
+                    start = periods[str(start_period)][batch_key]
+                    end = periods[str(end_period)][batch_key]
+                    slots[start] = {"start": start, "end": end}
+
+    return sorted(
+        slots.values(),
+        key=lambda slot: int(slot["start"][1:])
+    )
+
+
+@allocation_bp.route("/allocation/lab-slots")
+def lab_slots():
+    return jsonify(get_lab_start_slots())
 def check_allocation_conflict(
     batch,
     slot,
@@ -148,14 +194,7 @@ def add_allocation():
     elif course_type == "P":
 
         class_type = "practical"
-
-        lab_slots = subject.get("lab_slots", {})
-        slot = lab_slots.get(str(data["batch"]))
-
-        if not slot:
-            return jsonify({
-                "error": "No practical slot configured for this batch."
-            }), 400
+        slot = data.get("lab_slot")
 
     elif course_type == "J":
 
@@ -171,19 +210,22 @@ def add_allocation():
             slot = subject["slot"]
 
         else:
-
-            lab_slots = subject.get("lab_slots", {})
-            slot = lab_slots.get(str(data["batch"]))
-
-            if not slot:
-                return jsonify({
-                    "error": "No practical slot configured for this batch."
-                }), 400
+            slot = data.get("lab_slot")
 
     else:
 
         return jsonify({
             "error": "Invalid course type."
+        }), 400
+
+    valid_lab_slots = {
+        lab_slot["start"]
+        for lab_slot in get_lab_start_slots()
+    }
+
+    if class_type == "practical" and slot not in valid_lab_slots:
+        return jsonify({
+            "error": "Please select a valid two-period lab session."
         }), 400
 
     if (
@@ -338,11 +380,25 @@ def edit_allocation(id):
         allocation.batch
     )
 
+    new_slot = allocation.slot
+    if allocation.class_type == "practical":
+        new_slot = data.get("lab_slot", allocation.slot)
+
+        valid_lab_slots = {
+            lab_slot["start"]
+            for lab_slot in get_lab_start_slots()
+        }
+
+        if new_slot not in valid_lab_slots:
+            return jsonify({
+                "error": "Please select a valid two-period lab session."
+            }), 400
+
     # Check whether moving this allocation creates
     # a conflict with another allocation.
     conflict = check_allocation_conflict(
         batch=new_batch,
-        slot=allocation.slot,
+        slot=new_slot,
         class_type=allocation.class_type,
         subject_code=allocation.subject_code,
         section=data.get("section", allocation.section),
@@ -355,6 +411,7 @@ def edit_allocation(id):
         }), 400
 
     allocation.batch = new_batch
+    allocation.slot = new_slot
 
     allocation.section = data.get(
         "section",

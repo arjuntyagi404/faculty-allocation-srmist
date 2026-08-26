@@ -39,9 +39,8 @@ def admin_login():
             error="Access denied."
         )
 
-    if not check_password_hash(
-        faculty.password_hash,
-        password
+    if not faculty.password_hash or not check_password_hash(
+        faculty.password_hash, password
     ):
 
         return render_template(
@@ -71,9 +70,8 @@ def faculty_login():
             error="Invalid Faculty ID or Password."
         )
 
-    if not check_password_hash(
-        faculty.password_hash,
-        password
+    if not faculty.password_hash or not check_password_hash(
+        faculty.password_hash, password
     ):
         return render_template(
             "faculty_login.html",

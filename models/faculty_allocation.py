@@ -23,8 +23,8 @@ class FacultyAllocation(db.Model):
     )
 
     slot = db.Column(
-        db.String(10),
-        nullable=False
+        db.String(255),
+        nullable=True
     )
 
     class_type = db.Column(
@@ -35,7 +35,7 @@ class FacultyAllocation(db.Model):
 
     batch = db.Column(
         db.Integer,
-        nullable=False
+        nullable=True
     )
     # We'll use this later
     section = db.Column(db.String(20), nullable=True)

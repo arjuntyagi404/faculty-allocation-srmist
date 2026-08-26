@@ -17,17 +17,22 @@ class Faculty(db.Model):
     email = db.Column(
         db.String(100),
         unique=True,
-        nullable=False
+        nullable=True
     )
 
     contact = db.Column(
         db.String(15),
-        nullable=False
+        nullable=True
+    )
+
+    cabin_no = db.Column(
+        db.String(50),
+        nullable=True
     )
 
     password_hash = db.Column(
         db.String(255),
-        nullable=False
+        nullable=True
     )
 
     role = db.Column(
@@ -37,14 +42,14 @@ class Faculty(db.Model):
     )
 
     professor_post = db.Column(
-        db.String(50),
-        nullable=False,
+        db.String(80),
+        nullable=True,
         default="Assistant Professor"
     )
 
     special_role = db.Column(
-        db.String(20),
-        nullable=False,
+        db.String(30),
+        nullable=True,
         default="None"
     )
 
@@ -60,6 +65,7 @@ class Faculty(db.Model):
             "username": self.username,
             "email": self.email,
             "contact": self.contact,
+            "cabin_no": self.cabin_no,
             "role": self.role,
             "professor_post": self.professor_post,
             "special_role": self.special_role or "None"

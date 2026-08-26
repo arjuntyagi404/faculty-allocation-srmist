@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subject Preference — Faculty Allocation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <p class="eyebrow">SRM Institute of Science and Technology</p>
+      <h1>Faculty Allocation System</h1>
+      <span class="header-subtitle">Department Academic Management Portal</span>
+    </div>
+    <div class="header-right">Faculty Portal</div>
+  </header>
+
+  <main class="main-wide">
+    <div class="page-wrap">
+      <div class="card wide preference-card">
+        <p class="overline">Faculty Portal</p>
+        <h2>Subject Preference</h2>
+        <p class="subtitle">{{ faculty.username }} · {{ faculty.faculty_id }}</p>
+
+        <div class="preference-tabs" role="tablist" aria-label="Subject preference sections">
+          <button class="preference-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="regulationPanel" data-tab="regulationPanel">Academic Regulation</button>
+          <button class="preference-tab" type="button" role="tab" aria-selected="false" aria-controls="preferencesPanel" data-tab="preferencesPanel">Subject Preferences</button>
+        </div>
+
+        <form id="subjectPreferenceForm" class="preference-form" method="post" action="{{ url_for('subject_preference.submit_subject_preference') }}">
+          {% if form_error %}<p class="form-error preference-error">{{ form_error }}</p>{% endif %}
+
+          <section class="preference-panel is-visible" id="regulationPanel" role="tabpanel">
+            <section class="preference-section">
+              <p class="section-label">Academic Regulation</p>
+              <input type="hidden" id="regulation" name="regulation" value="{{ form_values.get('regulation', preference.regulation if preference else '') }}">
+              <div class="selector-grid regulation-grid" data-selector="regulation">
+                <button class="selector-button selector-disabled" type="button" disabled>2026 <small>Coming Soon</small></button>
+                <button class="selector-button {% if form_values.get('regulation', preference.regulation if preference else '') == '2021' %}is-selected{% endif %}" type="button" data-value="2021">2021 <small>Available now</small></button>
+                <button class="selector-button selector-disabled" type="button" disabled>2018 <small>Coming Soon</small></button>
+              </div>
+            </section>
+
+            <section class="preference-section selector-step" id="programStep">
+              <p class="section-label">Program</p>
+              <input type="hidden" id="program" name="program" value="{{ form_values.get('program', preference.program if preference else '') }}">
+              <div class="selector-grid program-grid" data-selector="program">
+                {% for value in ["UG", "PG"] %}
+                <button class="selector-button {% if form_values.get('program', preference.program if preference else '') == value %}is-selected{% endif %}" type="button" data-value="{{ value }}">{{ value }}</button>
+                {% endfor %}
+              </div>
+            </section>
+
+            <section class="preference-section selector-step" id="curriculumStep">
+              <p class="section-label">Department Curriculum</p>
+              <input type="hidden" id="department" name="department" value="{{ form_values.get('department', preference.department if preference else '') }}">
+              {% for program, departments in curricula.items() %}
+              <div class="curriculum-group" data-program="{{ program }}">
+                <p class="curriculum-label">{{ program }} Departments</p>
+                <div class="curriculum-grid">
+                  {% for name, url in departments %}
+                  <a class="curriculum-card {% if form_values.get('department', preference.department if preference else '') == name %}is-selected{% endif %}" href="{{ url }}" target="_blank" rel="noopener" data-department="{{ name }}">
+                    <strong>{{ name }}</strong>
+                    <span>SRM Curriculum 2021</span>
+                    <span class="external-link" aria-hidden="true">&#8599;</span>
+                  </a>
+                  {% endfor %}
+                </div>
+              </div>
+              {% endfor %}
+            </section>
+          </section>
+
+          <section class="preference-panel" id="preferencesPanel" role="tabpanel" hidden>
+            <p class="preference-panel-intro">Choose your teaching preferences for the selected academic context.</p>
+            {% if faculty.special_role == "FA" %}
+            <section class="preference-section fa-section">
+              <p class="section-label">Faculty Advisor (FA) Information</p>
+              {% set saved_fa_semester = form_values.get('fa_semester', preference.fa_semester if preference else '') %}
+              <div class="form-field fa-field">
+                <label for="fa_semester">FA Semester</label>
+                <select class="form-input" id="fa_semester" name="fa_semester">
+                  <option value="">Select Semester</option>
+                  {% for semester in fa_semesters %}
+                  <option value="{{ semester }}" {% if saved_fa_semester == semester %}selected{% endif %}>{{ semester }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            </section>
+            {% endif %}
+            {% for group, label in [("core", "Core Subjects"), ("elective", "Elective Subjects")] %}
+            <section class="preference-section preference-subject-section">
+              <p class="section-label">{{ label }} <span>(Choose Three)</span></p>
+              <div class="preference-card-stack">
+                {% for number in [1, 2, 3] %}
+                {% set field = group ~ "_preference_" ~ number %}
+                {% set saved_subject = form_values.get(field, preference[field] if preference else '') %}
+                {% set times_field = group ~ "_times_handled_" ~ number %}
+                {% set hours_field = group ~ "_teaching_hours_" ~ number %}
+                {% set ecurricula_field = group ~ "_has_ecurricula_" ~ number %}
+                {% set lectures_field = group ~ "_has_online_lectures_" ~ number %}
+                <div class="preference-item" data-preference-group="{{ group }}">
+                  <div class="preference-item-heading"><span class="preference-number">0{{ number }}</span><label for="{{ field }}">{{ label }} Preference {{ number }}</label></div>
+                  <select class="form-input" id="{{ field }}" name="{{ field }}" {% if faculty.special_role == "FA" and field == "core_preference_1" and not saved_fa_semester %}disabled{% endif %}>
+                    <option value="">Select subject</option>
+                    {% if faculty.special_role == "FA" and field == "core_preference_1" %}
+                    {% for semester, subjects in fa_core_subjects.items() %}
+                    {% for subject in subjects %}
+                    <option value="{{ subject.code }}" data-fa-semesters="{{ semester }}" {% if saved_subject == subject.code %}selected{% endif %}>{{ subject.code }} — {{ subject.name }}</option>
+                    {% endfor %}
+                    {% endfor %}
+                    {% else %}
+                    {% for subject in subjects_by_category[group] %}
+                    <option value="{{ subject.code }}" {% if saved_subject == subject.code %}selected{% endif %}>{{ subject.code }} — {{ subject.name }}</option>
+                    {% endfor %}
+                    {% endif %}
+                  </select>
+                  <div class="preference-item-options">
+                    <label class="times-label" for="{{ times_field }}">Number of times this subject has been handled previously</label>
+                    <input class="form-input" id="{{ times_field }}" name="{{ times_field }}" type="number" min="0" step="1" value="{{ preference[times_field] if preference and preference[times_field] is not none else '' }}">
+                    <label class="hours-label" for="{{ hours_field }}">Approximate teaching hours completed for this subject</label>
+                    <input class="form-input" id="{{ hours_field }}" name="{{ hours_field }}" type="number" min="0" step="1" placeholder="40 hours" value="{{ preference[hours_field] if preference and preference[hours_field] is not none else '' }}">
+                    <label class="checkbox-label"><input id="{{ ecurricula_field }}" type="checkbox" name="{{ ecurricula_field }}" value="yes" {% if preference and preference[ecurricula_field] %}checked{% endif %}> <span>Prepared e-Curricula / course material for this subject</span></label>
+                    <label class="checkbox-label"><input id="{{ lectures_field }}" type="checkbox" name="{{ lectures_field }}" value="yes" {% if preference and preference[lectures_field] %}checked{% endif %}> <span>Delivered online video lectures for this subject</span></label>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </section>
+            {% endfor %}
+
+            <p class="form-error preference-validation-error" id="preferenceValidationError" hidden></p>
+            <div class="preference-actions">
+              <button class="btn-primary" type="submit">Save Preferences</button>
+              <a class="btn-secondary" href="{{ url_for('auth.dashboard') }}">Back to Dashboard</a>
+            </div>
+          </section>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script src="{{ url_for('static', filename='subject_preference.js') }}"></script>
+</body>
+</html>

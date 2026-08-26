@@ -1,3 +1,6 @@
+from utils.special_roles import SPECIAL_ROLE_WORKLOAD_ROLES
+
+
 WORKLOAD_RULES = {
     ("J", "theory"): 3,
     ("J", "practical"): 4,
@@ -6,9 +9,14 @@ WORKLOAD_RULES = {
 }
 
 WORKLOAD_CAPACITIES = {
+    "Professor": 18,
+    "Professor & Head": 18,
     "Assistant Professor": 16,
+    "Assistant Professor - Jr.G": 16,
     "Associate Professor": 14,
 }
+
+DEFAULT_WORKLOAD_CAPACITY = 10
 
 SPECIAL_ROLE_WORKLOAD = 2
 
@@ -36,9 +44,16 @@ def calculate_workload(allocations, professor_post=None, special_role=None):
         calculate_allocation_workload(allocation)
         for allocation in allocations
     )
-    if special_role and special_role != "None":
-        assigned_workload += SPECIAL_ROLE_WORKLOAD
-    required_workload = WORKLOAD_CAPACITIES.get(professor_post)
+    base_required_workload = WORKLOAD_CAPACITIES.get(
+        professor_post,
+        DEFAULT_WORKLOAD_CAPACITY,
+    )
+    role_adjustment = (
+        SPECIAL_ROLE_WORKLOAD
+        if special_role in SPECIAL_ROLE_WORKLOAD_ROLES
+        else 0
+    )
+    required_workload = base_required_workload + role_adjustment
 
     if required_workload is None:
         return {

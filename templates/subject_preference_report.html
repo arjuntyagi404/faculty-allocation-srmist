@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subject Preference Report — Faculty Allocation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <p class="eyebrow">SRM Institute of Science and Technology</p>
+      <h1>Faculty Allocation System</h1>
+      <span class="header-subtitle">Department Academic Management Portal</span>
+    </div>
+    <div class="header-right">Admin Portal</div>
+  </header>
+
+  <main class="main-wide">
+    <div class="report-page preference-report-page">
+      <a class="back-link report-back" href="/admin">&lt;- Back to Admin Dashboard</a>
+
+      <div class="card wide report-card">
+        <p class="overline">Administration</p>
+        <h2>Subject Preference Report</h2>
+        <div class="divider divider-left"></div>
+        <p class="subtitle">Faculty teaching preferences and submission status.</p>
+      </div>
+
+      <section class="card wide report-card report-filters" aria-label="Subject preference report filters">
+        <div class="report-filter-grid preference-report-filter-grid">
+          <div class="form-field report-filter-search">
+            <label for="preferenceReportSearch">Faculty Name / ID</label>
+            <input id="preferenceReportSearch" class="form-input" type="search" placeholder="Search faculty">
+          </div>
+
+          {% set filters = [
+            ("post", "Professor Post", filter_options.posts),
+            ("regulation", "Regulation", filter_options.regulations),
+            ("program", "Program", filter_options.programs),
+            ("semester", "Semester Type", filter_options.semesters)
+          ] %}
+          {% for key, label, options in filters %}
+          <div class="form-field">
+            <label for="preferenceReport{{ key|capitalize }}">{{ label }}</label>
+            <select id="preferenceReport{{ key|capitalize }}" class="form-input preference-report-filter" data-filter="{{ key }}">
+              <option value="">All</option>
+              {% for option in options %}
+              <option value="{{ option }}">{{ option }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          {% endfor %}
+        </div>
+        <p id="preferenceReportNoResults" class="empty-state" hidden>No faculty records match these filters.</p>
+      </section>
+
+      <section class="card wide report-card preference-table-card">
+        <div class="table-wrap">
+          <table class="report-table preference-report-table">
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Faculty ID</th>
+                <th>Faculty Name</th>
+                <th>Professor Post</th>
+                <th>Regulation</th>
+                <th>Program</th>
+                <th>Semester Type</th>
+                <th>Core Preference 1</th>
+                <th>Core Preference 2</th>
+                <th>Core Preference 3</th>
+                <th>Elective Preference 1</th>
+                <th>Elective Preference 2</th>
+                <th>Elective Preference 3</th>
+              </tr>
+            </thead>
+            <tbody id="preferenceReportRows">
+              {% for faculty in faculties %}
+              {% set preference = preferences.get(faculty.faculty_id) %}
+              {% set display_value = "Not Submitted" if not preference else "" %}
+              <tr class="preference-report-row"
+                  data-faculty="{{ faculty.username }} {{ faculty.faculty_id }}"
+                  data-post="{{ faculty.professor_post }}"
+                  data-regulation="{{ preference.regulation if preference else '' }}"
+                  data-program="{{ preference.program if preference else '' }}"
+                  data-semester="{{ preference.semester_type if preference else '' }}">
+                <td>
+                  {% if preference %}
+                  <span class="status-badge preference-status-submitted">Submitted</span>
+                  {% else %}
+                  <span class="status-badge preference-status-not-submitted">Not Submitted</span>
+                  {% endif %}
+                </td>
+                <td>{{ faculty.faculty_id }}</td>
+                <td>{{ faculty.username }}</td>
+                <td>{{ faculty.professor_post }}</td>
+                <td>{{ preference.regulation if preference else display_value }}</td>
+                <td>{{ preference.program if preference else display_value }}</td>
+                <td>{{ preference.semester_type if preference else display_value }}</td>
+                <td>{{ preference.core_preference_1 if preference and preference.core_preference_1 else display_value }}</td>
+                <td>{{ preference.core_preference_2 if preference and preference.core_preference_2 else display_value }}</td>
+                <td>{{ preference.core_preference_3 if preference and preference.core_preference_3 else display_value }}</td>
+                <td>{{ preference.elective_preference_1 if preference and preference.elective_preference_1 else display_value }}</td>
+                <td>{{ preference.elective_preference_2 if preference and preference.elective_preference_2 else display_value }}</td>
+                <td>{{ preference.elective_preference_3 if preference and preference.elective_preference_3 else display_value }}</td>
+              </tr>
+              {% else %}
+              <tr>
+                <td class="empty-state" colspan="13">No faculty records available.</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="{{ url_for('static', filename='subject_preference_report.js') }}"></script>
+</body>
+</html>

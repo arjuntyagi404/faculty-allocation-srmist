@@ -1,4 +1,14 @@
 let subjectsData = [];
+let labSlotsData = [];
+
+async function loadLabSlots() {
+
+    const res = await fetch("/allocation/lab-slots");
+
+    labSlotsData = await res.json();
+
+}
+
 async function loadFaculty() {
 
     const res = await fetch("/faculty/list");
@@ -32,14 +42,32 @@ async function loadSubjects() {
 
     select.innerHTML = "";
 
-    subjectsData.forEach(s => {
+    const categoryLabels = {
+        core: "Core Subjects",
+        elective: "Elective Subjects",
+        lab: "Lab Subjects",
+    };
 
-        select.innerHTML += `
-            <option value="${s.subject_code}">
-                ${s.subject_name}
-            </option>
-        `;
+    ["core", "elective", "lab"].forEach(category => {
+        const subjects = subjectsData.filter(
+            subject => subject.category === category
+        );
 
+        if (!subjects.length) {
+            return;
+        }
+
+        const group = document.createElement("optgroup");
+        group.label = categoryLabels[category];
+
+        subjects.forEach(subject => {
+            const option = document.createElement("option");
+            option.value = subject.subject_code;
+            option.textContent = subject.subject_name;
+            group.appendChild(option);
+        });
+
+        select.appendChild(group);
     });
 
     updateClassType();
@@ -56,9 +84,14 @@ function updateClassType() {
 
     const field =
         document.getElementById("classTypeField");
+    const labSlotField =
+        document.getElementById("labSlotField");
+    const labSlot =
+        document.getElementById("labSlot");
 
     if (!subject) {
         field.style.display = "none";
+        labSlotField.style.display = "none";
         return;
     }
 
@@ -74,6 +107,22 @@ function updateClassType() {
         field.style.display = "none";
 
     }
+
+    const isPractical =
+        courseType === "P" ||
+        (courseType === "J" && document.getElementById("classType").value === "practical");
+
+    labSlotField.style.display = isPractical ? "block" : "none";
+    labSlot.required = isPractical;
+
+    if (isPractical && labSlot.options.length === 1) {
+        labSlotsData.forEach(slot => {
+            const option = document.createElement("option");
+            option.value = slot.start;
+            option.textContent = `${slot.start}-${slot.end}`;
+            labSlot.appendChild(option);
+        });
+    }
 }
 
 document
@@ -82,6 +131,10 @@ document
         "change",
         updateClassType
     );
+
+document
+    .getElementById("classType")
+    .addEventListener("change", updateClassType);
 
 async function loadAllocations() {
 
@@ -164,7 +217,10 @@ async function addAllocation(event) {
         document.getElementById("building_name").value,
 
     class_type:
-        document.getElementById("classType").value
+        document.getElementById("classType").value,
+
+    lab_slot:
+        document.getElementById("labSlot").value
 
 };
 
@@ -229,6 +285,14 @@ async function editAllocation(id) {
     document.getElementById("batch").value =
         allocation.batch;
 
+    document.getElementById("classType").value =
+        allocation.class_type;
+
+    updateClassType();
+
+    document.getElementById("labSlot").value =
+        allocation.slot;
+
     document.getElementById("section").value =
         allocation.section || "";
     document.getElementById("room_number").value = allocation.room_number || "";
@@ -262,6 +326,6 @@ async function deleteAllocation(id) {
 
 loadFaculty();
 
-loadSubjects();
+loadLabSlots().then(loadSubjects);
 
 loadAllocations();

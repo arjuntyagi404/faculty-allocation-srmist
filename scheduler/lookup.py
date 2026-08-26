@@ -130,13 +130,6 @@ def get_allocation_periods(slot: str, batch: int, class_type: str):
 
         occurrences = lookup_practical_slot(slot)
 
-        # A practical slot belongs to a specific batch.
-        occurrences = [
-            occurrence
-            for occurrence in occurrences
-            if occurrence["batch"] == batch
-        ]
-
         if not occurrences:
             return []
 
@@ -152,10 +145,10 @@ def get_allocation_periods(slot: str, batch: int, class_type: str):
         if str(second_period) not in periods:
             return []
 
-        batch_key = f"batch{batch}"
+        timetable_batch_key = f"batch{first['batch']}"
 
-        first_cell = periods[str(first_period)][batch_key]
-        second_cell = periods[str(second_period)][batch_key]
+        first_cell = periods[str(first_period)][timetable_batch_key]
+        second_cell = periods[str(second_period)][timetable_batch_key]
 
         if (
             first_cell.startswith("P")

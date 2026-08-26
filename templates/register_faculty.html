@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faculty Registration — Faculty Allocation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <p class="eyebrow">SRM Institute of Science and Technology</p>
+      <h1>Faculty Allocation System</h1>
+      <span class="header-subtitle">Department Academic Management Portal</span>
+    </div>
+    <div class="header-right">Faculty Access</div>
+  </header>
+
+  <main>
+    <div class="card register-card">
+      <p class="overline">Faculty Access</p>
+      <h2>New Faculty Registration</h2>
+      <p class="subtitle">Create your faculty portal account.</p>
+
+      {% if error %}<p class="form-error register-error">{{ error }}</p>{% endif %}
+      <form method="post" class="register-form">
+        <div class="register-grid">
+          <div class="form-field">
+            <label for="faculty_id">Faculty ID</label>
+            <input class="form-input" id="faculty_id" name="faculty_id" type="text" value="{{ form.get('faculty_id', '') if form else '' }}" required>
+          </div>
+          <div class="form-field">
+            <label for="username">Full Name</label>
+            <input class="form-input" id="username" name="username" type="text" value="{{ form.get('username', '') if form else '' }}" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input class="form-input" id="email" name="email" type="email" value="{{ form.get('email', '') if form else '' }}" required>
+          </div>
+          <div class="form-field">
+            <label for="contact">Phone Number</label>
+            <input class="form-input" id="contact" name="contact" type="tel" value="{{ form.get('contact', '') if form else '' }}" required>
+          </div>
+          <div class="form-field">
+            <label for="cabin_no">Cabin Number</label>
+            <input class="form-input" id="cabin_no" name="cabin_no" type="text" value="{{ form.get('cabin_no', '') if form else '' }}" required>
+          </div>
+          <div class="form-field">
+            <label for="password">Password</label>
+            <input class="form-input" id="password" name="password" type="password" required>
+          </div>
+          <div class="form-field">
+            <label for="confirm_password">Confirm Password</label>
+            <input class="form-input" id="confirm_password" name="confirm_password" type="password" required>
+          </div>
+        </div>
+        <div class="register-actions">
+          <button class="btn-primary" type="submit">Create Faculty Account</button>
+          <a class="btn-secondary" href="{{ url_for('auth.faculty_login') }}">Back to Login</a>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

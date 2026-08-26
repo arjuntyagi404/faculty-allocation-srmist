@@ -1,15 +1,28 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, render_template, redirect, url_for
 from config import db
 from models.faculty import Faculty
 from werkzeug.security import generate_password_hash
 from utils.auth import admin_required
 from utils.validators import validate_faculty
 from utils.logger import logger
+from utils.special_roles import SPECIAL_ROLES as NORMALIZED_SPECIAL_ROLES
 
 
 registration_bp = Blueprint('registration', __name__)
 
-SPECIAL_ROLES = {"None", "FA", "AA", "TC", "FUND"}
+
+@registration_bp.before_app_request
+def ensure_cabin_column():
+    columns = db.session.execute(
+        db.text("PRAGMA table_info(faculty)")
+    ).fetchall()
+    if columns and not any(column[1] == "cabin_no" for column in columns):
+        db.session.execute(db.text(
+            "ALTER TABLE faculty ADD COLUMN cabin_no VARCHAR(50)"
+        ))
+        db.session.commit()
+
+SPECIAL_ROLES = set(NORMALIZED_SPECIAL_ROLES)
 
 
 def validate_special_role(value):
@@ -49,6 +62,8 @@ def add_faculty():
     email=data["email"],
 
     contact=data["contact"],
+
+    cabin_no=data.get("cabin_no") or None,
 
     password_hash=generate_password_hash(
         data["password"]
@@ -103,6 +118,7 @@ def edit_faculty(faculty_id):
     faculty.username = data.get('username', faculty.username)
     faculty.email    = data.get('email',    faculty.email)
     faculty.contact  = data.get('contact',  faculty.contact)
+    faculty.cabin_no = data.get('cabin_no', faculty.cabin_no)
     faculty.professor_post = data.get('professor_post', faculty.professor_post)
     if "special_role" in data:
         special_role = data.get("special_role") or "None"
@@ -114,6 +130,66 @@ def edit_faculty(faculty_id):
     logger.info(
     f"Faculty {faculty.faculty_id} updated.")
     return jsonify({"message": "Faculty updated successfully"})
+
+
+@registration_bp.route('/faculty/reset-password/<faculty_id>', methods=['POST'])
+@admin_required
+def reset_faculty_password(faculty_id):
+    faculty = Faculty.query.get(faculty_id)
+    if not faculty:
+        return jsonify({"error": "Faculty not found"}), 404
+    data = request.get_json() or {}
+    password = data.get("password", "")
+    if not isinstance(password, str) or not password:
+        return jsonify({"error": "password is required."}), 400
+    faculty.password_hash = generate_password_hash(password)
+    db.session.commit()
+    return jsonify({"message": "Faculty password reset successfully"})
+
+
+@registration_bp.route('/faculty/register', methods=['GET', 'POST'])
+def faculty_register():
+    if request.method == 'GET':
+        return render_template('register_faculty.html')
+
+    data = request.form
+    faculty_id = data.get('faculty_id', '').strip()
+    username = data.get('username', '').strip()
+    email = data.get('email', '').strip()
+    contact = data.get('contact', '').strip()
+    cabin_no = data.get('cabin_no', '').strip()
+    password = data.get('password', '')
+    confirm_password = data.get('confirm_password', '')
+
+    error = next((message for condition, message in (
+        (not faculty_id or not username or not email or not contact,
+         'Faculty ID, full name, email, and phone number are required.'),
+        (not cabin_no, 'Cabin number is required.'),
+        (password != confirm_password, 'Password and confirm password must match.'),
+        (not password, 'Password is required.'),
+    ) if condition), None)
+    if error:
+        return render_template('register_faculty.html', error=error, form=data), 400
+
+    if Faculty.query.get(faculty_id):
+        return render_template('register_faculty.html', error='Faculty ID already exists.', form=data), 400
+    if Faculty.query.filter_by(email=email).first():
+        return render_template('register_faculty.html', error='Email already exists.', form=data), 400
+
+    faculty = Faculty(
+        faculty_id=faculty_id,
+        username=username,
+        email=email,
+        contact=contact,
+        cabin_no=cabin_no,
+        password_hash=generate_password_hash(password),
+        role='faculty',
+        professor_post='Assistant Professor',
+        special_role='None'
+    )
+    db.session.add(faculty)
+    db.session.commit()
+    return redirect(url_for('auth.faculty_login', registered='1'))
 
 # REMOVE a faculty
 @registration_bp.route('/faculty/remove/<faculty_id>', methods=['DELETE'])
