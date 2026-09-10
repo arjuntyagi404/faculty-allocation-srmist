@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faculty Query Portal — Faculty Allocation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <p class="eyebrow">SRM Institute of Science and Technology</p>
+      <h1>Faculty Allocation System</h1>
+      <span class="header-subtitle">Department Academic Management Portal</span>
+    </div>
+    <div class="header-right">Admin Portal</div>
+  </header>
+
+  <main class="main-wide">
+    <div class="query-page">
+      <a class="back-link report-back" href="/admin">&lt;- Back to Admin Dashboard</a>
+      <section class="card query-intro">
+        <p class="overline">Academic Operations</p>
+        <h2>Faculty Query Portal</h2>
+        <p class="subtitle">Quickly find faculty availability, subject, and venue by day and time.</p>
+      </section>
+
+      <section class="query-module" aria-labelledby="availability-title">
+        <div class="card query-card">
+          <div class="query-card-heading"><div><p class="overline">Live Lookup</p><h3 id="availability-title">Faculty Availability</h3></div><span class="query-chip">Day and time</span></div>
+          <form class="query-form" data-query="availability">
+            <div class="query-fields">
+              <div class="form-field"><label for="availabilityDay">Day Order</label><select id="availabilityDay" class="form-input" data-field="day"><option value="">All days</option>{% for day in range(1, 6) %}<option value="Day {{ day }}">Day {{ day }}</option>{% endfor %}</select></div>
+              <div class="form-field"><label for="availabilityTime">Time</label><select id="availabilityTime" class="form-input" data-field="time"><option value="">All times</option>{% for period, time in period_times.items() %}<option value="{{ time }}">{{ time }}</option>{% endfor %}</select></div>
+              <div class="form-field"><label for="availabilityBuilding">Building</label><select id="availabilityBuilding" class="form-input" data-field="building"><option value="">All buildings</option>{% for building in buildings %}<option value="{{ building }}">{{ building }}</option>{% endfor %}</select></div>
+              <div class="form-field"><label for="availabilityRoom">Room Number</label><input id="availabilityRoom" class="form-input" type="search" data-field="room" placeholder="Optional"></div>
+            </div>
+            <button class="btn-primary" type="submit">Search Availability</button>
+          </form>
+        </div>
+        <div class="card query-results"><div class="query-results-heading"><h3>Availability Results</h3><span class="result-count" data-count="availability">0 results</span></div><div class="table-wrap"><table class="report-table query-table"><thead><tr><th>Faculty Name</th><th>Subject Code</th><th>Subject Name</th><th>Venue</th><th>Time</th></tr></thead><tbody data-results="availability"></tbody></table></div><p class="empty-state" data-empty="availability">No matching classes found.</p></div>
+      </section>
+
+      <section class="query-module" aria-labelledby="faculty-lookup-title">
+        <div class="card query-card">
+          <div class="query-card-heading"><div><p class="overline">Faculty Search</p><h3 id="faculty-lookup-title">Faculty Lookup</h3></div><span class="query-chip">Name or ID</span></div>
+          <form class="query-form" data-query="faculty">
+            <div class="query-fields query-fields-compact"><div class="form-field"><label for="facultySearch">Faculty Name or ID</label><input id="facultySearch" class="form-input" type="search" data-field="faculty" placeholder="Search faculty"></div><div class="form-field"><label for="facultyDay">Day Order</label><select id="facultyDay" class="form-input" data-field="day"><option value="">All days</option>{% for day in range(1, 6) %}<option value="Day {{ day }}">Day {{ day }}</option>{% endfor %}</select></div></div>
+            <button class="btn-primary" type="submit">Search Faculty</button>
+          </form>
+        </div>
+        <div class="card query-results"><div class="query-results-heading"><h3>Faculty Classes</h3><span class="result-count" data-count="faculty">0 results</span></div><div class="table-wrap"><table class="report-table query-table"><thead><tr><th>Faculty Name</th><th>Professor Post</th><th>Cabin Number</th><th>Day</th><th>Time</th><th>Subject Code</th><th>Subject Name</th><th>Venue</th></tr></thead><tbody data-results="faculty"></tbody></table></div><p class="empty-state" data-empty="faculty">No matching classes found.</p></div>
+      </section>
+
+      <section class="query-module" aria-labelledby="venue-lookup-title">
+        <div class="card query-card">
+          <div class="query-card-heading"><div><p class="overline">Room Search</p><h3 id="venue-lookup-title">Venue Lookup</h3></div><span class="query-chip">Room occupancy</span></div>
+          <form class="query-form" data-query="venue">
+            <div class="query-fields"><div class="form-field"><label for="venueBuilding">Building</label><select id="venueBuilding" class="form-input" data-field="building"><option value="">All buildings</option>{% for building in buildings %}<option value="{{ building }}">{{ building }}</option>{% endfor %}</select></div><div class="form-field"><label for="venueRoom">Room Number</label><input id="venueRoom" class="form-input" type="search" data-field="room" placeholder="Room number"></div><div class="form-field"><label for="venueDay">Day Order</label><select id="venueDay" class="form-input" data-field="day"><option value="">All days</option>{% for day in range(1, 6) %}<option value="Day {{ day }}">Day {{ day }}</option>{% endfor %}</select></div></div>
+            <button class="btn-primary" type="submit">Search Venue</button>
+          </form>
+        </div>
+        <div class="card query-results"><div class="query-results-heading"><h3>Venue Occupancy</h3><span class="result-count" data-count="venue">0 results</span></div><div class="table-wrap"><table class="report-table query-table"><thead><tr><th>Time</th><th>Faculty Name</th><th>Subject Code</th><th>Subject Name</th></tr></thead><tbody data-results="venue"></tbody></table></div><p class="empty-state" data-empty="venue">No room occupancy found.</p></div>
+      </section>
+    </div>
+  </main>
+
+  <script id="queryData" type="application/json">{{ query_rows|tojson }}</script>
+  <script src="{{ url_for('static', filename='faculty_query.js') }}"></script>
+</body>
+</html>

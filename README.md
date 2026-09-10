@@ -24,6 +24,30 @@ A web application to manage and allocate subjects to faculty members.
 
 4. Open http://localhost:5000
 
+## CSV import
+
+Run `python seed_database.py` for a read-only dry run. It reports source row
+counts, duplicates, missing optional values, unresolved references, and
+validation errors. Run `python seed_database.py --import` only after a clean
+dry run. The operation is transactional, insert-only, and never drops or
+overwrites existing records. Imported faculty accounts have no password hash;
+an administrator must set one through `POST /faculty/reset-password/<faculty_id>`
+with a JSON `password` value before that faculty member can log in. Passwords
+are hashed and are never read from or written to the CSV files.
+Missing faculty posts use the existing `Assistant Professor` default; missing
+personal fields remain NULL. Theory allocation `batch` and `slot` values may
+also remain NULL because the existing allocation schema now permits those
+catalog records to be preserved without inventing timetable data.
+
+## Create the first administrator
+
+Run `python create_admin.py` locally. The command prompts for the faculty ID,
+name, email, contact, and password, refuses an existing faculty ID or email,
+and stores only a Werkzeug password hash. It does not run automatically during
+Flask startup. Set `SECRET_KEY` and `DATABASE_URL` in the environment for
+production; local development uses the existing SQLite database and a
+development-only secret fallback.
+
 ## Team
 - Your Name (your roll number)
 - Teammate Name (their roll number)

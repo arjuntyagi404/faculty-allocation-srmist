@@ -1,3 +1,14 @@
+let subjectsData = [];
+let labSlotsData = [];
+
+async function loadLabSlots() {
+
+    const res = await fetch("/allocation/lab-slots");
+
+    labSlotsData = await res.json();
+
+}
+
 async function loadFaculty() {
 
     const res = await fetch("/faculty/list");
@@ -25,24 +36,105 @@ async function loadSubjects() {
 
     const res = await fetch("/subjects");
 
-    const subjects = await res.json();
+    subjectsData = await res.json();
 
     const select = document.getElementById("subject");
 
     select.innerHTML = "";
 
-    subjects.forEach(s => {
+    const categoryLabels = {
+        core: "Core Subjects",
+        elective: "Elective Subjects",
+        lab: "Lab Subjects",
+    };
 
-        select.innerHTML += `
-            <option value="${s.subject_code}">
-                ${s.subject_name}
-            </option>
-        `;
+    ["core", "elective", "lab"].forEach(category => {
+        const subjects = subjectsData.filter(
+            subject => subject.category === category
+        );
 
+        if (!subjects.length) {
+            return;
+        }
+
+        const group = document.createElement("optgroup");
+        group.label = categoryLabels[category];
+
+        subjects.forEach(subject => {
+            const option = document.createElement("option");
+            option.value = subject.subject_code;
+            option.textContent = `${subject.subject_code} — ${subject.subject_name}`;
+            group.appendChild(option);
+        });
+
+        select.appendChild(group);
     });
 
+    updateClassType();
+}
+function updateClassType() {
+
+    const subjectCode =
+        document.getElementById("subject").value;
+
+    const subject =
+        subjectsData.find(
+            s => s.subject_code === subjectCode
+        );
+
+    const field =
+        document.getElementById("classTypeField");
+    const labSlotField =
+        document.getElementById("labSlotField");
+    const labSlot =
+        document.getElementById("labSlot");
+
+    if (!subject) {
+        field.style.display = "none";
+        labSlotField.style.display = "none";
+        return;
+    }
+
+    const courseType =
+        subject.course_type;
+
+    if (courseType === "J") {
+
+        field.style.display = "block";
+
+    } else {
+
+        field.style.display = "none";
+
+    }
+
+    const isPractical =
+        courseType === "P" ||
+        (courseType === "J" && document.getElementById("classType").value === "practical");
+
+    labSlotField.style.display = isPractical ? "block" : "none";
+    labSlot.required = isPractical;
+
+    if (isPractical && labSlot.options.length === 1) {
+        labSlotsData.forEach(slot => {
+            const option = document.createElement("option");
+            option.value = slot.start;
+            option.textContent = `${slot.start}-${slot.end}`;
+            labSlot.appendChild(option);
+        });
+    }
 }
 
+document
+    .getElementById("subject")
+    .addEventListener(
+        "change",
+        updateClassType
+    );
+
+document
+    .getElementById("classType")
+    .addEventListener("change", updateClassType);
 
 async function loadAllocations() {
 
@@ -62,11 +154,13 @@ async function loadAllocations() {
 
             <td>${a.faculty_name}</td>
 
-            <td>${a.subject_name}</td>
+            <td>${a.subject_code} — ${a.subject_name}</td>
 
             <td>${a.batch}</td>
 
             <td>${a.section || ""}</td>
+                <td>${a.room_number || ""}</td>
+                <td>${a.building_name || ""}</td>
 
             <td>
 
@@ -104,15 +198,31 @@ async function addAllocation(event) {
 
     const body = {
 
-        faculty_id: document.getElementById("faculty").value,
+    faculty_id:
+        document.getElementById("faculty").value,
 
-        subject_code: document.getElementById("subject").value,
+    subject_code:
+        document.getElementById("subject").value,
 
-        batch: Number(document.getElementById("batch").value),
+    batch:
+        Number(document.getElementById("batch").value),
 
-        section: document.getElementById("section").value
+    section:
+        document.getElementById("section").value,
 
-    };
+    room_number:
+        document.getElementById("room_number").value,
+
+    building_name:
+        document.getElementById("building_name").value,
+
+    class_type:
+        document.getElementById("classType").value,
+
+    lab_slot:
+        document.getElementById("labSlot").value
+
+};
 
     let url = "/allocation/add";
     let method = "POST";
@@ -141,7 +251,11 @@ async function addAllocation(event) {
 
     const data = await res.json();
 
-    alert(data.message || data.error);
+    alert(
+        [data.message, data.warning || data.error]
+            .filter(Boolean)
+            .join("\n")
+    );
 
     if (res.ok) {
 
@@ -171,8 +285,18 @@ async function editAllocation(id) {
     document.getElementById("batch").value =
         allocation.batch;
 
+    document.getElementById("classType").value =
+        allocation.class_type;
+
+    updateClassType();
+
+    document.getElementById("labSlot").value =
+        allocation.slot;
+
     document.getElementById("section").value =
         allocation.section || "";
+    document.getElementById("room_number").value = allocation.room_number || "";
+    document.getElementById("building_name").value = allocation.building_name || "";
 
     window.editingAllocation = id;
 
@@ -202,6 +326,6 @@ async function deleteAllocation(id) {
 
 loadFaculty();
 
-loadSubjects();
+loadLabSlots().then(loadSubjects);
 
 loadAllocations();

@@ -10,10 +10,12 @@
 
   <header>
     <div class="header-left">
+      <span class="brand-mark" aria-hidden="true">S</span>
       <p class="eyebrow">SRM Institute of Science and Technology</p>
       <h1>Faculty Allocation System</h1>
+      <span class="header-subtitle">Department Academic Management Portal</span>
     </div>
-    <div class="header-right">Academic Portal</div>
+    <div class="header-right">Admin Portal</div>
   </header>
 
   <main class="main-wide">
@@ -42,6 +44,21 @@
                 <option value="">Loading subjects…</option>
               </select>
             </div>
+            <div class="form-field" id="classTypeField" style="display: none;">
+              <label for="classType">Class Type</label>
+
+              <select id="classType" class="form-input">
+                <option value="theory">Theory</option>
+                <option value="practical">Practical</option>
+              </select>
+            </div>
+
+            <div class="form-field" id="labSlotField" style="display: none;">
+              <label for="labSlot">Lab Slot</label>
+              <select id="labSlot" class="form-input">
+                <option value="">Select a lab session</option>
+              </select>
+            </div>
 
             <div class="form-field">
               <label for="batch">Batch</label>
@@ -58,6 +75,28 @@
                   id="section"
                   class="form-input"
                   placeholder="Optional">
+            </div>
+
+            <div class="form-field">
+              <label for="room_number">Room Number</label>
+              <input
+                  type="text"
+                  id="room_number"
+                  class="form-input"
+                  placeholder="e.g. 502">
+            </div>
+
+            <div class="form-field">
+              <label for="building_name">Building Name</label>
+              <select id="building_name" class="form-input">
+                <option value="">Select a building</option>
+                <option value="TP1">TP1</option>
+                <option value="TP2">TP2</option>
+                <option value="UB">UB</option>
+                <option value="Main Block">Main Block</option>
+                <option value="Biotech">Biotech</option>
+                <option value="I-MAC Lab">I-MAC Lab</option>
+              </select>
             </div>
 
           </div>
@@ -80,6 +119,8 @@
                 <th>Subject</th>
                 <th>Batch</th>
                 <th>Section</th>
+                <th>Room</th>
+                <th>Building</th>
                 <th>Action</th>
               </tr>
             </thead>

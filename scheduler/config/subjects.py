@@ -1,33 +1,99 @@
-SUBJECTS = {
-
-    "21CSC302J": {
-        "name": "Computer Networks",
-        "slot": "A"
-    },
-
-    "21CSC201J": {
-        "name": "Data Structures and Algorithms",
-        "slot": "B"
-    },
-
-    "21CSS201T": {
-        "name": "Computer Organization and Architecture",
-        "slot": "C"
-    },
-
-    "21CSC206P": {
-        "name": "Advanced Object Oriented Programming",
-        "slot": "D"
-    },
-
-    "21CSC203P": {
-        "name": "Advanced Programming Practice",
-        "slot": "E"
-    },
-
-    "21CSC307P": {
-        "name": "Machine Learning for Data Analytics",
-        "slot": "F"
-    }
-
+SUBJECT_SLOTS = {
+    "21CSC302J": "A",
+    "21CSC201J": "B",
+    "21CSS201T": "C",
+    "21CSC206P": "D",
+    "21CSC203P": "E",
+    "21CSC307P": "F",
 }
+
+"""
+Legacy catalog removed. Subject identity and names come from the database.
+
+    "CAT001T": {"name": "Calculus And Linear Algebra", "category": "configurable", "semester": 1},
+    "CAT002T": {"name": "Chemistry", "category": "configurable", "semester": 1},
+    "CAT003T": {"name": "Philosophy Of Engineering", "category": "configurable", "semester": 1},
+    "CAT004T": {"name": "Introduction To Computational Biology", "category": "configurable", "semester": 1},
+    "CAT005T": {"name": "Programming For Problem Solving", "category": "core", "semester": 1},
+    "CAT006T": {"name": "Fundamental Of Economics (FOE)", "category": "configurable", "semester": 1},
+    "CAT007T": {"name": "Biomedical Sensors", "category": "configurable", "semester": 1},
+    "CAT008T": {"name": "Foreign Languages", "category": "configurable", "semester": 1},
+    "CAT009T": {"name": "Cell Biology", "category": "configurable", "semester": 1},
+    "CAT010T": {"name": "Microbiology", "category": "configurable", "semester": 1},
+    "CAT011T": {"name": "Physical And Analytical Chemistry", "category": "configurable", "semester": 1},
+    "CAT012T": {"name": "Biochemistry", "category": "configurable", "semester": 1},
+    "CAT013T": {"name": "Basic Civil & Mechanical Workshop", "category": "configurable", "semester": 1},
+    "CAT014T": {"name": "Biology", "category": "configurable", "semester": 1},
+    "CAT015T": {"name": "Advanced Calculus And Complex Analysis", "category": "configurable", "semester": 2},
+    "CAT016T": {"name": "Electrical And Electronics Engineering", "category": "configurable", "semester": 2},
+    "CAT017T": {"name": "Semiconductor Physics And Computational Methods", "category": "configurable", "semester": 2},
+    "CAT018T": {"name": "Physics-Mechanics", "category": "configurable", "semester": 2},
+    "CAT019T": {"name": "Object Oriented Design And Programming", "category": "core", "semester": 2},
+    "CAT020T": {"name": "Communicative English", "category": "configurable", "semester": 2},
+    "CAT021T": {"name": "Electromagnetic Physics", "category": "configurable", "semester": 2},
+    "CAT022T": {"name": "Engineering Mechanics", "category": "configurable", "semester": 2},
+    "CAT023T": {"name": "Electronic System And PCB Design", "category": "configurable", "semester": 2},
+    "CAT024T": {"name": "Building Materials In The Built Environment", "category": "configurable", "semester": 2},
+    "CAT025T": {"name": "Data Structures And Algorithm", "category": "core", "semester": 3},
+    "CAT026T": {"name": "Operating Systems", "category": "core", "semester": 3},
+    "CAT027T": {"name": "Transforms And Boundary Value Problems", "category": "configurable", "semester": 3},
+    "CAT028T": {"name": "Design Thinking And Methodology", "category": "configurable", "semester": 3},
+    "CAT029T": {"name": "Digital Logic Design", "category": "configurable", "semester": 3},
+    "CAT030T": {"name": "Solid State Devices", "category": "configurable", "semester": 3},
+    "CAT031T": {"name": "Biochemistry", "category": "configurable", "semester": 3},
+    "CAT032T": {"name": "Electromagnetic Thoery And Interference", "category": "configurable", "semester": 3},
+    "CAT033T": {"name": "Basic Chemical Engineering", "category": "configurable", "semester": 3},
+    "CAT034T": {"name": "Bioprocess Principles", "category": "configurable", "semester": 3},
+    "CAT035T": {"name": "Genetics And Cytogenetics", "category": "configurable", "semester": 3},
+    "CAT036T": {"name": "Microbiology", "category": "configurable", "semester": 3},
+    "CAT037T": {"name": "Social Engineering", "category": "configurable", "semester": 3},
+    "CAT038T": {"name": "Numerical Methods & Analysis", "category": "configurable", "semester": 3},
+    "CAT039T": {"name": "Foundation of Data Science (FDS)", "category": "core", "semester": 3},
+    "CAT040T": {"name": "Design And Analysis Of Algorithms", "category": "core", "semester": 4},
+    "CAT041T": {"name": "Database Management Systems", "category": "core", "semester": 4},
+    "CAT042T": {"name": "Artificial Intelligence", "category": "core", "semester": 4},
+    "CAT043T": {"name": "Probability And Queueing Theory", "category": "configurable", "semester": 4},
+    "CAT044T": {"name": "Social Engineering", "category": "configurable", "semester": 4},
+    "CAT045T": {"name": "Bioprocess Engineering", "category": "configurable", "semester": 4},
+    "CAT046T": {"name": "Cell Communication And Signaling", "category": "configurable", "semester": 4},
+    "CAT047T": {"name": "Software Process", "category": "configurable", "semester": 4},
+    "CAT048T": {"name": "Chemical Engineering Principles", "category": "configurable", "semester": 4},
+    "CAT049T": {"name": "Molecular Biology", "category": "configurable", "semester": 4},
+    "CAT050T": {"name": "Internet Of Things (IOT)", "category": "configurable", "semester": 4},
+    "CAT051T": {"name": "Probability & Applied Statistics", "category": "configurable", "semester": 4},
+    "CAT052T": {"name": "Digital Image Processing", "category": "configurable", "semester": 4},
+    "CAT053T": {"name": "Signal Processing", "category": "configurable", "semester": 4},
+    "CAT054T": {"name": "CGA", "category": "configurable", "semester": 4},
+    "CAT055T": {"name": "Discrete Mathematics", "category": "configurable", "semester": 5},
+    "CAT056T": {"name": "Full Stack Web Development", "category": "configurable", "semester": 5},
+    "CAT057T": {"name": "Formal Language And Automata", "category": "core", "semester": 5},
+    "CAT058T": {"name": "Machine Learning", "category": "core", "semester": 5},
+    "CAT059T": {"name": "Professional Elective 2", "category": "configurable", "semester": 5},
+    "CAT060T": {"name": "Open Elective 1", "category": "configurable", "semester": 5},
+    "CAT061T": {"name": "Community Connect", "category": "configurable", "semester": 5},
+    "CAT062T": {"name": "Data Science", "category": "configurable", "semester": 6},
+    "CAT063T": {"name": "Software Engineering & Project Management (SEPM)", "category": "configurable", "semester": 6},
+    "CAT064T": {"name": "Compiler Design", "category": "core", "semester": 6},
+    "CAT065T": {"name": "Professional Elective 3", "category": "configurable", "semester": 6},
+    "CAT066T": {"name": "Professional Elective 4", "category": "configurable", "semester": 6},
+    "CAT067T": {"name": "Open Elective 2", "category": "configurable", "semester": 6},
+    "CAT068T": {"name": "Project & MOOC", "category": "configurable", "semester": 6},
+    "CAT069T": {"name": "Behavioural Psychology and other electives.", "category": "configurable", "semester": 7},
+}
+
+SUBJECT_SCHEMA_FIELDS = (
+    "subject_code",
+    "subject_name",
+    "regulation",
+    "program",
+    "department",
+    "semester",
+    "category",
+    "course_type",
+    "credits",
+    "hours_per_week",
+    "LTPC",
+)
+
+SUBJECT_CATEGORIES = ("Core", "Elective", "Lab")
+COURSE_TYPES = ("J", "T", "P", "L")

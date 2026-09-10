@@ -17,6 +17,9 @@ def dashboard():
         return redirect("/faculty/login")
 
     faculty = Faculty.query.get(faculty_id)
+    if faculty is None:
+        session.pop("faculty_id", None)
+        return redirect("/faculty/login")
 
     return render_template(
         "dashboard.html",

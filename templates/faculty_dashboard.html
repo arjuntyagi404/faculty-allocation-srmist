@@ -10,17 +10,32 @@
 
   <header>
     <div class="header-left">
+      <span class="brand-mark" aria-hidden="true">S</span>
       <p class="eyebrow">SRM Institute of Science and Technology</p>
       <h1>Faculty Allocation System</h1>
+      <span class="header-subtitle">Department Academic Management Portal</span>
     </div>
-    <div class="header-right">Academic Portal</div>
+    <div class="header-right">Faculty Portal</div>
   </header>
 
   <main>
-    <div class="card">
-      <p class="overline">Faculty Portal</p>
-      <h2>Welcome<br>{{ faculty.username }}</h2>
-      <div class="divider"></div>
+    <div class="faculty-dashboard">
+      <section class="dashboard-hero">
+        <div>
+          <p class="overline">Faculty Workspace</p>
+          <h2>Welcome, {{ faculty.username }}</h2>
+          <p class="subtitle">Your academic workload and teaching tools.</p>
+        </div>
+      </section>
+
+      <div class="faculty-summary">
+        <div class="metric-card"><span class="metric-label">Faculty ID</span><span class="metric-value">{{ faculty.faculty_id }}</span></div>
+        <div class="metric-card"><span class="metric-label">Assigned Workload</span><span class="metric-value">{{ workload.assigned_workload }}h</span></div>
+        {% if workload.required_workload is not none %}
+        <div class="metric-card"><span class="metric-label">Required Workload</span><span class="metric-value">{{ workload.base_required_workload }}h</span></div>
+        <div class="metric-card"><span class="metric-label">{% if workload.is_overloaded %}Excess{% else %}Pending{% endif %} Workload</span><span class="metric-value">{% if workload.is_overloaded %}{{ workload.excess_workload }}{% else %}{{ workload.pending_workload }}{% endif %}h</span></div>
+        {% endif %}
+      </div>
 
       <div class="profile-info">
         <div class="info-row">
@@ -29,8 +44,45 @@
         </div>
         <div class="info-row">
           <span class="info-label">Current Workload</span>
-          <span class="info-value"><b>{{ workload }}</b> Hours</span>
+            <span class="info-value"><b>{{ workload.assigned_workload }}</b> Hours</span>
         </div>
+          {% if workload.required_workload is not none %}
+          <div class="info-row">
+            <span class="info-label">Required Workload</span>
+            <span class="info-value">{{ workload.base_required_workload }} Hours</span>
+          </div>
+          {% if workload.relief_roles %}
+          <div class="info-row">
+            <span class="info-label">Administrative Relief</span>
+            <span class="info-value"><ul>{% for role in workload.relief_roles %}<li>{{ role }} -2 hrs</li>{% endfor %}</ul></span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Effective Teaching Target</span>
+            <span class="info-value">{{ workload.required_workload }} Hours</span>
+          </div>
+          {% endif %}
+          {% if not workload.relief_roles %}
+          <div class="info-row">
+            <span class="info-label">Effective Teaching Target</span>
+            <span class="info-value">{{ workload.required_workload }} Hours</span>
+          </div>
+          {% endif %}
+          <div class="info-row">
+            {% if workload.is_overloaded %}
+            <span class="info-label">Excess Workload</span>
+            <span class="info-value">{{ workload.excess_workload }} Hours</span>
+            {% else %}
+            <span class="info-label">Pending Workload</span>
+            <span class="info-value">{{ workload.pending_workload }} Hours</span>
+            {% endif %}
+          </div>
+          {% endif %}
+          {% if workload.is_overloaded %}
+          <p class="msg error">
+            Warning: This faculty member exceeds the recommended weekly workload
+            by {{ workload.excess_workload }} hours.
+          </p>
+          {% endif %}
       </div>
 
       <div class="subjects-section">
@@ -48,17 +100,23 @@
       </div>
 
       <div class="btn-group">
-        <button class="btn-primary" onclick="window.location.href='/timetable'">
+        <a class="btn-primary" href="/timetable">
 
           View Timetable
 
-        </button>
+        </a>
 
-        <button class="btn-secondary" onclick="window.location.href='/logout'">
+        <a class="btn-secondary" href="/subject-preference">
+
+          Subject Preference
+
+        </a>
+
+        <a class="btn-ghost-danger" href="/logout">
 
           Logout
 
-        </button>
+        </a>
       </div>
     </div>
   </main>

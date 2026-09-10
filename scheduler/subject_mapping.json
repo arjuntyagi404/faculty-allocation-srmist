@@ -1,31 +1,56 @@
-{
-    "A": {
-        "subject_code": "21CSC302J",
-        "subject_name": "Computer Networks"
+SUBJECTS = {
+
+    "21CSC302J": {
+        "name": "Computer Networks",
+        "course_type": "J",
+        "slot": "A",
+        "lab_slots": {
+            "1": "P6",
+            "2": "P1"
+        }
     },
 
-    "B": {
-        "subject_code": "21CSC201J",
-        "subject_name": "Data Structures and Algorithms"
+    "21CSC201J": {
+        "name": "Data Structures and Algorithms",
+        "course_type": "J",
+        "slot": "B",
+        "lab_slots": {
+            "1": "P8",
+            "2": "P3"
+        }
     },
 
-    "C": {
-        "subject_code": "21CSS201T",
-        "subject_name": "Computer Organization and Architecture"
+    "21CSS201T": {
+        "name": "Computer Organization and Architecture",
+        "course_type": "T",
+        "slot": "C"
     },
 
-    "D": {
-        "subject_code": "21CSC206P",
-        "subject_name": "Advanced Object Oriented Programming"
+    "21CSC206P": {
+        "name": "Advanced Object Oriented Programming",
+        "course_type": "P",
+        "lab_slots": {
+            "1": "P10",
+            "2": "P5"
+        }
     },
 
-    "E": {
-        "subject_code": "21CSC203P",
-        "subject_name": "Advanced Programming Practice"
+    "21CSC203P": {
+        "name": "Advanced Programming Practice",
+        "course_type": "P",
+        "lab_slots": {
+            "1": "P7",
+            "2": "P4"
+        }
     },
 
-    "F": {
-        "subject_code": "21CSC307P",
-        "subject_name": "Machine Learning for Data Analytics"
+    "21CSC307P": {
+        "name": "Machine Learning for Data Analytics",
+        "course_type": "P",
+        "lab_slots": {
+            "1": "P9",
+            "2": "P2"
+        }
     }
+
 }

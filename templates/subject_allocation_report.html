@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subject Allocation — Faculty Allocation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+  <header><div class="header-left"><span class="brand-mark" aria-hidden="true">S</span><p class="eyebrow">SRM Institute of Science and Technology</p><h1>Faculty Allocation System</h1><span class="header-subtitle">Department Academic Management Portal</span></div><div class="header-right">Admin Portal</div></header>
+  <main class="main-wide"><div class="report-page">
+    <a class="back-link report-back" href="{{ url_for('admin.faculty_report') }}">← Back to Faculty Reports</a>
+    <div class="card wide report-card"><p class="overline">Administration</p><h2>Subject Allocation</h2><p class="subtitle">Subjects assigned to the selected faculty.</p>
+      <form class="report-select-form" method="get"><div class="form-field"><label for="faculty_id">Faculty</label><select class="form-input" id="faculty_id" name="faculty_id" onchange="this.form.submit()"><option value="">Select Faculty</option>{% for item in faculties %}<option value="{{ item.faculty_id }}" {% if faculty and item.faculty_id == faculty.faculty_id %}selected{% endif %}>{{ item.username }} — {{ item.faculty_id }}</option>{% endfor %}</select></div></form>
+    </div>
+    {% if faculty %}
+    <div class="card wide report-card"><p class="overline">Faculty Member</p><h2>{{ faculty.username }}</h2><div class="report-meta"><span>Faculty ID: {{ faculty.faculty_id }}</span><span class="post-badge">{{ faculty.professor_post }}</span></div>
+      {% if allocations %}<div class="table-wrap"><table class="report-table"><thead><tr><th>Subject</th><th>Course Type</th><th>Batch</th><th>Section</th><th>Day / Slot</th><th>Venue</th></tr></thead><tbody>{% for allocation in allocations %}<tr><td>{{ allocation.subject_code }} — {{ allocation.subject_name }}</td><td>{{ allocation.course_type }}</td><td>{{ allocation.batch }}</td><td>{{ allocation.section }}</td><td>{{ allocation.day_slot }}</td><td>{{ allocation.venue }}</td></tr>{% endfor %}</tbody></table></div>{% else %}<p class="empty-state">No subjects allocated.</p>{% endif %}
+    </div>
+    {% elif faculties %}<div class="card wide report-card"><p class="empty-state">Select a faculty to view subject allocations.</p></div>{% endif %}
+  </div></main>
+</body>
+</html>

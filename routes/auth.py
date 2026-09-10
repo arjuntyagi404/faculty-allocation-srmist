@@ -9,6 +9,15 @@ auth_bp = Blueprint(
 )
 
 
+def authenticate_faculty(faculty_id, password):
+    faculty = Faculty.query.get(faculty_id)
+    if faculty is None or not faculty.password_hash:
+        return None
+    if not check_password_hash(faculty.password_hash, password):
+        return None
+    return faculty
+
+
 @auth_bp.route("/")
 def home():
     return render_template("login.html")
@@ -23,7 +32,7 @@ def admin_login():
     faculty_id = request.form["faculty_id"]
     password = request.form["password"]
 
-    faculty = Faculty.query.get(faculty_id)
+    faculty = authenticate_faculty(faculty_id, password)
 
     if faculty is None:
 
@@ -32,23 +41,15 @@ def admin_login():
             error="Invalid credentials."
         )
 
-    if faculty.role != "admin":
+    if faculty is None or faculty.role != "admin":
 
         return render_template(
             "admin_login.html",
             error="Access denied."
         )
 
-    if not check_password_hash(
-        faculty.password_hash,
-        password
-    ):
-
-        return render_template(
-            "admin_login.html",
-            error="Invalid credentials."
-        )
-
+    session.pop("faculty_id", None)
+    session["admin_id"] = faculty.faculty_id
     session["admin"] = True
     logger.info(f"Admin {faculty.faculty_id} logged in.")
     return redirect("/admin")
@@ -63,7 +64,7 @@ def faculty_login():
     faculty_id = request.form["faculty_id"]
     password = request.form["password"]
 
-    faculty = Faculty.query.get(faculty_id)
+    faculty = authenticate_faculty(faculty_id, password)
 
     if faculty is None:
         return render_template(
@@ -71,15 +72,14 @@ def faculty_login():
             error="Invalid Faculty ID or Password."
         )
 
-    if not check_password_hash(
-        faculty.password_hash,
-        password
-    ):
+    if faculty is None or faculty.role == "admin":
         return render_template(
             "faculty_login.html",
             error="Invalid Faculty ID or Password."
         )
 
+    session.pop("admin_id", None)
+    session.pop("admin", None)
     session["faculty_id"] = faculty.faculty_id
     logger.info(
     f"Faculty {faculty.faculty_id} logged in.")
@@ -95,20 +95,26 @@ def dashboard():
         return redirect("/faculty/login")
 
     faculty = Faculty.query.get(faculty_id)
+    if faculty is None:
+        session.pop("faculty_id", None)
+        return redirect("/faculty/login")
 
-    from models.faculty_allocation import FacultyAllocation
+    from scheduler.database_loader import load_allocations
+    from scheduler.workload import calculate_workload
 
-    allocations = FacultyAllocation.query.filter_by(
-        faculty_id=faculty_id
-    ).all()
+    allocations = load_allocations(faculty_id)
 
     subjects = sorted({
-        allocation.subject_name
+        f'{allocation["subject_code"]} — {allocation["subject_name"]}'
         for allocation in allocations
+        if allocation["subject_name"]
     })
 
-    workload = len(allocations) * 2
-
+    workload = calculate_workload(
+        allocations,
+        faculty.professor_post,
+        faculty.special_role
+    )
     return render_template(
 
         "faculty_dashboard.html",
@@ -117,12 +123,13 @@ def dashboard():
 
         subjects=subjects,
 
-        workload=workload
+        workload=workload,
 
     )
 @auth_bp.route("/admin/logout")
 def admin_logout():
 
+    session.pop("admin_id", None)
     session.pop("admin", None)
 
     return redirect("/admin/login")

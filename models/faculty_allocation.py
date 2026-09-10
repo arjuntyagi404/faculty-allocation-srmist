@@ -12,34 +12,59 @@ class FacultyAllocation(db.Model):
         nullable=False
     )
 
-    subject_code = db.Column(db.String(20), nullable=False)
-    subject_name = db.Column(db.String(100), nullable=False)
+    subject_code = db.Column(
+    db.String(20),
+    nullable=False
+    )
 
-    slot = db.Column(db.String(2), nullable=False)
+    subject_name = db.Column(
+        db.String(100),
+        nullable=False
+    )
 
-    batch = db.Column(db.Integer, nullable=False)
+    slot = db.Column(
+        db.String(255),
+        nullable=True
+    )
 
+    class_type = db.Column(
+        db.String(20),
+        nullable=False,
+        default="theory"
+    )
+
+    batch = db.Column(
+        db.Integer,
+        nullable=True
+    )
     # We'll use this later
     section = db.Column(db.String(20), nullable=True)
+    room_number = db.Column(db.String(50), nullable=True)
+    building_name = db.Column(db.String(100), nullable=True)
 
     def to_dict(self):
 
         return {
 
-            "id": self.id,
+        "id": self.id,
 
-            "faculty_id": self.faculty_id,
+        "faculty_id": self.faculty_id,
 
-            "faculty_name": self.faculty.username,
+        "faculty_name": self.faculty.username,
 
-            "subject_code": self.subject_code,
+        "subject_code": self.subject_code,
 
-            "subject_name": self.subject_name,
+        "subject_name": self.subject_name,
 
-            "slot": self.slot,
+        "slot": self.slot,
 
-            "batch": self.batch,
+        "class_type": self.class_type,
 
-            "section": self.section
+        "batch": self.batch,
 
-        }
+        "section": self.section
+        ,
+        "room_number": self.room_number,
+        "building_name": self.building_name
+
+    }

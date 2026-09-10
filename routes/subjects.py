@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify
 
-from scheduler.config.subjects import SUBJECTS
+from models.subject import Subject
+
 
 subjects_bp = Blueprint(
     "subjects",
@@ -10,19 +11,11 @@ subjects_bp = Blueprint(
 
 @subjects_bp.route("/subjects")
 def get_subjects():
-
+    subjects = Subject.query.order_by(Subject.subject_code).all()
     data = []
-
-    for code, info in SUBJECTS.items():
-
-        data.append({
-
-            "subject_code": code,
-
-            "subject_name": info["name"],
-
-            "slot": info["slot"]
-
-        })
-
+    for subject in subjects:
+        item = subject.to_dict()
+        if item["category"]:
+            item["category"] = item["category"].casefold()
+        data.append(item)
     return jsonify(data)

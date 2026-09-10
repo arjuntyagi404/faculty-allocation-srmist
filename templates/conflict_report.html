@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conflict Report — Faculty Allocation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+  <header><div class="header-left"><span class="brand-mark" aria-hidden="true">S</span><p class="eyebrow">SRM Institute of Science and Technology</p><h1>Faculty Allocation System</h1><span class="header-subtitle">Department Academic Management Portal</span></div><div class="header-right">Admin Portal</div></header>
+  <main class="main-wide"><div class="report-page">
+    <a class="back-link report-back" href="{{ url_for('admin.faculty_report') }}">&lt;- Back to Faculty Reports</a>
+    <div class="card wide report-card"><p class="overline">Administration</p><h2>Conflict Report</h2><p class="subtitle">Read-only report of overlapping imported allocations.</p></div>
+    {% for group, rows in conflicts.items() %}
+    <section class="card wide report-card">
+      <p class="overline">{{ group }}</p><h2>{{ rows|length }} conflict{% if rows|length != 1 %}s{% endif %}</h2>
+      {% if rows %}
+      <div class="table-wrap"><table class="report-table"><thead><tr><th>Faculty</th><th>Subject</th><th>Batch</th><th>Section</th><th>Slot</th><th>Conflict Reason</th></tr></thead><tbody>
+      {% for row in rows %}<tr><td>{{ row.faculty }}</td><td>{{ row.subject }}</td><td>{{ row.batch }}</td><td>{{ row.section }}</td><td>{{ row.slot }}</td><td>{{ row.reason }}</td></tr>{% endfor %}
+      </tbody></table></div>
+      {% else %}<p class="empty-state">No conflicts found.</p>{% endif %}
+    </section>
+    {% endfor %}
+  </div></main>
+</body>
+</html>

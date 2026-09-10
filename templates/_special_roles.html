@@ -1,0 +1,27 @@
+{% macro role_checkboxes(prefix) %}
+<section class="special-role-section" aria-labelledby="{{ prefix }}-special-roles-title">
+  <div class="special-role-heading">
+    <h4 id="{{ prefix }}-special-roles-title">Special Roles</h4>
+    <p>Select one or more administrative responsibilities.</p>
+  </div>
+  <div class="special-role-options" data-special-role-group>
+  {% for role in special_role_options %}
+  <label class="special-role-option" for="{{ prefix }}_special_role_{{ loop.index }}">
+    <input type="checkbox" id="{{ prefix }}_special_role_{{ loop.index }}" value="{{ role }}" data-special-role>
+    <span>{{ role }}</span>
+  </label>
+  {% endfor %}
+  </div>
+</section>
+{% endmacro %}
+
+{% macro role_badges(value) %}
+<span class="role-badges">
+  {% set roles = special_role_list(value) %}
+  {% if roles %}
+    {% for role in roles %}<span class="role-badge">{{ role }}</span>{% endfor %}
+  {% else %}
+    <span class="role-badge">None</span>
+  {% endif %}
+</span>
+{% endmacro %}
